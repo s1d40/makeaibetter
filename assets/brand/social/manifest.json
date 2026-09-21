@@ -1,0 +1,42 @@
+[
+  {
+    "arquivo": "assets/brand/social/avatar-1080.png",
+    "tamanho": "1080×1080",
+    "uso": "master de avatar, serve todos os canais"
+  },
+  {
+    "arquivo": "assets/brand/social/avatar-800.png",
+    "tamanho": "800×800",
+    "uso": "YouTube (mínimo 800×800)"
+  },
+  {
+    "arquivo": "assets/brand/social/avatar-400.png",
+    "tamanho": "400×400",
+    "uso": "Instagram, Threads, TikTok, X, Facebook"
+  },
+  {
+    "arquivo": "assets/brand/social/youtube-banner.png",
+    "tamanho": "2560×1440",
+    "uso": "YouTube — área segura central 1546×423"
+  },
+  {
+    "arquivo": "assets/brand/social/x-header.png",
+    "tamanho": "1500×500",
+    "uso": "X / Twitter"
+  },
+  {
+    "arquivo": "assets/brand/social/facebook-cover.png",
+    "tamanho": "1640×856",
+    "uso": "Facebook (página)"
+  },
+  {
+    "arquivo": "assets/brand/social/linkedin-cover.png",
+    "tamanho": "1128×191",
+    "uso": "LinkedIn (página)"
+  },
+  {
+    "arquivo": "assets/brand/social/post-1080.png",
+    "tamanho": "1080×1350",
+    "uso": "post 4:5 (Instagram, Threads)"
+  }
+]
