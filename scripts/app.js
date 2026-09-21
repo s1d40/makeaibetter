@@ -573,7 +573,7 @@ function closeReportModalOnBackdrop(e) {
 }
 
 function copyReportLink() {
-  const text = `# State of AI 2026: The Paradigm Shift\nMake AI Better Research Report — September 21, 2026\n\nRead the full report at: https://github.com/makeaibetter`;
+  const text = `# State of AI 2026: The Paradigm Shift\nMake AI Better Research Report — September 21, 2026\n\nRead the full report at: https://github.com/s1d40/makeaibetter`;
   navigator.clipboard.writeText(text).then(() => {
     const btn = document.getElementById('btn-copy-link');
     const originalText = btn.innerHTML;
