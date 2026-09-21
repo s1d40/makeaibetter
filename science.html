@@ -120,35 +120,48 @@
     <div class="container">
       
       <!-- Discipline Selector Pills -->
-      <div class="domain-selector-pills" id="domain-pills">
-        <button class="domain-pill active" data-domain="biology" onclick="selectDomain('biology')">
-          <span class="pill-icon">🧬</span>
+      <div class="domain-selector-pills" id="domain-pills" role="tablist" aria-label="Domínios científicos">
+        <button class="domain-pill active" type="button" role="tab"
+                id="tab-biology" data-domain="biology"
+                aria-selected="true" aria-controls="domain-content-card" tabindex="0">
+          <svg class="domain-icon" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 3c0 5 14 5 14 11M19 3c0 5-14 5-14 11M5 21c0-2.5 3.5-4 7-4s7 1.5 7 4"/><path d="M7.5 7.5h9M6.5 11.5h11M7.5 15.5h9"/></svg>
           <span data-i18n="domain_pill_bio">Biologia & Genômica</span>
         </button>
-        <button class="domain-pill" data-domain="astronomy" onclick="selectDomain('astronomy')">
-          <span class="pill-icon">🔭</span>
+        <button class="domain-pill" type="button" role="tab"
+                id="tab-astronomy" data-domain="astronomy"
+                aria-selected="false" aria-controls="domain-content-card" tabindex="-1">
+          <svg class="domain-icon" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m10.06 8.44 6.86-3.96a2 2 0 0 1 2.73.73l1 1.73a2 2 0 0 1-.73 2.73l-6.86 3.96"/><path d="m5.6 11.02 4.46-2.58 2.9 5.02-4.46 2.58a2 2 0 0 1-2.73-.73l-.9-1.56a2 2 0 0 1 .73-2.73Z"/><path d="M9 17.5 7 22M13.5 15.5 16 22M12 19h.01"/></svg>
           <span data-i18n="domain_pill_astro">Astronomia & Cosmo</span>
         </button>
-        <button class="domain-pill" data-domain="medicine" onclick="selectDomain('medicine')">
-          <span class="pill-icon">💊</span>
+        <button class="domain-pill" type="button" role="tab"
+                id="tab-medicine" data-domain="medicine"
+                aria-selected="false" aria-controls="domain-content-card" tabindex="-1">
+          <svg class="domain-icon" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2.5" y="8.5" width="19" height="7" rx="3.5" transform="rotate(-45 12 12)"/><path d="M9.2 9.2l5.6 5.6"/></svg>
           <span data-i18n="domain_pill_med">Medicina & Fármacos</span>
         </button>
-        <button class="domain-pill" data-domain="chemistry" onclick="selectDomain('chemistry')">
-          <span class="pill-icon">🧪</span>
+        <button class="domain-pill" type="button" role="tab"
+                id="tab-chemistry" data-domain="chemistry"
+                aria-selected="false" aria-controls="domain-content-card" tabindex="-1">
+          <svg class="domain-icon" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 3v6.2a2 2 0 0 1-.3 1.05L4.2 17.4A2 2 0 0 0 5.9 20.5h12.2a2 2 0 0 0 1.7-3.1l-4.5-7.15A2 2 0 0 1 15 9.2V3"/><path d="M8 3h8M6.6 14.5h10.8"/></svg>
           <span data-i18n="domain_pill_chem">Química & Materiais</span>
         </button>
-        <button class="domain-pill" data-domain="quantum" onclick="selectDomain('quantum')">
-          <span class="pill-icon">⚛️</span>
+        <button class="domain-pill" type="button" role="tab"
+                id="tab-quantum" data-domain="quantum"
+                aria-selected="false" aria-controls="domain-content-card" tabindex="-1">
+          <svg class="domain-icon" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="2"/><ellipse cx="12" cy="12" rx="10" ry="4.2"/><ellipse cx="12" cy="12" rx="10" ry="4.2" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4.2" transform="rotate(120 12 12)"/></svg>
           <span data-i18n="domain_pill_quantum">Física Quântica</span>
         </button>
-        <button class="domain-pill" data-domain="ai4ai" onclick="selectDomain('ai4ai')">
-          <span class="pill-icon">🤖</span>
+        <button class="domain-pill" type="button" role="tab"
+                id="tab-ai4ai" data-domain="ai4ai"
+                aria-selected="false" aria-controls="domain-content-card" tabindex="-1">
+          <svg class="domain-icon" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="7" y="7" width="10" height="10" rx="2"/><rect x="3.5" y="3.5" width="17" height="17" rx="3"/><path d="M9 1.5v2M15 1.5v2M9 20.5v2M15 20.5v2M1.5 9h2M1.5 15h2M20.5 9h2M20.5 15h2"/></svg>
           <span data-i18n="domain_pill_ai4ai">IA para a Própria IA</span>
         </button>
       </div>
 
       <!-- Domain Content Dynamic Display -->
-      <div class="domain-content-card" id="domain-content-card">
+      <div class="domain-content-card" id="domain-content-card" role="tabpanel"
+           aria-labelledby="tab-biology" tabindex="0">
         <!-- Injected dynamically by science.js -->
       </div>
 
@@ -166,51 +179,56 @@
         </p>
       </div>
 
+      <div class="matrix-chart" id="matrix-chart"></div>
+
       <div class="table-wrapper">
         <table class="benchmark-table">
+          <caption class="table-caption" data-i18n="matrix_caption">
+            Cada fator de aceleração traz o denominador da comparação e vem de fonte primária citada. Um traço (—) significa que não há estudo comparável publicado — não que o ganho seja nulo.
+          </caption>
           <thead>
             <tr>
-              <th data-i18n="th_science_area">Área Científica</th>
-              <th data-i18n="th_breakthrough">Marco Central (2025/2026)</th>
-              <th data-i18n="th_speedup">Fator de Aceleração</th>
-              <th data-i18n="th_ai_role">Papel da Make AI Better</th>
+              <th scope="col" data-i18n="th_science_area">Área Científica</th>
+              <th scope="col" data-i18n="th_breakthrough">Marco Central (2025/2026)</th>
+              <th scope="col" data-i18n="th_speedup">Fator de Aceleração</th>
+              <th scope="col" data-i18n="th_ai_role">Papel da Make AI Better</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td><strong>🧬 Biologia Molecular</strong></td>
+            <tr data-domain="biology">
+              <th scope="row" class="matrix-row-head"><svg class="domain-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 3c0 5 14 5 14 11M19 3c0 5-14 5-14 11M5 21c0-2.5 3.5-4 7-4s7 1.5 7 4"/><path d="M7.5 7.5h9M6.5 11.5h11M7.5 15.5h9"/></svg><strong>Biologia Molecular</strong></th>
               <td>AlphaFold 3 & AlphaGenome (Genômica não-codificante)</td>
-              <td><span class="score-highlight">100x a 1.000x</span></td>
+              <td class="speedup-cell" data-speedup></td>
               <td>Validação anti-alucinação de dobras proteicas</td>
             </tr>
-            <tr>
-              <td><strong>🔭 Astronomia</strong></td>
+            <tr data-domain="astronomy">
+              <th scope="row" class="matrix-row-head"><svg class="domain-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m10.06 8.44 6.86-3.96a2 2 0 0 1 2.73.73l1 1.73a2 2 0 0 1-.73 2.73l-6.86 3.96"/><path d="m5.6 11.02 4.46-2.58 2.9 5.02-4.46 2.58a2 2 0 0 1-2.73-.73l-.9-1.56a2 2 0 0 1 .73-2.73Z"/><path d="M9 17.5 7 22M13.5 15.5 16 22M12 19h.01"/></svg><strong>Astronomia</strong></th>
               <td>Zoobot & Redes Neurais para JWST / Vera Rubin</td>
-              <td><span class="score-highlight">10.000x</span></td>
+              <td class="speedup-cell" data-speedup></td>
               <td>Filtragem de dados astronômicos abertos</td>
             </tr>
-            <tr>
-              <td><strong>💊 Medicina & Fármacos</strong></td>
+            <tr data-domain="medicine">
+              <th scope="row" class="matrix-row-head"><svg class="domain-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2.5" y="8.5" width="19" height="7" rx="3.5" transform="rotate(-45 12 12)"/><path d="M9.2 9.2l5.6 5.6"/></svg><strong>Medicina & Fármacos</strong></th>
               <td>Agentes Autônomos Co-Scientist & Robin</td>
-              <td><span class="score-highlight">Anos para Semanas</span></td>
+              <td class="speedup-cell" data-speedup></td>
               <td>Sandboxing e segurança de ensaios in-silico</td>
             </tr>
-            <tr>
-              <td><strong>🧪 Química & Materiais</strong></td>
+            <tr data-domain="chemistry">
+              <th scope="row" class="matrix-row-head"><svg class="domain-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 3v6.2a2 2 0 0 1-.3 1.05L4.2 17.4A2 2 0 0 0 5.9 20.5h12.2a2 2 0 0 0 1.7-3.1l-4.5-7.15A2 2 0 0 1 15 9.2V3"/><path d="M8 3h8M6.6 14.5h10.8"/></svg><strong>Química & Materiais</strong></th>
               <td>GNoME (2,2M novos cristais) & Self-Driving Labs</td>
-              <td><span class="score-highlight">800 anos comprimidos</span></td>
+              <td class="speedup-cell" data-speedup></td>
               <td>Benchmarks de síntese física reproduzível</td>
             </tr>
-            <tr>
-              <td><strong>⚛️ Física Quântica</strong></td>
+            <tr data-domain="quantum">
+              <th scope="row" class="matrix-row-head"><svg class="domain-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="2"/><ellipse cx="12" cy="12" rx="10" ry="4.2"/><ellipse cx="12" cy="12" rx="10" ry="4.2" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4.2" transform="rotate(120 12 12)"/></svg><strong>Física Quântica</strong></th>
               <td>Decodificador neural de código de superfície (Willow)</td>
-              <td><span class="score-highlight">Sub-microssegundo</span></td>
+              <td class="speedup-cell" data-speedup></td>
               <td>Modelagem aberta de estados quânticos</td>
             </tr>
-            <tr>
-              <td><strong>🤖 IA para IA</strong></td>
+            <tr data-domain="ai4ai">
+              <th scope="row" class="matrix-row-head"><svg class="domain-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="7" y="7" width="10" height="10" rx="2"/><rect x="3.5" y="3.5" width="17" height="17" rx="3"/><path d="M9 1.5v2M15 1.5v2M9 20.5v2M15 20.5v2M1.5 9h2M1.5 15h2M20.5 9h2M20.5 15h2"/></svg><strong>IA para IA</strong></th>
               <td>AlphaChip & Dados sintéticos provados em Lean 4</td>
-              <td><span class="score-highlight">Horas vs Meses</span></td>
+              <td class="speedup-cell" data-speedup></td>
               <td>Verificação formal e governança de auto-aprimoramento</td>
             </tr>
           </tbody>

@@ -35,7 +35,7 @@
   /* Text Colors */
   --text-primary: #f0f4fc;
   --text-secondary: #94a3b8;
-  --text-muted: #64748b;
+  --text-muted: #7a8aa0;
   --text-link: #38bdf8;
 
   /* Transitions & Shadows */
@@ -295,7 +295,7 @@ h1, h2, h3, h4, h5, h6 {
   border: 1px solid transparent;
 }
 .btn-primary {
-  background: linear-gradient(135deg, #00f0ff 0%, #00b4d8 50%, #8a2be2 100%);
+  background: linear-gradient(135deg, #00f0ff 0%, #35c4ea 50%, #a855f7 100%);
   color: #050811;
   font-weight: 700;
   box-shadow: 0 4px 20px rgba(0, 240, 255, 0.35);

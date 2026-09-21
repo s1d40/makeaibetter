@@ -2,3 +2,6 @@ gemini.api.key
 .env
 *.api.key
 node_modules/
+
+# vídeos grandes ficam fora do git — ver README
+*.mp4

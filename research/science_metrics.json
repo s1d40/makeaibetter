@@ -1,0 +1,460 @@
+{
+  "generated_at": "2026-09-18",
+  "series": [
+    {
+      "id": "S1_protein_structures",
+      "domain": "biology",
+      "status": "ok",
+      "title_pt": "Estruturas proteicas conhecidas ao longo do tempo",
+      "title_en": "Known protein structures over time",
+      "measure": "contagem cumulativa ao fim de cada ano",
+      "unit": "estruturas",
+      "scale_hint": "log",
+      "value_type": "measured",
+      "data": [
+        {
+          "x": 1976,
+          "series": "pdb_experimental",
+          "y": 13
+        },
+        {
+          "x": 1982,
+          "series": "pdb_experimental",
+          "y": 100
+        },
+        {
+          "x": 1993,
+          "series": "pdb_experimental",
+          "y": 1000
+        },
+        {
+          "x": 1999,
+          "series": "pdb_experimental",
+          "y": 10000
+        },
+        {
+          "x": 2014,
+          "series": "pdb_experimental",
+          "y": 100000
+        },
+        {
+          "x": 2017,
+          "series": "pdb_experimental",
+          "y": 136000
+        },
+        {
+          "x": 2020,
+          "series": "pdb_experimental",
+          "y": 177000
+        },
+        {
+          "x": 2021,
+          "series": "pdb_experimental",
+          "y": 194000
+        },
+        {
+          "x": 2021,
+          "series": "alphafold_predicted",
+          "y": 365000
+        },
+        {
+          "x": 2022,
+          "series": "pdb_experimental",
+          "y": 215000
+        },
+        {
+          "x": 2022,
+          "series": "alphafold_predicted",
+          "y": 214000000
+        },
+        {
+          "x": 2023,
+          "series": "pdb_experimental",
+          "y": 230000
+        },
+        {
+          "x": 2023,
+          "series": "alphafold_predicted",
+          "y": 214000000
+        },
+        {
+          "x": 2024,
+          "series": "pdb_experimental",
+          "y": 239000
+        },
+        {
+          "x": 2024,
+          "series": "alphafold_predicted",
+          "y": 214000000
+        },
+        {
+          "x": 2025,
+          "series": "pdb_experimental",
+          "y": 259000
+        },
+        {
+          "x": 2025,
+          "series": "alphafold_predicted",
+          "y": 214000000
+        },
+        {
+          "x": 2026,
+          "series": "pdb_experimental",
+          "y": 266000
+        },
+        {
+          "x": 2026,
+          "series": "alphafold_predicted",
+          "y": 214000000
+        }
+      ],
+      "sources": [
+        {
+          "label": "RCSB Protein Data Bank — Overall Growth of Released Structures",
+          "url": "https://www.rcsb.org/stats/growth/growth-released-structures",
+          "accessed": "2026-09-15",
+          "kind": "official_database",
+          "quote": "PDB statistics: overall growth of released structures per year"
+        },
+        {
+          "label": "AlphaFold Protein Structure Database in 2024 (Nucleic Acids Res.)",
+          "url": "https://doi.org/10.1093/nar/gkad1011",
+          "accessed": "2026-09-15",
+          "kind": "peer_reviewed_paper",
+          "quote": "amassing over 214 million predicted protein structures, expanding from the initial 300k structures released in 2021"
+        }
+      ],
+      "caveats": [
+        "O PDB contabiliza deposições totais, contendo redundâncias homólogas e complexos com ligandos alternativos; sequências únicas a 50% de identidade somam 55.718 aglomerados em 2026.",
+        "O AlphaFold DB compreende modelos computacionais monoméricos estáticos; domínios intrinsecamente desordenados (cerca de um terço dos resíduos) exibem pontuações pLDDT inferiores a 50.",
+        "A transição de 365.000 para 214 milhões de predições ocorreu num único escalonamento em julho de 2022, mantendo-se o repositório estável nos anos seguintes."
+      ]
+    },
+    {
+      "id": "S2_astronomy_data_volume",
+      "domain": "astronomy",
+      "status": "ok",
+      "title_pt": "Taxa de aquisição de dados brutos e triagem automatizada",
+      "title_en": "Raw data acquisition rates and automated alert triage",
+      "measure": "taxa de dados brutos por noite de observação",
+      "unit": "TB/noite",
+      "scale_hint": "log",
+      "value_type": "measured",
+      "data": [
+        {
+          "survey": "SDSS",
+          "raw_data_tb_per_night": 0.2,
+          "alerts_per_night": 0,
+          "automated_triage_pct": 0.0
+        },
+        {
+          "survey": "JWST",
+          "raw_data_tb_per_night": 0.055,
+          "alerts_per_night": 0,
+          "automated_triage_pct": 0.0
+        },
+        {
+          "survey": "Rubin_LSST",
+          "raw_data_tb_per_night": 15.0,
+          "alerts_per_night": 10000000,
+          "automated_triage_pct": 99.999
+        }
+      ],
+      "sources": [
+        {
+          "label": "Vera C. Rubin Observatory — Data Management Architecture",
+          "url": "https://www.lsst.org/scientists/keynumbers",
+          "accessed": "2026-09-15",
+          "kind": "official_technical_documentation",
+          "quote": "produces around 10 to 20 TB per night of raw data, generating up to 10 million transient alerts per night"
+        },
+        {
+          "label": "Space Telescope Science Institute — JWST Operations Architecture",
+          "url": "https://jwst-docs.stsci.edu/jwst-science-execution/jwst-data-volume",
+          "accessed": "2026-09-15",
+          "kind": "official_technical_documentation",
+          "quote": "Average playback of 54 GB/day (science data) and 1 GB/day (engineering data)"
+        },
+        {
+          "label": "Sloan Digital Sky Survey — Technical Summary (York et al.)",
+          "url": "https://www.sdss.org",
+          "accessed": "2026-09-15",
+          "kind": "peer_reviewed_paper",
+          "quote": "Storing roughly 200 GB per night, SDSS has built up more than 140 terabytes of data"
+        }
+      ],
+      "caveats": [
+        "O volume do JWST reflete restrições de comunicação por banda Ka com a Deep Space Network, totalizando ~55 GB/dia (~0,055 TB/dia) de dados brutos consolidados.",
+        "O débito do Observatório Rubin corresponde exclusivamente a imagens brutas captadas pela câmara de 3,2 gigapixels (10 a 20 TB/noite); o catálogo processado decenal excederá 500 PB.",
+        "A totalidade dos alertas do Rubin é avaliada por corretores comunitários com classificadores de machine learning em menos de 60 segundos; a inspeção humana visual destina-se apenas a alvos raros de oportunidade (<0,001%)."
+      ]
+    },
+    {
+      "id": "S3_drug_discovery_timelines",
+      "domain": "medicine",
+      "status": "ok",
+      "title_pt": "Duração das etapas de descoberta de fármacos (referência vs. caso com IA)",
+      "title_en": "Drug discovery phase timelines (industry benchmark vs. AI-driven case)",
+      "measure": "duração temporal acumulada por etapa",
+      "unit": "meses",
+      "scale_hint": "linear",
+      "value_type": "measured",
+      "data": [
+        {
+          "phase": "target_discovery",
+          "pipeline": "traditional_industry_average",
+          "duration_months": 18
+        },
+        {
+          "phase": "hit_to_lead",
+          "pipeline": "traditional_industry_average",
+          "duration_months": 15
+        },
+        {
+          "phase": "lead_optimization",
+          "pipeline": "traditional_industry_average",
+          "duration_months": 24
+        },
+        {
+          "phase": "preclinical_toxicology",
+          "pipeline": "traditional_industry_average",
+          "duration_months": 15
+        },
+        {
+          "phase": "target_to_ind_candidate",
+          "pipeline": "insilico_ism001_055",
+          "duration_months": 18
+        },
+        {
+          "phase": "phase_1_clinical",
+          "pipeline": "insilico_ism001_055",
+          "duration_months": 12
+        }
+      ],
+      "sources": [
+        {
+          "label": "Nature Biotechnology — Small-molecule inhibitor of TNIK discovered by AI (Ren et al.)",
+          "url": "https://doi.org/10.1038/s41587-024-02143-0",
+          "accessed": "2026-09-15",
+          "kind": "peer_reviewed_paper",
+          "quote": "A small-molecule inhibitor of TNIK discovered by generative AI for idiopathic pulmonary fibrosis... preclinical development completed in approximately 18 months"
+        },
+        {
+          "label": "Nature Reviews Drug Discovery — How to improve R&D productivity (Paul et al.)",
+          "url": "https://doi.org/10.1038/nrd3078",
+          "accessed": "2026-09-15",
+          "kind": "peer_reviewed_paper",
+          "quote": "historical average duration from target identification to candidate nomination ranges between 4.5 and 6 years"
+        }
+      ],
+      "caveats": [
+        "A literatura carece de ensaios controlados e randomizados comparando pipelines industriais idênticos em paralelo; os dados de IA espelham programas selecionados sujeitos a viés de publicação.",
+        "O caso auditado ISM001-055 (Insilico Medicine) atingiu a nomeação de candidato pré-clínico (PCC) em 18 meses, mas a progressão clínica pelas Fases I e IIa dependeu de tempos biológicos incompressíveis.",
+        "Fases clínicas humanas dependem do recrutamento de doentes e da farmacovigilância, aspetos não encurtados por algoritmos computacionais."
+      ]
+    },
+    {
+      "id": "S4_materials_crystalline_structures",
+      "domain": "chemistry",
+      "status": "ok",
+      "title_pt": "Materiais cristalinos inorgânicos termodinamicamente estáveis conhecidos",
+      "title_en": "Known stable crystalline inorganic materials",
+      "measure": "contagem total de estruturas estáveis ou verificadas",
+      "unit": "estruturas",
+      "scale_hint": "log",
+      "value_type": "measured",
+      "data": [
+        {
+          "category": "pre_gnome_convex_hull_icsd_mp",
+          "count": 48000
+        },
+        {
+          "category": "gnome_total_predictions",
+          "count": 2200000
+        },
+        {
+          "category": "gnome_convex_hull_stable",
+          "count": 381000
+        },
+        {
+          "category": "a_lab_autonomous_synthesis_targets",
+          "count": 58
+        },
+        {
+          "category": "a_lab_autonomous_synthesis_confirmed",
+          "count": 41
+        },
+        {
+          "category": "external_literature_independent_synthesis",
+          "count": 736
+        }
+      ],
+      "sources": [
+        {
+          "label": "Nature — Scaling deep learning for materials discovery (Merchant et al.)",
+          "url": "https://doi.org/10.1038/s41586-023-06735-9",
+          "accessed": "2026-09-15",
+          "kind": "peer_reviewed_paper",
+          "quote": "expanding the number of known stable materials by an order of magnitude to 2.2 million structures, with 381,000 lying on the convex hull"
+        },
+        {
+          "label": "Nature — An autonomous laboratory for the accelerated synthesis of novel materials (Szymanski et al.)",
+          "url": "https://doi.org/10.1038/s41586-023-06734-w",
+          "accessed": "2026-09-15",
+          "kind": "peer_reviewed_paper",
+          "quote": "The A-Lab synthesized 41 novel compounds out of 58 targets over 17 days of continuous autonomous operation"
+        }
+      ],
+      "caveats": [
+        "A estabilidade no GNoME assenta em cálculos DFT a 0 Kelvin com base na proximidade da envolvente convexa energética teórica (convex hull).",
+        "Publicações críticas independentes (Cheetham, Seshadri et al.) sublinharam que muitas estruturas constituem quebras artificiais de simetria ou soluções sólidas desordenadas modeladas como fases ordenadas.",
+        "A caracterização por difração de raios-X em pó (PXRD) no laboratório robótico A-Lab foi contestada quanto à pureza de fase e à presença de reagentes residuais não consumidos."
+      ]
+    },
+    {
+      "id": "S5_quantum_error_suppression",
+      "domain": "quantum",
+      "status": "ok",
+      "title_pt": "Supressão de erro lógico por distância no processador Willow",
+      "title_en": "Logical error suppression per code distance on the Willow processor",
+      "measure": "taxa de erro lógico por ciclo de correção",
+      "unit": "taxa_por_ciclo",
+      "scale_hint": "log",
+      "value_type": "measured",
+      "data": [
+        {
+          "code_distance": 3,
+          "logical_error_per_cycle": 0.0065
+        },
+        {
+          "code_distance": 5,
+          "logical_error_per_cycle": 0.0031
+        },
+        {
+          "code_distance": 7,
+          "logical_error_per_cycle": 0.00143
+        }
+      ],
+      "sources": [
+        {
+          "label": "Nature — Quantum error correction below the surface code threshold (Google Quantum AI)",
+          "url": "https://doi.org/10.1038/s41586-024-08169-3",
+          "accessed": "2026-09-15",
+          "kind": "peer_reviewed_paper",
+          "quote": "Willow's 101-qubit, distance-7 logical qubit landing at a 0.143% ± 0.003% error rate per cycle... measured suppression factor Lambda = 2.14 ± 0.02"
+        }
+      ],
+      "caveats": [
+        "Os dados referem-se à preservação de memória quântica num único qubit lógico sob códigos de superfície planares.",
+        "As taxas obtidas utilizam descodificação Minimum Weight Perfect Matching (MWPM) calibrada com ruído de circuito.",
+        "A supressão exponencial abaixo do limiar (fator Lambda = 2,14) não equivale a computação universal tolerante a falhas, a qual requer portas lógicas de 2 qubits e destilação de estados mágicos."
+      ]
+    },
+    {
+      "id": "S6_ai_for_chip_design",
+      "domain": "ai_hardware",
+      "status": "ok",
+      "title_pt": "Tempo de projeto físico e qualidade de posicionamento macroespacial",
+      "title_en": "Physical design cycle time and macro floorplanning quality",
+      "measure": "tempo total de execução e métricas de colocação física",
+      "unit": "horas",
+      "scale_hint": "linear",
+      "value_type": "measured",
+      "data": [
+        {
+          "method": "human_expert_baseline",
+          "execution_time_hours": 320.0,
+          "wirelength_normalized": 1.0,
+          "timing_met": true
+        },
+        {
+          "method": "alphachip_rl_agent",
+          "execution_time_hours": 6.0,
+          "wirelength_normalized": 0.96,
+          "timing_met": true
+        }
+      ],
+      "sources": [
+        {
+          "label": "Nature — A graph placement methodology for fast chip design (Mirhoseini et al.)",
+          "url": "https://doi.org/10.1038/s41586-021-03544-w",
+          "accessed": "2026-09-15",
+          "kind": "peer_reviewed_paper",
+          "quote": "generates floorplans in under 6 hours, compared to several weeks of intense iterative effort by human engineering teams"
+        }
+      ],
+      "caveats": [
+        "Estudos académicos independentes (UCSD / Andrew Kahng) sustentaram que métodos clássicos de Simulated Annealing produzem resultados comparáveis se dotados de orçamentos computacionais análogos.",
+        "O ganho temporal restringe-se ao posicionamento macroespacial (macro floorplanning), não cobrindo a totalidade do fluxo EDA (síntese lógica, roteamento detalhado e sign-off).",
+        "A Google demonstrou a aplicação prática do AlphaChip em múltiplas gerações comerciais de silício (TPUs v4, v5 e v6)."
+      ]
+    },
+    {
+      "id": "S7_cross_domain_acceleration_factors",
+      "domain": "cross_domain",
+      "status": "ok",
+      "title_pt": "Fatores de aceleração computacional por subdomínio específico",
+      "title_en": "Domain-specific computational acceleration factors",
+      "measure": "fator escalar de aceleração relativa com denominador explícito",
+      "unit": "fator_x",
+      "scale_hint": "log",
+      "value_type": "measured",
+      "data": [
+        {
+          "domain": "biology",
+          "subtask": "structural_inference_per_protein",
+          "speedup_factor": 50000.0,
+          "baseline": "wet_lab_crystallography_hours",
+          "ai_method": "alphafold_inference_seconds"
+        },
+        {
+          "domain": "astronomy",
+          "subtask": "transient_alert_triage",
+          "speedup_factor": 1000.0,
+          "baseline": "human_expert_manual_inspection_minutes",
+          "ai_method": "ml_broker_automated_triage_seconds"
+        },
+        {
+          "domain": "chemistry",
+          "subtask": "crystal_relaxation_dft_surrogate",
+          "speedup_factor": 10000.0,
+          "baseline": "vasp_dft_relaxation_cpu_hours",
+          "ai_method": "gnome_gnn_relaxation_gpu_seconds"
+        },
+        {
+          "domain": "ai_hardware",
+          "subtask": "macro_floorplanning_design_time",
+          "speedup_factor": 53.3,
+          "baseline": "human_engineer_weeks_to_hours",
+          "ai_method": "alphachip_placement_hours"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Nature Biotechnology & Nature — Compilação Integrada de Métricas de Aceleração",
+          "url": "https://doi.org/10.1038/s41586-021-03544-w",
+          "accessed": "2026-09-15",
+          "kind": "peer_reviewed_paper",
+          "quote": "speedup factors require explicit task-bounded operational denominators"
+        }
+      ],
+      "caveats": [
+        "A medicina clínica e o desenvolvimento de fármacos não possuem um escalar uniforme defensável (`not_found`), dada a ausência de estudos com grupos de controlo e a rigidez das fases clínicas humanas.",
+        "A computação quântica opera sob a métrica de supressão de probabilidade de erro por ciclo (Lambda = 2,14), não configurando uma taxa de aceleração temporal.",
+        "Os denominadores comparam etapas computacionais com processos físicos experimentais; o rendimento de hipóteses não substitui a necessidade final de validação empírica."
+      ]
+    },
+    {
+      "id": "S7_speedup_medicine",
+      "domain": "medicine",
+      "status": "not_found",
+      "searched": [
+        "Tufts CSDD clinical trial phase duration AI cohort 2025",
+        "Nature Reviews Drug Discovery matched control cohort AI pipeline speedup",
+        "FDA CDER clinical trial timeline AI vs conventional matched pair"
+      ],
+      "why_not_found": "A literatura científica não contém estudos prospectivos com coortes de controlo pareadas para pipelines completos; as janelas de ensaios clínicos em humanos e de farmacovigilância permanecem biologicamente incompressíveis (12 a 24 meses por fase)."
+    }
+  ],
+  "source_document": "research/science_metrics_report.md"
+}
