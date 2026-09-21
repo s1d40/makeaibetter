@@ -4,4 +4,7 @@ Allow: /
 # Os arquivos de pesquisa são conteúdo público e citável
 Allow: /research/
 
+# Guia para agentes e buscadores de IA
+# https://makeaibetter.com/llms.txt
+
 Sitemap: https://makeaibetter.com/sitemap.xml

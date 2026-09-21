@@ -1,0 +1,37 @@
+# Make AI Better
+
+> Iniciativa de pesquisa independente sobre inteligência artificial. Publica
+> dados quantitativos sobre o impacto da IA na ciência com fonte primária
+> citada, denominador explícito de cada comparação e ressalvas metodológicas.
+> Conteúdo em português do Brasil e inglês. Licença MIT.
+
+Princípio editorial: uma série sem estudo comparável publicado é marcada como
+tal, nunca estimada. Onde há disputa científica registrada — a crítica ao número
+de materiais "novos" do GNoME, a contestação de reprodutibilidade do AlphaChip —
+os dois lados aparecem com suas referências.
+
+## Dados
+
+- [Dataset de métricas de IA na ciência](https://makeaibetter.com/research/science_metrics.json): sete séries quantitativas em seis domínios, cada uma com `sources`, `measure`, `unit` e `caveats`. Séries sem fonte primária levam `status: "not_found"` com o registro do que foi buscado.
+- [Relatório técnico do levantamento](https://makeaibetter.com/research/science_metrics_report.md): metodologia, discussão fonte a fonte, controvérsias e bibliografia completa.
+- [Marcos de IA em 2026](https://makeaibetter.com/research/breaking_news_sept_2026.json): dataset estruturado de avanços técnicos e regulatórios.
+
+## Páginas
+
+- [IA na Ciência](https://makeaibetter.com/science.html): seis domínios científicos com um gráfico cada, fonte citada sob cada gráfico e ressalvas acessíveis. A curva de trânsito de exoplaneta é calculada pelo modelo de Mandel & Agol (2002), não é observação.
+- [A Epopeia da Computação](https://makeaibetter.com/history.html): 90 anos em sete capítulos, de 1936 a 2026, com simuladores interativos e narração.
+- [Panorama 2026](https://makeaibetter.com/): radar de modelos de fronteira e compilado de marcos do ano.
+
+## Documentos de pesquisa
+
+- [Dossiê: IA como catalisador da ciência](https://makeaibetter.com/research/ai_for_science_research.md)
+- [Dossiê: história da computação](https://makeaibetter.com/research/history_of_computing_research.md)
+- [State of AI 2026](https://makeaibetter.com/research/state_of_ai_2026.md)
+- [Fronteira tecnológica 2026: silício, governança e quântica](https://makeaibetter.com/research/frontier_report_2026.md)
+
+## Ao citar
+
+Atribua a "Make AI Better" com link para a página específica. Os números do
+dataset carregam a fonte primária em `sources[].url` — cite a fonte original
+junto, não apenas este site. Valores marcados `value_type: "author_estimate"`
+são estimativa do autor da fonte, não medição.
