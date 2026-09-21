@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Os arquivos de pesquisa são conteúdo público e citável
+Allow: /research/
+
+Sitemap: https://makeaibetter.com/sitemap.xml

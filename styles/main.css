@@ -1187,3 +1187,32 @@ h1, h2, h3, h4, h5, h6 {
   .news-grid { grid-template-columns: 1fr; }
   .footer-links-grid { grid-template-columns: 1fr; }
 }
+
+/* Skip link — primeiro elemento focável da página.
+   Com 5 links na navbar, quem navega por teclado tabulava a navegação inteira
+   em toda página antes de chegar ao conteúdo. Fica fora da tela até receber foco. */
+.skip-link {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -140%);
+  z-index: 2000;
+  padding: 0.7rem 1.4rem;
+  border-radius: 0 0 12px 12px;
+  background: var(--accent-cyan);
+  color: #050811;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-decoration: none;
+  box-shadow: 0 6px 24px rgba(0, 240, 255, 0.45);
+  transition: transform var(--transition-fast);
+}
+.skip-link:focus {
+  transform: translate(-50%, 0);
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
+
+/* O alvo do skip link não deve ganhar anel de foco ao ser pulado para ele */
+[tabindex="-1"]:focus { outline: none; }
