@@ -1,7 +1,11 @@
 /**
  * MAKE AI BETTER — AI for Science Interactive Hub
+ * Powered by Motion One (motion.dev)
  * Date: 2026-09-21
  */
+
+import { animate, stagger } from "https://cdn.jsdelivr.net/npm/motion@latest/+esm";
+
 
 let currentLang = 'pt';
 let activeDomainId = 'biology';
@@ -140,7 +144,59 @@ const scienceDomains = {
 document.addEventListener('DOMContentLoaded', () => {
   initLanguage();
   renderActiveDomain();
+  initScrollReveal();
+  animateScienceHero();
 });
+
+// --- Hero Animation ---
+function animateScienceHero() {
+  const els = [
+    document.querySelector('.science-hero .hero-badge'),
+    document.querySelector('.science-title'),
+    document.querySelector('.science-lead'),
+    document.querySelector('.science-stats-strip')
+  ];
+  els.forEach((el, i) => {
+    if (!el) return;
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(24px)';
+    setTimeout(() => {
+      animate(el, { opacity: [0, 1], y: [24, 0] },
+        { duration: 0.65, easing: [0.22, 1, 0.36, 1], delay: i * 0.10 });
+    }, 60);
+  });
+}
+
+// --- Scroll-Reveal via IntersectionObserver ---
+function initScrollReveal() {
+  const targets = document.querySelectorAll(
+    '.science-stat-box, .matrix-section, .domain-selector-section, .science-cta'
+  );
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animate(entry.target,
+          { opacity: [0, 1], y: [40, 0] },
+          { duration: 0.7, easing: [0.22, 1, 0.36, 1] });
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  targets.forEach(el => { el.style.opacity = '0'; obs.observe(el); });
+
+  // Matrix rows staggered
+  const matrixRows = document.querySelectorAll('.matrix-table tbody tr');
+  const rowObs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animate(matrixRows, { opacity: [0, 1], x: [-20, 0] },
+          { duration: 0.4, easing: 'ease-out', delay: stagger(0.06) });
+        rowObs.disconnect();
+      }
+    });
+  }, { threshold: 0.1 });
+  if (matrixRows.length) rowObs.observe(matrixRows[0]);
+}
 
 // --- Domain Selection ---
 window.selectDomain = function(domainId) {
@@ -148,7 +204,18 @@ window.selectDomain = function(domainId) {
   document.querySelectorAll('.domain-pill').forEach(btn => {
     btn.classList.toggle('active', btn.getAttribute('data-domain') === domainId);
   });
-  renderActiveDomain();
+  // Fade out, then re-render and fade in
+  const card = document.getElementById('domain-content-card');
+  if (card) {
+    animate(card, { opacity: [1, 0], scale: [1, 0.97] }, { duration: 0.2, easing: 'ease-in' })
+      .finished.then(() => {
+        renderActiveDomain();
+        animate(card, { opacity: [0, 1], scale: [0.97, 1], y: [12, 0] },
+          { duration: 0.45, easing: [0.22, 1, 0.36, 1] });
+      });
+  } else {
+    renderActiveDomain();
+  }
 };
 
 function renderActiveDomain() {
@@ -333,14 +400,24 @@ window.simulateMutation = function() {
 window.simulateTransit = function() {
   const planet = document.getElementById('planet-orb');
   const flux = document.getElementById('light-flux');
-  if (planet && flux) {
-    planet.style.left = '75%';
-    flux.textContent = currentLang === 'pt' ? 'Queda de Fluxo Detectada: 98.6% (Bioassinatura H₂O confirmada)' : 'Flux Drop Detected: 98.6% (H₂O Biosignature confirmed)';
-    setTimeout(() => {
-      planet.style.left = '10%';
-      flux.textContent = currentLang === 'pt' ? 'Fluxo Luminoso: 100%' : 'Luminosity Flux: 100%';
-    }, 2500);
-  }
+  if (!planet || !flux) return;
+
+  // Animate planet across star
+  animate(planet, { left: ['10%', '45%', '80%'] }, { duration: 2.5, easing: 'linear' })
+    .finished.then(() => {
+      setTimeout(() => {
+        animate(planet, { left: ['80%', '10%'] }, { duration: 0.01 });
+        flux.textContent = currentLang === 'pt' ? 'Flux Luminoso: 100%' : 'Luminosity Flux: 100%';
+      }, 300);
+    });
+
+  // Simulate flux drop during transit
+  setTimeout(() => {
+    flux.textContent = currentLang === 'pt'
+      ? 'Queda de Flux: 98.6% — Bioassinatura H₂O confirmada ✓'
+      : 'Flux Drop: 98.6% — H₂O Biosignature confirmed ✓';
+    animate(flux, { color: ['#00f0ff', '#00ff88'] }, { duration: 0.5 });
+  }, 1200);
 };
 
 window.testNewMolecule = function() {

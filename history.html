@@ -290,7 +290,10 @@
             </div>
             <div class="moore-slider-box">
               <label for="moore-year-slider" data-i18n="moore_slider_label">Selecione o Ano Histórico:</label>
-              <input type="range" id="moore-year-slider" min="1971" max="2026" step="5" value="1971" oninput="updateMooreDisplay(this.value)">
+              <input type="range" id="moore-year-slider" min="1971" max="2026" step="1" value="1971">
+              <div class="moore-log-bar-track">
+                <div class="moore-log-bar" id="moore-bar"></div>
+              </div>
               <div class="moore-display-readout">
                 <div class="readout-year" id="moore-year">Ano: 1971</div>
                 <div class="readout-chip" id="moore-chip">Chip: Intel 4004</div>
@@ -344,13 +347,19 @@
                 <div class="node-circle" id="node-in2">X2: 0.2</div>
               </div>
               <div class="nn-weights-col">
-                <span class="weight-label" id="w1-val">w1: 0.50</span>
-                <span class="weight-label" id="w2-val">w2: 0.35</span>
+                <span class="weight-label" id="w1-val">w1: 0.500</span>
+                <span class="weight-label" id="w2-val">w2: 0.350</span>
               </div>
               <div class="nn-layer-col">
                 <span class="layer-title">Output</span>
-                <div class="node-circle output-node" id="node-out">Y: 0.47</div>
-                <span class="loss-badge" id="loss-val">Loss: 0.530</span>
+                <div class="node-circle output-node" id="node-out">Y: 0.473</div>
+                <span class="loss-badge" id="loss-val">Loss: 0.2769</span>
+              </div>
+            </div>
+            <div class="loss-bar-track" style="margin-top:0.75rem;">
+              <div class="loss-bar-label">Loss →</div>
+              <div class="loss-bar-track-inner">
+                <div class="loss-bar" id="loss-bar" style="width:55%"></div>
               </div>
             </div>
             <div class="widget-controls">
@@ -500,10 +509,12 @@
               <!-- Interactive System-2 Reasoning Tree Visualizer -->
               <div class="interactive-mini-box">
                 <div class="mini-box-title" data-i18n="system2_sim_title">Árvore de Raciocínio System-2 em Tempo Real:</div>
+                <div class="reasoning-scenario-tag" id="reasoning-title">Prova Matemática (AIME 2026)</div>
                 <div class="reasoning-tree-display" id="reasoning-tree">
-                  <div class="tree-step step-ok">✓ Hipótese 1: Formulação Matemática</div>
-                  <div class="tree-step step-bad">✗ Ramo 2: Dedução inválida (Descartado via PRM)</div>
-                  <div class="tree-step step-ok">✓ Ramo 3: Prova Formal em Lean 4 Verificada</div>
+                  <div class="tree-step step-ok">✓ Etapa 1: Formalização do problema no espaço polinomial</div>
+                  <div class="tree-step step-bad">✗ Hipótese 2A: Indução fraca falhou — rejeitada via PRM</div>
+                  <div class="tree-step step-ok">✓ Hipótese 2B: Bijection provada em Lean 4 (verificado)</div>
+                  <div class="tree-step step-ok">✓ Etapa 4: Resposta verificada. Score AIME: 100%</div>
                 </div>
                 <button class="btn btn-outline small-btn" onclick="runReasoningSimulation()">
                   <span data-i18n="btn_simulate_thinking">Simular Deliberação Cognitiva (Thinking Tokens)</span>

@@ -342,3 +342,60 @@
   .domain-selector-pills { justify-content: flex-start; overflow-x: auto; padding-bottom: 0.5rem; }
   .domain-content-card { padding: 1.75rem 1.25rem; }
 }
+
+/* ── Astronomy Transit Simulator Improvements ─────────────── */
+.star-orb {
+  animation: star-pulse 3s ease-in-out infinite;
+}
+@keyframes star-pulse {
+  0%, 100% { box-shadow: 0 0 35px #f59e0b, 0 0 60px rgba(251,191,36,0.3); }
+  50%       { box-shadow: 0 0 55px #f59e0b, 0 0 90px rgba(251,191,36,0.5); }
+}
+.planet-orb {
+  /* position driven by motion.dev — override transition to none for motion control */
+  transition: none;
+  box-shadow: 0 0 6px #38bdf8;
+}
+
+/* ── Protein Chain Connectors ─────────────────────────────── */
+.protein-structure-mock {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+.amino-acid-node {
+  position: relative;
+  flex-shrink: 0;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.amino-acid-node:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 20px rgba(0,255,136,0.7);
+}
+.amino-acid-node:not(:last-child)::after {
+  content: '';
+  display: inline-block;
+  width: 16px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent-green), transparent);
+  margin: 0 2px;
+  vertical-align: middle;
+  position: absolute;
+  right: -18px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* ── Domain Content Card Animations ──────────────────────── */
+#domain-content-card {
+  will-change: transform, opacity;
+}
+.innovation-item {
+  transition: background 0.2s;
+}
+.innovation-item:hover {
+  background: rgba(255,255,255,0.04);
+  border-radius: 8px;
+}

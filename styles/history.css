@@ -593,13 +593,87 @@
 .qubit-node:hover, .qubit-node.excited {
   background: var(--accent-cyan);
   color: #000;
-  box-shadow: 0 0 10px var(--accent-cyan);
+  box-shadow: 0 0 14px var(--accent-cyan), 0 0 28px rgba(0,240,255,0.4);
+  transform: scale(1.2);
+}
+.qubit-node.flicker {
+  background: rgba(0, 240, 255, 0.35);
+  border-color: var(--accent-cyan);
+}
+.qubit-node.entangled {
+  background: rgba(138, 43, 226, 0.45);
+  border-color: var(--accent-purple);
+  box-shadow: 0 0 10px var(--accent-purple);
+  transform: scale(1.1);
+}
+.qubit-label {
+  pointer-events: none;
+  font-size: 0.58rem;
 }
 .qubit-status-row {
   font-size: 0.75rem;
   font-family: var(--font-mono);
   color: var(--accent-green);
   text-align: center;
+  transition: color 0.5s;
+}
+
+/* Moore's Law Logarithmic Bar */
+.moore-log-bar-track {
+  width: 100%;
+  height: 8px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 4px;
+  overflow: hidden;
+  margin: 0.6rem 0;
+}
+.moore-log-bar {
+  height: 100%;
+  width: 2%;
+  background: linear-gradient(90deg, #ffb703, #00ff88);
+  border-radius: 4px;
+  box-shadow: 0 0 8px rgba(0, 255, 136, 0.6);
+  transition: width 0.4s ease;
+}
+
+/* Backprop Loss Bar */
+.loss-bar-track {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.loss-bar-label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+.loss-bar-track-inner {
+  flex: 1;
+  height: 8px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.loss-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #ff3366, #ffb703);
+  border-radius: 4px;
+  box-shadow: 0 0 6px rgba(255, 51, 102, 0.5);
+  transition: width 0.4s ease;
+}
+
+/* Reasoning Scenario Tag */
+.reasoning-scenario-tag {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--accent-purple);
+  border: 1px solid rgba(138, 43, 226, 0.3);
+  background: rgba(138, 43, 226, 0.08);
+  border-radius: 6px;
+  padding: 0.3rem 0.6rem;
+  margin-bottom: 0.6rem;
+  display: inline-block;
 }
 
 /* Reasoning Tree */
