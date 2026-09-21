@@ -30,6 +30,9 @@ const translations = {
     stat_test_time: "Paradigma de Test-Time Compute",
     stat_open_moe: "Custo de Inferência Open MoE",
     stat_coalition: "Alinhamento & Pacing Global",
+    video_section_tag: "EM VÍDEO",
+    video_section_title: "Assista à pesquisa",
+    video_section_subtitle: "Um mergulho longo no panorama de 2026 e três recortes curtos sobre as mudanças que mais importam.",
     news_section_tag: "PANORAMA EM TEMPO REAL",
     news_section_title: "Breaking News & Descobertas Científicas (2026)",
     news_section_subtitle: "O compilado curado dos maiores saltos técnicos, anúncios de laboratórios de fronteira e marcos regulatórios registrados até 21 de setembro de 2026.",
@@ -106,6 +109,9 @@ const translations = {
     stat_test_time: "Test-Time Compute Paradigm",
     stat_open_moe: "Open MoE Inference Cost",
     stat_coalition: "Global Alignment & Pacing",
+    video_section_tag: "ON VIDEO",
+    video_section_title: "Watch the research",
+    video_section_subtitle: "One long dive into the 2026 landscape and three short cuts on the shifts that matter most.",
     news_section_tag: "REAL-TIME RADAR",
     news_section_title: "Breaking News & Scientific Milestones (2026)",
     news_section_subtitle: "The curated synthesis of major technical leaps, frontier lab announcements, and regulatory checkpoints recorded up to September 21, 2026.",
@@ -331,6 +337,8 @@ function setLanguage(lang) {
   applyTranslations();
   renderNewsGrid();
   renderModelShowcase(activeModelId);
+  // app.js é script clássico e o embed de vídeo é módulo ES: o evento é a ponte
+  document.dispatchEvent(new CustomEvent('mab:langchange', { detail: lang }));
 }
 
 function initLanguage() {

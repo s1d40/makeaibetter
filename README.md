@@ -126,6 +126,34 @@ in `scripts/history.js`, which stays the single source of truth for the text.
 
 ---
 
+## 📺 Videos
+
+Videos live on YouTube; the site embeds them through a **facade**. A stock
+YouTube `<iframe>` pulls over 1 MB of JavaScript and sets a tracking cookie
+before anyone presses play, so the page renders a local poster instead and only
+creates the iframe on click — pointed at `youtube-nocookie.com`.
+
+To publish a video:
+
+1. Upload it to the YouTube channel.
+2. Copy the 11-character ID from the URL (`youtube.com/watch?v=<ID>`).
+3. Paste it into the matching entry in [`assets/videos.json`](./assets/videos.json).
+
+That is the whole workflow — no markup changes. While `youtubeId` is empty the
+card shows its poster with a "coming soon" badge and a disabled button, so
+nothing breaks in the layout.
+
+Posters are extracted from the source file:
+
+```bash
+ffmpeg -ss 2 -i video.mp4 -frames:v 1 -vf scale=1280:-2 -quality 82 \
+  assets/video-posters/<slot>.webp
+```
+
+Source `.mp4` files stay out of git (`.gitignore`) — YouTube is the host.
+
+---
+
 ## 🤝 Getting Involved & Contributing
 
 We welcome researchers, engineers, and AI safety advocates:
