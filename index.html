@@ -58,8 +58,10 @@
 
       <nav class="nav-links" id="nav-menu">
         <a href="#state-of-ai" class="nav-link" data-i18n="nav_state_of_ai">State of AI 2026</a>
+        <a href="history.html" class="nav-link" data-i18n="nav_history">História</a>
+        <a href="science.html" class="nav-link" data-i18n="nav_science">IA na Ciência</a>
         <a href="#benchmarks" class="nav-link" data-i18n="nav_benchmarks">Radar de Modelos</a>
-        <a href="#pillars" class="nav-link" data-i18n="nav_pillars">Pilares de Pesquisa</a>
+        <a href="#pillars" class="nav-link" data-i18n="nav_pillars">Pilares</a>
         <a href="#manifesto" class="nav-link" data-i18n="nav_manifesto">Manifesto</a>
       </nav>
 
@@ -105,15 +107,27 @@
           </svg>
           <span data-i18n="btn_explore_radar">Explorar Radar 2026</span>
         </a>
-        <button class="btn btn-secondary" onclick="openReportModal()" id="btn-open-report">
+        <a href="history.html" class="btn btn-secondary">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="12 6 12 12 16 14"></polyline>
+          </svg>
+          <span data-i18n="btn_history">História da Computação</span>
+        </a>
+        <a href="science.html" class="btn btn-secondary">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+          </svg>
+          <span data-i18n="btn_science">IA na Ciência</span>
+        </a>
+        <button class="btn btn-outline" onclick="openReportModal()" id="btn-open-report">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
             <polyline points="14 2 14 8 20 8"></polyline>
             <line x1="16" y1="13" x2="8" y2="13"></line>
             <line x1="16" y1="17" x2="8" y2="17"></line>
-            <polyline points="10 9 9 9 8 9"></polyline>
           </svg>
-          <span data-i18n="btn_read_state_of_ai">Ler State of AI 2026 (Completo)</span>
+          <span data-i18n="btn_read_state_of_ai">State of AI 2026</span>
         </button>
       </div>
 
@@ -415,8 +429,10 @@
 
       <div class="footer-links-grid">
         <div class="footer-col">
-          <h5 data-i18n="footer_col_research">Pesquisa</h5>
+          <h5 data-i18n="footer_col_research">Pesquisa & História</h5>
           <a href="#state-of-ai" data-i18n="nav_state_of_ai">State of AI 2026</a>
+          <a href="history.html" data-i18n="nav_history">História da Computação</a>
+          <a href="science.html" data-i18n="nav_science">IA na Ciência</a>
           <a href="#benchmarks" data-i18n="nav_benchmarks">Radar de Modelos</a>
           <a href="#" onclick="openReportModal(); return false;" data-i18n="footer_whitepaper">Relatório Técnico (MD)</a>
         </div>

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IA na Ciência: Aceleração da Descoberta Científica | Make AI Better</title>
+  <meta name="description" content="Explore como a Inteligência Artificial está comprimindo séculos de pesquisa em semanas em Biologia, Astronomia, Medicina, Química, Física Quântica e na criação de modelos de IA mais avançados.">
+  <meta name="keywords" content="AI for Science, AlphaFold 3, AlphaGenome, GNoME, AlphaChip, Quantum Physics, Drug Discovery, Make AI Better">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/science.css">
+</head>
+<body class="science-body">
+
+  <!-- Ambient Glow Background -->
+  <div class="ambient-glow science-glow-1"></div>
+  <div class="ambient-glow science-glow-2"></div>
+
+  <!-- Global Header -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="brand-logo" id="brand-logo">
+        <div class="logo-icon">
+          <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 2L28 9V23L16 30L4 23V9L16 2Z" stroke="url(#logo-grad)" stroke-width="2.5" stroke-linejoin="round"/>
+            <circle cx="16" cy="16" r="4" fill="url(#logo-grad-circle)"/>
+            <path d="M16 6V12M16 20V26M6.5 10.5L12 14M20 18L25.5 21.5M25.5 10.5L20 14M12 18L6.5 21.5" stroke="rgba(0,240,255,0.6)" stroke-width="1.5"/>
+            <defs>
+              <linearGradient id="logo-grad" x1="4" y1="2" x2="28" y2="30" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#00f0ff"/>
+                <stop offset="0.5" stop-color="#8a2be2"/>
+                <stop offset="1" stop-color="#00ff88"/>
+              </linearGradient>
+              <linearGradient id="logo-grad-circle" x1="12" y1="12" x2="20" y2="20" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#00f0ff"/>
+                <stop offset="1" stop-color="#00ff88"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-name">MAKE AI BETTER</span>
+          <span class="brand-badge" data-i18n="nav_science_badge">AI for Science Hub</span>
+        </div>
+      </a>
+
+      <nav class="nav-links">
+        <a href="index.html" class="nav-link" data-i18n="nav_home">Home</a>
+        <a href="history.html" class="nav-link" data-i18n="nav_history">História</a>
+        <a href="science.html" class="nav-link active" data-i18n="nav_science">IA na Ciência</a>
+        <a href="index.html#benchmarks" class="nav-link" data-i18n="nav_benchmarks">Radar</a>
+        <a href="index.html#manifesto" class="nav-link" data-i18n="nav_manifesto">Manifesto</a>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Language Switcher -->
+        <div class="lang-switch-container">
+          <button class="lang-btn active" id="btn-lang-pt" onclick="setLanguage('pt')">PT</button>
+          <span class="lang-divider">/</span>
+          <button class="lang-btn" id="btn-lang-en" onclick="setLanguage('en')">EN</button>
+        </div>
+
+        <a href="https://github.com/s1d40/makeaibetter" target="_blank" rel="noopener" class="btn btn-outline nav-cta">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+          </svg>
+          <span>GitHub</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="science-hero">
+    <div class="container hero-container-inner">
+      <div class="hero-badge animate-fade-in">
+        <span class="pulse-dot"></span>
+        <span data-i18n="science_hero_badge">Ciência na Velocidade Digital • 2026</span>
+      </div>
+      <h1 class="science-title">
+        <span class="gradient-text" data-i18n="science_hero_title">A IA como Catalisador Universal da Ciência</span>
+      </h1>
+      <p class="science-lead" data-i18n="science_hero_lead">
+        A inteligência artificial deixou de ser um simples assistente estatístico. Em 2026, modelos de raciocínio, agentes autônomos e redes neurais profundas estão formulando hipóteses, descobrindo materiais supercondutores, mapeando o universo e acelerando a própria criação de hardware de IA.
+      </p>
+
+      <!-- Acceleration Metrics Strip -->
+      <div class="science-stats-strip">
+        <div class="science-stat-box">
+          <div class="stat-num gradient-green">2,2M+</div>
+          <div class="stat-text" data-i18n="sci_stat_crystals">Novos Cristais (GNoME)</div>
+          <div class="stat-sub">800 anos de pesquisa condensados</div>
+        </div>
+        <div class="science-stat-box">
+          <div class="stat-num gradient-purple">3 Bilhões</div>
+          <div class="stat-text" data-i18n="sci_stat_genome">Pares de Bases Mapeados</div>
+          <div class="stat-sub">AlphaGenome (DeepMind 2026)</div>
+        </div>
+        <div class="science-stat-box">
+          <div class="stat-num gradient-cyan">10.000x</div>
+          <div class="stat-text" data-i18n="sci_stat_cosmic">Simulação da Teia Cósmica</div>
+          <div class="stat-sub">Modelos de IA para o JWST</div>
+        </div>
+        <div class="science-stat-box">
+          <div class="stat-num gradient-amber">Horas vs Meses</div>
+          <div class="stat-text" data-i18n="sci_stat_alphachip">Design de Chips TPU</div>
+          <div class="stat-sub">AlphaChip (IA desenhando IA)</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scientific Domains Interactive Showcase -->
+  <section class="science-showcase-section">
+    <div class="container">
+      
+      <!-- Discipline Selector Pills -->
+      <div class="domain-selector-pills" id="domain-pills">
+        <button class="domain-pill active" data-domain="biology" onclick="selectDomain('biology')">
+          <span class="pill-icon">🧬</span>
+          <span data-i18n="domain_pill_bio">Biologia & Genômica</span>
+        </button>
+        <button class="domain-pill" data-domain="astronomy" onclick="selectDomain('astronomy')">
+          <span class="pill-icon">🔭</span>
+          <span data-i18n="domain_pill_astro">Astronomia & Cosmo</span>
+        </button>
+        <button class="domain-pill" data-domain="medicine" onclick="selectDomain('medicine')">
+          <span class="pill-icon">💊</span>
+          <span data-i18n="domain_pill_med">Medicina & Fármacos</span>
+        </button>
+        <button class="domain-pill" data-domain="chemistry" onclick="selectDomain('chemistry')">
+          <span class="pill-icon">🧪</span>
+          <span data-i18n="domain_pill_chem">Química & Materiais</span>
+        </button>
+        <button class="domain-pill" data-domain="quantum" onclick="selectDomain('quantum')">
+          <span class="pill-icon">⚛️</span>
+          <span data-i18n="domain_pill_quantum">Física Quântica</span>
+        </button>
+        <button class="domain-pill" data-domain="ai4ai" onclick="selectDomain('ai4ai')">
+          <span class="pill-icon">🤖</span>
+          <span data-i18n="domain_pill_ai4ai">IA para a Própria IA</span>
+        </button>
+      </div>
+
+      <!-- Domain Content Dynamic Display -->
+      <div class="domain-content-card" id="domain-content-card">
+        <!-- Injected dynamically by science.js -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Cross-Discipline Comparative Matrix -->
+  <section class="science-matrix-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag" data-i18n="matrix_tag">PANORAMA COMPARATIVO</div>
+        <h2 class="section-title" data-i18n="matrix_title">Como a IA Redefine Cada Disciplina em 2026</h2>
+        <p class="section-subtitle" data-i18n="matrix_subtitle">
+          Um comparativo das ferramentas líderes, métricas de aceleração e o papel da Make AI Better em cada fronteira.
+        </p>
+      </div>
+
+      <div class="table-wrapper">
+        <table class="benchmark-table">
+          <thead>
+            <tr>
+              <th data-i18n="th_science_area">Área Científica</th>
+              <th data-i18n="th_breakthrough">Marco Central (2025/2026)</th>
+              <th data-i18n="th_speedup">Fator de Aceleração</th>
+              <th data-i18n="th_ai_role">Papel da Make AI Better</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>🧬 Biologia Molecular</strong></td>
+              <td>AlphaFold 3 & AlphaGenome (Genômica não-codificante)</td>
+              <td><span class="score-highlight">100x a 1.000x</span></td>
+              <td>Validação anti-alucinação de dobras proteicas</td>
+            </tr>
+            <tr>
+              <td><strong>🔭 Astronomia</strong></td>
+              <td>Zoobot & Redes Neurais para JWST / Vera Rubin</td>
+              <td><span class="score-highlight">10.000x</span></td>
+              <td>Filtragem de dados astronômicos abertos</td>
+            </tr>
+            <tr>
+              <td><strong>💊 Medicina & Fármacos</strong></td>
+              <td>Agentes Autônomos Co-Scientist & Robin</td>
+              <td><span class="score-highlight">Anos para Semanas</span></td>
+              <td>Sandboxing e segurança de ensaios in-silico</td>
+            </tr>
+            <tr>
+              <td><strong>🧪 Química & Materiais</strong></td>
+              <td>GNoME (2,2M novos cristais) & Self-Driving Labs</td>
+              <td><span class="score-highlight">800 anos comprimidos</span></td>
+              <td>Benchmarks de síntese física reproduzível</td>
+            </tr>
+            <tr>
+              <td><strong>⚛️ Física Quântica</strong></td>
+              <td>Decodificador neural de código de superfície (Willow)</td>
+              <td><span class="score-highlight">Sub-microssegundo</span></td>
+              <td>Modelagem aberta de estados quânticos</td>
+            </tr>
+            <tr>
+              <td><strong>🤖 IA para IA</strong></td>
+              <td>AlphaChip & Dados sintéticos provados em Lean 4</td>
+              <td><span class="score-highlight">Horas vs Meses</span></td>
+              <td>Verificação formal e governança de auto-aprimoramento</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Bottom Navigation Callout -->
+      <div class="science-bottom-cta">
+        <h3 data-i18n="cta_science_title">Conheça também a história de como chegamos até aqui</h3>
+        <p data-i18n="cta_science_desc">
+          Descubra a linha do tempo completa de 90 anos, de Alan Turing em 1936 até os chips quânticos e modelos de raciocínio de 2026.
+        </p>
+        <div class="cta-buttons-row">
+          <a href="history.html" class="btn btn-primary" data-i18n="btn_explore_history">
+            <span>Explorar a Epopeia da Computação</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+          <a href="index.html" class="btn btn-secondary" data-i18n="btn_return_radar">
+            <span>Voltar ao Radar de Modelos 2026</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Global Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <div class="brand-logo">
+          <div class="logo-icon small">
+            <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M16 2L28 9V23L16 30L4 23V9L16 2Z" stroke="#00f0ff" stroke-width="2.5" stroke-linejoin="round"/>
+              <circle cx="16" cy="16" r="4" fill="#00ff88"/>
+            </svg>
+          </div>
+          <span class="brand-name">MAKE AI BETTER</span>
+        </div>
+        <p class="footer-desc" data-i18n="footer_desc">
+          Iniciativa de pesquisa independente e aberta para o avanço seguro e rigoroso da inteligência artificial.
+        </p>
+        <div class="footer-copy">
+          &copy; 2026 Make AI Better Research Initiative. Licença MIT Open Source.
+        </div>
+      </div>
+
+      <div class="footer-links-grid">
+        <div class="footer-col">
+          <h5 data-i18n="footer_col_nav">Navegação</h5>
+          <a href="index.html" data-i18n="nav_home">Home & Radar</a>
+          <a href="history.html" data-i18n="nav_history">História da Computação</a>
+          <a href="science.html" data-i18n="nav_science">IA na Ciência</a>
+        </div>
+        <div class="footer-col">
+          <h5 data-i18n="footer_col_disciplines">Disciplinas</h5>
+          <a href="#" onclick="selectDomain('biology'); return false;">Biologia & AlphaGenome</a>
+          <a href="#" onclick="selectDomain('chemistry'); return false;">Química & GNoME</a>
+          <a href="#" onclick="selectDomain('ai4ai'); return false;">AlphaChip & IA para IA</a>
+        </div>
+        <div class="footer-col">
+          <h5 data-i18n="footer_col_connect">Conectar</h5>
+          <a href="https://github.com/s1d40/makeaibetter" target="_blank" rel="noopener">GitHub</a>
+          <a href="mailto:research@makeaibetter.org">research@makeaibetter.org</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="scripts/science.js"></script>
+</body>
+</html>

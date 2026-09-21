@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Epopeia da Computação: De Turing ao Willow & OpenAI | Make AI Better</title>
+  <meta name="description" content="Uma jornada visual e animada através de 90 anos da história do cálculo. Da máquina universal de Alan Turing ao chip quântico Google Willow e ao raciocínio System-2 da OpenAI.">
+  <meta name="keywords" content="História da Computação, Alan Turing, Google Willow, OpenAI o1 o3, Quantum Computing, System-2 Reasoning, Motion.dev, Make AI Better">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/history.css">
+</head>
+<body class="history-body">
+
+  <!-- Ambient Glow Background -->
+  <div class="ambient-glow history-glow-1"></div>
+  <div class="ambient-glow history-glow-2"></div>
+  <div class="ambient-glow history-glow-3"></div>
+
+  <!-- Global Navigation Header -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="brand-logo" id="brand-logo">
+        <div class="logo-icon">
+          <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 2L28 9V23L16 30L4 23V9L16 2Z" stroke="url(#logo-grad)" stroke-width="2.5" stroke-linejoin="round"/>
+            <circle cx="16" cy="16" r="4" fill="url(#logo-grad-circle)"/>
+            <path d="M16 6V12M16 20V26M6.5 10.5L12 14M20 18L25.5 21.5M25.5 10.5L20 14M12 18L6.5 21.5" stroke="rgba(0,240,255,0.6)" stroke-width="1.5"/>
+            <defs>
+              <linearGradient id="logo-grad" x1="4" y1="2" x2="28" y2="30" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#00f0ff"/>
+                <stop offset="0.5" stop-color="#8a2be2"/>
+                <stop offset="1" stop-color="#00ff88"/>
+              </linearGradient>
+              <linearGradient id="logo-grad-circle" x1="12" y1="12" x2="20" y2="20" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#00f0ff"/>
+                <stop offset="1" stop-color="#00ff88"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-name">MAKE AI BETTER</span>
+          <span class="brand-badge" data-i18n="nav_history_badge">A Epopeia da Computação</span>
+        </div>
+      </a>
+
+      <nav class="nav-links">
+        <a href="index.html" class="nav-link" data-i18n="nav_home">Home</a>
+        <a href="history.html" class="nav-link active" data-i18n="nav_history">História</a>
+        <a href="science.html" class="nav-link" data-i18n="nav_science">IA na Ciência</a>
+        <a href="index.html#benchmarks" class="nav-link" data-i18n="nav_benchmarks">Radar</a>
+        <a href="index.html#manifesto" class="nav-link" data-i18n="nav_manifesto">Manifesto</a>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Language Switcher -->
+        <div class="lang-switch-container">
+          <button class="lang-btn active" id="btn-lang-pt" onclick="setLanguage('pt')">PT</button>
+          <span class="lang-divider">/</span>
+          <button class="lang-btn" id="btn-lang-en" onclick="setLanguage('en')">EN</button>
+        </div>
+
+        <a href="https://github.com/s1d40/makeaibetter" target="_blank" rel="noopener" class="btn btn-outline nav-cta">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+          </svg>
+          <span>GitHub</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Scroll Progress Indicator Bar -->
+  <div class="scroll-progress-container">
+    <div class="scroll-progress-bar" id="scroll-progress-bar"></div>
+  </div>
+
+  <!-- Floating Timeline Quick Scrubber -->
+  <aside class="timeline-scrubber" id="timeline-scrubber">
+    <div class="scrubber-label" data-i18n="timeline_nav_label">CRONOLOGIA</div>
+    <a href="#era-1" class="scrub-dot active" data-era="1" title="1936: Alan Turing"><span>1936</span></a>
+    <a href="#era-2" class="scrub-dot" data-era="2" title="1947: Von Neumann & Transistor"><span>1947</span></a>
+    <a href="#era-3" class="scrub-dot" data-era="3" title="1971: Microchips & Moore"><span>1971</span></a>
+    <a href="#era-4" class="scrub-dot" data-era="4" title="1984: PCs, Web & Backprop"><span>1984</span></a>
+    <a href="#era-5" class="scrub-dot" data-era="5" title="2012: Deep Learning & GPUs"><span>2012</span></a>
+    <a href="#era-6" class="scrub-dot" data-era="6" title="2017: Transformers"><span>2017</span></a>
+    <a href="#era-7" class="scrub-dot" data-era="7" title="2026: Willow & System-2"><span>2026</span></a>
+  </aside>
+
+  <!-- Hero Section -->
+  <section class="history-hero">
+    <div class="container hero-container-inner">
+      <div class="hero-badge animate-fade-in">
+        <span class="pulse-dot"></span>
+        <span data-i18n="history_badge">90 Anos da História da Computação</span>
+      </div>
+      <h1 class="history-title">
+        <span class="gradient-text" data-i18n="history_hero_title">A Epopeia da Computação</span><br>
+        <span class="history-subtitle-text" data-i18n="history_hero_subtitle">Da Fita de Turing ao Salto Quântico do Willow e à Razão System-2</span>
+      </h1>
+      <p class="history-lead" data-i18n="history_hero_lead">
+        Em 1936, Alan Turing concebeu a máquina que poderia computar qualquer pensamento formalizável. Nove décadas depois, a humanidade atinge a computação quântica abaixo do limiar de erro com o <strong>Google Willow</strong> e modelos de raciocínio deliberado com a <strong>OpenAI</strong>. Esta é a trajetória completa da inteligência mecânica.
+      </p>
+      <div class="hero-action-row">
+        <a href="#era-1" class="btn btn-primary" id="btn-start-journey" data-i18n="btn_start_journey">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+          <span>Iniciar a Viagem</span>
+        </a>
+        <a href="science.html" class="btn btn-secondary" data-i18n="btn_view_science_hub">
+          <span>Explorar IA na Ciência</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Timeline Chapters Container -->
+  <main class="timeline-container">
+    <div class="timeline-central-spine"></div>
+
+    <!-- ERA 1 -->
+    <section class="epoch-section" id="era-1" data-epoch="1">
+      <div class="epoch-marker">
+        <div class="marker-circle">1936</div>
+      </div>
+      <div class="epoch-card motion-card" id="card-era-1">
+        <div class="epoch-header">
+          <div class="epoch-meta">
+            <span class="badge badge-amber" data-i18n="era_1_tag">ERA 1 • 1936 – 1950</span>
+            <span class="epoch-quote">"Podem as máquinas pensar?" — Alan Turing, 1950</span>
+          </div>
+          <h2 class="epoch-title" data-i18n="era_1_title">O Oráculo Matemático e a Fita Infinita</h2>
+        </div>
+        <div class="epoch-body">
+          <p data-i18n="era_1_p1">
+            Em 1936, no artigo revolucionário <em>"On Computable Numbers"</em>, o jovem matemático britânico <strong>Alan Mathison Turing</strong> formulou o conceito da <strong>Máquina Universal de Turing</strong>. Ele provou que um único dispositivo hipotético, lendo e escrevendo símbolos em uma fita de papel infinitamente longa, era capaz de simular o comportamento de qualquer outro calculador concebível.
+          </p>
+          <p data-i18n="era_1_p2">
+            Durante a Segunda Guerra Mundial, em Bletchley Park, o trabalho teórico de Turing tornou-se operacional. Ele desenhou a <strong>Bombe</strong> para decifrar as transmissões militares da máquina cifradora Enigma alemã, enquanto Tommy Flowers construía o <strong>Colossus</strong> (o primeiro computador digital eletrônico com 1.500 válvulas termiônicas). Em 1950, Turing publicou o seminal *"Computing Machinery and Intelligence"*, formulando o Teste de Turing.
+          </p>
+
+          <!-- Interactive Turing Tape Simulator Widget -->
+          <div class="interactive-widget-box">
+            <div class="widget-header">
+              <div class="widget-title-group">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00f0ff" stroke-width="2">
+                  <rect x="2" y="7" width="20" height="10" rx="2"></rect>
+                  <circle cx="7" cy="12" r="2"></circle>
+                  <circle cx="17" cy="12" r="2"></circle>
+                </svg>
+                <strong data-i18n="widget_turing_title">Simulador Interativo: A Fita da Máquina de Turing</strong>
+              </div>
+              <span class="badge badge-cyan" data-i18n="widget_turing_status">Emulador Ativo</span>
+            </div>
+            <div class="turing-tape-wrapper">
+              <div class="turing-head-pointer" id="turing-head">
+                <span class="head-arrow">▼</span>
+                <span class="head-state-badge" id="turing-state">Estado: q0</span>
+              </div>
+              <div class="turing-cells-row" id="turing-tape">
+                <!-- Tape cells generated via JS -->
+              </div>
+            </div>
+            <div class="widget-controls">
+              <button class="btn btn-outline" id="btn-turing-step" onclick="stepTuringMachine()">
+                <span data-i18n="turing_btn_step">Executar 1 Ciclo (Step)</span>
+              </button>
+              <button class="btn btn-outline" id="btn-turing-run" onclick="toggleTuringAuto()">
+                <span id="turing-run-text" data-i18n="turing_btn_auto">Execução Contínua</span>
+              </button>
+              <button class="btn btn-outline" onclick="resetTuringMachine()">
+                <span data-i18n="turing_btn_reset">Reiniciar Fita</span>
+              </button>
+              <span class="turing-explanation" id="turing-explain" data-i18n="turing_explain">Regra: Inverter bits 0 ↔ 1 e avançar à direita.</span>
+            </div>
+          </div>
+
+          <div class="epoch-takeaways">
+            <div class="takeaway-item">
+              <span class="takeaway-num">01</span>
+              <span data-i18n="era_1_t1">Separação formal entre Hardware (máquina) e Software (programa gravado na fita).</span>
+            </div>
+            <div class="takeaway-item">
+              <span class="takeaway-num">02</span>
+              <span data-i18n="era_1_t2">Bletchley Park salvou milhões de vidas ao automatizar a criptoanálise militar.</span>
+            </div>
+            <div class="takeaway-item">
+              <span class="takeaway-num">03</span>
+              <span data-i18n="era_1_t3">Origem filosófica do Teste de Turing e do campo da Inteligência Artificial.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ERA 2 -->
+    <section class="epoch-section" id="era-2" data-epoch="2">
+      <div class="epoch-marker">
+        <div class="marker-circle">1947</div>
+      </div>
+      <div class="epoch-card motion-card" id="card-era-2">
+        <div class="epoch-header">
+          <div class="epoch-meta">
+            <span class="badge badge-purple" data-i18n="era_2_tag">ERA 2 • 1945 – 1960</span>
+            <span class="epoch-quote">"Qualquer problema que possa ser computado pode ser formulado em memória." — John von Neumann</span>
+          </div>
+          <h2 class="epoch-title" data-i18n="era_2_title">A Arquitetura Von Neumann e o Milagre do Transistor</h2>
+        </div>
+        <div class="epoch-body">
+          <p data-i18n="era_2_p1">
+            Os primeiros computadores eletrônicos gigantes, como o <strong>ENIAC (1946)</strong> com suas 18.000 válvulas, ocupavam salas inteiras e quebravam constantemente pelo calor e queima de filamentos. Em 1945, <strong>John von Neumann</strong> distribuiu seu relatório sobre o EDVAC, definindo o conceito de <strong>Programa Armazenado</strong>: dados e instruções compartilham a mesma memória principal, processados por uma Unidade de Controle e uma ALU. Essa estrutura governa até hoje quase todos os computadores do planeta.
+          </p>
+          <p data-i18n="era_2_p2">
+            Em 16 de dezembro de 1947, nos Bell Laboratories, <strong>John Bardeen, Walter Brattain e William Shockley</strong> inventaram o <strong>transistor de ponto de contato de germânio</strong>. Um interruptor de estado sólido sem partes móveis, frio, minúsculo e infinitamente mais rápido que as válvulas. Em 1956, na conferência de Dartmouth, John McCarthy cunhou oficialmente o termo <strong>"Inteligência Artificial"</strong>.
+          </p>
+
+          <!-- Interactive Transistor vs Valve Comparison -->
+          <div class="interactive-widget-box">
+            <div class="widget-header">
+              <div class="widget-title-group">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c084fc" stroke-width="2">
+                  <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                </svg>
+                <strong data-i18n="widget_transistor_title">Comparador Físico: Válvula Termiônica vs. Transistor de Silício</strong>
+              </div>
+            </div>
+            <div class="transistor-visualizer-grid">
+              <div class="compare-card valve-card">
+                <div class="card-tag" data-i18n="valve_label">Válvula Termiônica (1945)</div>
+                <div class="spec-row"><span>Tamanho:</span> <strong>~10 a 15 cm</strong></div>
+                <div class="spec-row"><span>Consumo:</span> <strong>~5 a 10 Watts</strong></div>
+                <div class="spec-row"><span>Confiabilidade:</span> <strong>Queima em ~2.000 horas</strong></div>
+                <div class="spec-row"><span>Velocidade:</span> <strong>~10 a 100 kHz</strong></div>
+              </div>
+              <div class="compare-vs">VS</div>
+              <div class="compare-card transistor-card">
+                <div class="card-tag" data-i18n="transistor_label">Transistor de Estado Sólido (1947+)</div>
+                <div class="spec-row"><span>Tamanho:</span> <strong>De mm a 2 nanômetros</strong></div>
+                <div class="spec-row"><span>Consumo:</span> <strong>Picowatts (1 bilhão de vezes menor)</strong></div>
+                <div class="spec-row"><span>Confiabilidade:</span> <strong>Vida útil de décadas</strong></div>
+                <div class="spec-row"><span>Velocidade:</span> <strong>GigaHertz (GHz)</strong></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ERA 3 -->
+    <section class="epoch-section" id="era-3" data-epoch="3">
+      <div class="epoch-marker">
+        <div class="marker-circle">1971</div>
+      </div>
+      <div class="epoch-card motion-card" id="card-era-3">
+        <div class="epoch-header">
+          <div class="epoch-meta">
+            <span class="badge badge-cyan" data-i18n="era_3_tag">ERA 3 • 1960 – 1980</span>
+            <span class="epoch-quote">"O número de transistores dobrará a cada dois anos." — Gordon Moore, 1965</span>
+          </div>
+          <h2 class="epoch-title" data-i18n="era_3_title">Circuitos Integrados, Lei de Moore e o Intel 4004</h2>
+        </div>
+        <div class="epoch-body">
+          <p data-i18n="era_3_p1">
+            Com a invenção do circuito integrado por Robert Noyce e Jack Kilby, múltiplos transistores puderam ser impressos em uma única lâmina de silício. Em 1965, Gordon Moore formulou a previsão empírica mais lucrativa da história: a <strong>Lei de Moore</strong>.
+          </p>
+          <p data-i18n="era_3_p2">
+            Em 1971, a Intel lançou o <strong>Intel 4004</strong>: o primeiro microprocessador comercial em um único chip, contendo 2.300 transistores. Paralelamente, nos Bell Labs nasciam o sistema operacional <strong>UNIX</strong> e a linguagem <strong>C</strong> (Dennis Ritchie e Ken Thompson), enquanto a <strong>ARPANET</strong> realizava sua primeira transmissão em 1969, tecendo as fundações da infraestrutura digital global.
+          </p>
+
+          <!-- Interactive Moore's Law Logarithmic Scale -->
+          <div class="interactive-widget-box">
+            <div class="widget-header">
+              <div class="widget-title-group">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00ff88" stroke-width="2">
+                  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                </svg>
+                <strong data-i18n="widget_moore_title">Visualizador da Lei de Moore: Crescimento Exponencial de Transistores</strong>
+              </div>
+            </div>
+            <div class="moore-slider-box">
+              <label for="moore-year-slider" data-i18n="moore_slider_label">Selecione o Ano Histórico:</label>
+              <input type="range" id="moore-year-slider" min="1971" max="2026" step="5" value="1971" oninput="updateMooreDisplay(this.value)">
+              <div class="moore-display-readout">
+                <div class="readout-year" id="moore-year">Ano: 1971</div>
+                <div class="readout-chip" id="moore-chip">Chip: Intel 4004</div>
+                <div class="readout-count" id="moore-count">Transistores: 2.300</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ERA 4 -->
+    <section class="epoch-section" id="era-4" data-epoch="4">
+      <div class="epoch-marker">
+        <div class="marker-circle">1984</div>
+      </div>
+      <div class="epoch-card motion-card" id="card-era-4">
+        <div class="epoch-header">
+          <div class="epoch-meta">
+            <span class="badge badge-green" data-i18n="era_4_tag">ERA 4 • 1980 – 2000</span>
+            <span class="epoch-quote">"Isto é para todo mundo." — Sir Tim Berners-Lee</span>
+          </div>
+          <h2 class="epoch-title" data-i18n="era_4_title">Computação Pessoal, a World Wide Web e o Backprop</h2>
+        </div>
+        <div class="epoch-body">
+          <p data-i18n="era_4_p1">
+            Os computadores finalmente deixaram os data centers corporativos e invadiram as residências. O lançamento do <strong>IBM PC (1981)</strong> e do icônico <strong>Apple Macintosh (1984)</strong> popularizou a interface gráfica com janelas, ícones e mouse. Em 1989, no CERN, <strong>Tim Berners-Lee</strong> inventou a World Wide Web (HTTP, HTML e URLs), conectando a humanidade em uma única malha de hipertexto.
+          </p>
+          <p data-i18n="era_4_p2">
+            No campo da IA, após um longo "inverno", <strong>David Rumelhart, Geoffrey Hinton e Ronald Williams</strong> publicaram em 1986 o algoritmo de <strong>Retropropagação (Backpropagation)</strong>, provando que redes neurais multicamadas podiam aprender representações internas complexas através do gradiente descendente.
+          </p>
+
+          <!-- Interactive Backpropagation Synapse Adjuster -->
+          <div class="interactive-widget-box">
+            <div class="widget-header">
+              <div class="widget-title-group">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00f0ff" stroke-width="2">
+                  <circle cx="6" cy="6" r="3"></circle>
+                  <circle cx="6" cy="18" r="3"></circle>
+                  <circle cx="18" cy="12" r="3"></circle>
+                  <line x1="9" y1="6" x2="15" y2="12"></line>
+                  <line x1="9" y1="18" x2="15" y2="12"></line>
+                </svg>
+                <strong data-i18n="widget_backprop_title">Simulador de Backpropagation: Ajuste Sináptico de Erro</strong>
+              </div>
+            </div>
+            <div class="backprop-interactive-canvas">
+              <div class="nn-layer-col">
+                <span class="layer-title">Input</span>
+                <div class="node-circle" id="node-in1">X1: 0.8</div>
+                <div class="node-circle" id="node-in2">X2: 0.2</div>
+              </div>
+              <div class="nn-weights-col">
+                <span class="weight-label" id="w1-val">w1: 0.50</span>
+                <span class="weight-label" id="w2-val">w2: 0.35</span>
+              </div>
+              <div class="nn-layer-col">
+                <span class="layer-title">Output</span>
+                <div class="node-circle output-node" id="node-out">Y: 0.47</div>
+                <span class="loss-badge" id="loss-val">Loss: 0.530</span>
+              </div>
+            </div>
+            <div class="widget-controls">
+              <button class="btn btn-outline" onclick="stepBackpropagation()">
+                <span data-i18n="btn_train_step">Executar Passo de Gradiente Descendente (Train Step)</span>
+              </button>
+              <button class="btn btn-outline" onclick="resetBackprop()">
+                <span data-i18n="btn_reset_nn">Resetar Pesos</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ERA 5 -->
+    <section class="epoch-section" id="era-5" data-epoch="5">
+      <div class="epoch-marker">
+        <div class="marker-circle">2012</div>
+      </div>
+      <div class="epoch-card motion-card" id="card-era-5">
+        <div class="epoch-header">
+          <div class="epoch-meta">
+            <span class="badge badge-amber" data-i18n="era_5_tag">ERA 5 • 2000 – 2016</span>
+            <span class="epoch-quote">"O Deep Learning funciona porque o mundo é composicional." — Yann LeCun</span>
+          </div>
+          <h2 class="epoch-title" data-i18n="era_5_title">Computação em Nuvem, GPUs CUDA e o Big Bang do Deep Learning</h2>
+        </div>
+        <div class="epoch-body">
+          <p data-i18n="era_5_p1">
+            Na virada do milênio, o cálculo migrou para os data centers elásticos com a computação em nuvem (AWS EC2). Paralelamente, a <strong>NVIDIA</strong> lançou em 2006 a plataforma <strong>CUDA</strong>, desbloqueando o poder de processamento massivamente paralelo das GPUs para álgebra linear e matrizes matemáticas.
+          </p>
+          <p data-i18n="era_5_p2">
+            Em outubro de 2012, <strong>Alex Krizhevsky, Ilya Sutskever e Geoffrey Hinton</strong> venceram o concurso ImageNet com a <strong>AlexNet</strong>, esmagando métodos clássicos de visão computacional e iniciando o boom moderno do Deep Learning. Quatro anos depois, em março de 2016, o <strong>AlphaGo</strong> da Google DeepMind chocou o mundo ao derrotar Lee Sedol no milenar jogo de Go, combinando redes profundas e Monte Carlo Tree Search (MCTS).
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ERA 6 -->
+    <section class="epoch-section" id="era-6" data-epoch="6">
+      <div class="epoch-marker">
+        <div class="marker-circle">2017</div>
+      </div>
+      <div class="epoch-card motion-card" id="card-era-6">
+        <div class="epoch-header">
+          <div class="epoch-meta">
+            <span class="badge badge-purple" data-i18n="era_6_tag">ERA 6 • 2017 – 2024</span>
+            <span class="epoch-quote">"Attention is all you need." — Vaswani et al., Google Brain</span>
+          </div>
+          <h2 class="epoch-title" data-i18n="era_6_title">A Revolução dos Transformers e a Explosão da IA Generativa</h2>
+        </div>
+        <div class="epoch-body">
+          <p data-i18n="era_6_p1">
+            Em junho de 2017, oito pesquisadores do Google publicaram o paper histórico <em>"Attention Is All You Need"</em>. A arquitetura <strong>Transformer</strong> eliminou redes recorrentes (RNNs/LSTMs) em favor do mecanismo de <strong>Self-Attention (Auto-Atenção)</strong>, permitindo que supercomputadores treinassem em paralelo com bilhões de páginas da web sem sofrer gargalos sequenciais.
+          </p>
+          <p data-i18n="era_6_p2">
+            O salto com o GPT-3 (2020) e o lançamento global do <strong>ChatGPT (Novembro de 2022)</strong> transformaram a IA no produto de tecnologia de adoção mais acelerada da história humana. O foco expandiu-se rapidamente para a multimodalidade nativa (visão, áudio e código unificados) com GPT-4o e Gemini 1.5.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ERA 7 -->
+    <section class="epoch-section" id="era-7" data-epoch="7">
+      <div class="epoch-marker">
+        <div class="marker-circle">2026</div>
+      </div>
+      <div class="epoch-card motion-card active-frontier-card" id="card-era-7">
+        <div class="epoch-header">
+          <div class="epoch-meta">
+            <span class="badge badge-cyan" data-i18n="era_7_tag">ERA 7 • 2024 – 2026 (A FRONTEIRA ATUAL)</span>
+            <span class="epoch-quote">"Cruzamos o limiar quântico e a barreira do raciocínio deliberado." — Make AI Better</span>
+          </div>
+          <h2 class="epoch-title gradient-text" data-i18n="era_7_title">A Dupla Fronteira: O Salto Quântico (Google Willow) e o Raciocínio System-2 (OpenAI)</h2>
+        </div>
+        <div class="epoch-body">
+          <p data-i18n="era_7_p1">
+            Em 2026, a história da computação atinge sua mais espetacular convergência simultânea entre física de hardware e inteligência cognitiva:
+          </p>
+
+          <!-- The Two Pillars of 2026 Grid -->
+          <div class="frontier-breakthrough-grid">
+            
+            <!-- Google Willow Breakthrough -->
+            <div class="frontier-card willow-card">
+              <div class="frontier-card-badge">
+                <span class="pulse-dot"></span>
+                <span>Google Quantum AI</span>
+              </div>
+              <h3 class="frontier-card-title">O Chip Quântico Willow (Dez/2024–2026)</h3>
+              <p class="frontier-card-desc">
+                Dotado de <strong>105 qubits supercondutores transmon</strong>, o Willow superou pela primeira vez na história o <em>limiar de correção de erros quânticos ("below-threshold")</em>. Ao aumentar a malha de código de superfície, a taxa de erro lógico diminuiu exponencialmente.
+              </p>
+              <div class="frontier-metrics-box">
+                <div class="metric-line">
+                  <span>Tempo de Cálculo (RCS):</span>
+                  <strong>&lt; 5 minutos</strong>
+                </div>
+                <div class="metric-line">
+                  <span>Supercomputador Clássico:</span>
+                  <strong>10 septilhões ($10^{25}$) de anos</strong>
+                </div>
+                <div class="metric-line">
+                  <span>Vantagem Verificável:</span>
+                  <strong>13.000x mais rápido (Quantum Echoes)</strong>
+                </div>
+              </div>
+
+              <!-- Interactive Willow Lattice Visualizer -->
+              <div class="interactive-mini-box">
+                <div class="mini-box-title" data-i18n="willow_sim_title">Simulador da Malha de Qubits do Willow:</div>
+                <div class="qubit-grid" id="qubit-grid">
+                  <!-- 25 interactive visual nodes rendered by JS -->
+                </div>
+                <div class="qubit-status-row">
+                  <span id="qubit-error-rate">Taxa de Erro Lógico: 0.000012% (Abaixo do Limiar)</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- OpenAI System-2 Breakthrough -->
+            <div class="frontier-card openai-card">
+              <div class="frontier-card-badge">
+                <span class="pulse-dot"></span>
+                <span>OpenAI Frontier Reasoning</span>
+              </div>
+              <h3 class="frontier-card-title">A Revolução do Raciocínio System-2 (o1, o3, GPT-6 Astra)</h3>
+              <p class="frontier-card-desc">
+                O fim da era do "chute impulsivo" do próximo token. A fronteira em 2026 é governada pelo <strong>Test-Time Compute Scaling</strong>: alocação dinâmica de tempo de reflexão onde o modelo explora árvores de hipóteses e auto-corrige seus erros antes de responder.
+              </p>
+              <div class="frontier-metrics-box">
+                <div class="metric-line">
+                  <span>Olimpíada AIME 2026:</span>
+                  <strong>96.8% de precisão</strong>
+                </div>
+                <div class="metric-line">
+                  <span>SWE-bench Verified:</span>
+                  <strong>81.9% em engenharia autônoma</strong>
+                </div>
+                <div class="metric-line">
+                  <span>Mecanismo Central:</span>
+                  <strong>Process Reward Models (PRMs)</strong>
+                </div>
+              </div>
+
+              <!-- Interactive System-2 Reasoning Tree Visualizer -->
+              <div class="interactive-mini-box">
+                <div class="mini-box-title" data-i18n="system2_sim_title">Árvore de Raciocínio System-2 em Tempo Real:</div>
+                <div class="reasoning-tree-display" id="reasoning-tree">
+                  <div class="tree-step step-ok">✓ Hipótese 1: Formulação Matemática</div>
+                  <div class="tree-step step-bad">✗ Ramo 2: Dedução inválida (Descartado via PRM)</div>
+                  <div class="tree-step step-ok">✓ Ramo 3: Prova Formal em Lean 4 Verificada</div>
+                </div>
+                <button class="btn btn-outline small-btn" onclick="runReasoningSimulation()">
+                  <span data-i18n="btn_simulate_thinking">Simular Deliberação Cognitiva (Thinking Tokens)</span>
+                </button>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="history-conclusion-box">
+            <h4 data-i18n="history_conclusion_title">O Encontro de Duas Trajetórias Históricas</h4>
+            <p data-i18n="history_conclusion_text">
+              Em 1936, Turing provou que o cálculo podia ser formalizado. Em 2026, com o chip quântico <strong>Willow</strong> dominando os estados atômicos e a <strong>OpenAI</strong> dominando a verificação de raciocínio passo a passo, entramos em uma era onde o cálculo e a razão tornam-se ilimitados. A missão da <strong>Make AI Better</strong> é assegurar que esse poder incalculável seja transparente, seguro e acessível a toda a humanidade.
+            </p>
+            <div class="conclusion-cta-row">
+              <a href="science.html" class="btn btn-primary" data-i18n="btn_go_science">
+                <span>Ver como a IA Acelera a Ciência Global</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+              <a href="index.html" class="btn btn-secondary" data-i18n="btn_return_home">Voltar ao Radar Principal</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <div class="brand-logo">
+          <div class="logo-icon small">
+            <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M16 2L28 9V23L16 30L4 23V9L16 2Z" stroke="#00f0ff" stroke-width="2.5" stroke-linejoin="round"/>
+              <circle cx="16" cy="16" r="4" fill="#00ff88"/>
+            </svg>
+          </div>
+          <span class="brand-name">MAKE AI BETTER</span>
+        </div>
+        <p class="footer-desc" data-i18n="footer_desc">
+          Iniciativa de pesquisa independente e aberta para o avanço seguro e rigoroso da inteligência artificial.
+        </p>
+        <div class="footer-copy">
+          &copy; 2026 Make AI Better Research Initiative. Licença MIT Open Source.
+        </div>
+      </div>
+
+      <div class="footer-links-grid">
+        <div class="footer-col">
+          <h5 data-i18n="footer_col_nav">Navegação</h5>
+          <a href="index.html" data-i18n="nav_home">Home & Radar</a>
+          <a href="history.html" data-i18n="nav_history">História da Computação</a>
+          <a href="science.html" data-i18n="nav_science">IA na Ciência</a>
+        </div>
+        <div class="footer-col">
+          <h5 data-i18n="footer_col_eras">Eras Principais</h5>
+          <a href="#era-1">Alan Turing (1936)</a>
+          <a href="#era-3">Intel 4004 (1971)</a>
+          <a href="#era-7">Google Willow & OpenAI (2026)</a>
+        </div>
+        <div class="footer-col">
+          <h5 data-i18n="footer_col_connect">Conectar</h5>
+          <a href="https://github.com/s1d40/makeaibetter" target="_blank" rel="noopener">GitHub</a>
+          <a href="mailto:research@makeaibetter.org">research@makeaibetter.org</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Motion.dev and History Script -->
+  <script type="module" src="scripts/history.js"></script>
+</body>
+</html>

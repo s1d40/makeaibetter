@@ -13,9 +13,13 @@ let activeModelId = 'gemini-38';
 const translations = {
   pt: {
     nav_state_of_ai: "State of AI 2026",
+    nav_history: "História",
+    nav_science: "IA na Ciência",
     nav_benchmarks: "Radar de Modelos",
-    nav_pillars: "Pilares de Pesquisa",
+    nav_pillars: "Pilares",
     nav_manifesto: "Manifesto",
+    btn_history: "História da Computação",
+    btn_science: "IA na Ciência",
     github_repo_btn: "GitHub Repo",
     hero_status: "Relatório de Inteligência • 21 de Setembro de 2026",
     hero_headline_sub: "Acelerando a Fronteira com Raciocínio, Rigor e Ciência Aberta",
