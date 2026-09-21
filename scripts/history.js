@@ -36,6 +36,48 @@ const mooreData = {
 // ─── Bilingual Dictionary ─────────────────────────────────────────────────────
 const historyI18n = {
   pt: {
+    frontier_willow_desc: "Dotado de <strong data-i18n=\"val_qubits\">105 qubits supercondutores transmon</strong>, o Willow superou pela primeira vez na história o <em>limiar de correção de erros quânticos (\"below-threshold\")</em>. Ao aumentar a malha de código de superfície, a taxa de erro lógico diminuiu exponencialmente.",
+    frontier_system2_desc: "O fim da era do \"chute impulsivo\" do próximo token. A fronteira em 2026 é governada pelo <strong>Test-Time Compute Scaling</strong>: alocação dinâmica de tempo de reflexão onde o modelo explora árvores de hipóteses e auto-corrige seus erros antes de responder.",
+    reasoning_scenario_tag: "Prova Matemática (AIME 2026)",
+    tree_step_1: "✓ Etapa 1: Formalização do problema no espaço polinomial",
+    tree_step_2: "✗ Hipótese 2A: Indução fraca falhou — rejeitada via PRM",
+    tree_step_3: "✓ Hipótese 2B: Bijection provada em Lean 4 (verificado)",
+    tree_step_4: "✓ Etapa 4: Resposta verificada. Score AIME: 100%",
+    footer_rights: "&copy; 2026 Make AI Better Research Initiative. Licença MIT Open Source.",
+    val_qubits: "105 qubits supercondutores transmon",
+    val_rcs_time: "&lt; 5 minutos",
+    val_classical_years: "10 septilhões ($10^{25}$) de anos",
+    val_advantage: "13.000x mais rápido (Quantum Echoes)",
+    val_error_rate: "Taxa de Erro Lógico: 0.000012% (Abaixo do Limiar)",
+    val_aime_acc: "96.8% de precisão",
+    val_swe_acc: "81.9% em engenharia autônoma",
+    tv_tube_size: "~10 a 15 cm",
+    tv_tube_power: "~5 a 10 Watts",
+    tv_tube_life: "Queima em ~2.000 horas",
+    tv_tube_speed: "~10 a 100 kHz",
+    tv_chip_size: "De mm a 2 nanômetros",
+    tv_chip_power: "Picowatts (1 bilhão de vezes menor)",
+    tv_chip_life: "Vida útil de décadas",
+    tv_chip_speed: "GigaHertz (GHz)",
+    quote_1: "\"Podem as máquinas pensar?\" — Alan Turing, 1950",
+    quote_2: "\"Qualquer problema que possa ser computado pode ser formulado em memória.\" — John von Neumann",
+    quote_3: "\"O número de transistores dobrará a cada dois anos.\" — Gordon Moore, 1965",
+    quote_4: "\"Isto é para todo mundo.\" — Sir Tim Berners-Lee",
+    quote_5: "\"O Deep Learning funciona porque o mundo é composicional.\" — Yann LeCun",
+    quote_6: "\"Attention is all you need.\" — Vaswani et al., Google Brain",
+    quote_7: "\"Cruzamos o limiar quântico e a barreira do raciocínio deliberado.\" — Make AI Better",
+    frontier_willow_title: "O Chip Quântico Willow (Dez/2024–2026)",
+    frontier_system2_title: "A Revolução do Raciocínio System-2 (o1, o3, GPT-6 Astra)",
+    lbl_size: "Tamanho:",
+    lbl_power: "Consumo:",
+    lbl_reliability: "Confiabilidade:",
+    lbl_speed: "Velocidade:",
+    lbl_rcs: "Tempo de Cálculo (RCS):",
+    lbl_classical: "Supercomputador Clássico:",
+    lbl_advantage: "Vantagem Verificável:",
+    lbl_aime: "Olimpíada AIME 2026:",
+    lbl_swebench: "SWE-bench Verified:",
+    lbl_mechanism: "Mecanismo Central:",
     nav_home: "Home",
     nav_history: "História da Computação",
     nav_science: "IA na Ciência",
@@ -112,6 +154,48 @@ const historyI18n = {
     footer_col_connect: "Conectar"
   },
   en: {
+    frontier_willow_desc: "With <strong data-i18n=\"val_qubits\">105 superconducting transmon qubits</strong>, Willow became the first chip in history to cross the <em>quantum error-correction threshold (\"below-threshold\")</em>. As the surface-code lattice grows, the logical error rate falls exponentially.",
+    frontier_system2_desc: "The end of the impulsive next-token guess. The 2026 frontier is governed by <strong>test-time compute scaling</strong>: dynamically allocating thinking time so the model explores hypothesis trees and corrects itself before answering.",
+    reasoning_scenario_tag: "Mathematical proof (AIME 2026)",
+    tree_step_1: "✓ Step 1: Problem formalised in polynomial space",
+    tree_step_2: "✗ Hypothesis 2A: Weak induction failed — rejected by PRM",
+    tree_step_3: "✓ Hypothesis 2B: Bijection proved in Lean 4 (verified)",
+    tree_step_4: "✓ Step 4: Answer verified. AIME score: 100%",
+    footer_rights: "&copy; 2026 Make AI Better Research Initiative. MIT Open Source License.",
+    val_qubits: "105 superconducting transmon qubits",
+    val_rcs_time: "&lt; 5 minutes",
+    val_classical_years: "10 septillion ($10^{25}$) years",
+    val_advantage: "13,000x faster (Quantum Echoes)",
+    val_error_rate: "Logical error rate: 0.000012% (below threshold)",
+    val_aime_acc: "96.8% accuracy",
+    val_swe_acc: "81.9% on autonomous engineering",
+    tv_tube_size: "~10 to 15 cm",
+    tv_tube_power: "~5 to 10 watts",
+    tv_tube_life: "Burns out in ~2,000 hours",
+    tv_tube_speed: "~10 to 100 kHz",
+    tv_chip_size: "From mm to 2 nanometres",
+    tv_chip_power: "Picowatts (a billion times less)",
+    tv_chip_life: "Decades of service life",
+    tv_chip_speed: "Gigahertz (GHz)",
+    quote_1: "\"Can machines think?\" — Alan Turing, 1950",
+    quote_2: "\"Any problem that can be computed can be held in memory.\" — John von Neumann",
+    quote_3: "\"The number of transistors will double every two years.\" — Gordon Moore, 1965",
+    quote_4: "\"This is for everyone.\" — Sir Tim Berners-Lee",
+    quote_5: "\"Deep learning works because the world is compositional.\" — Yann LeCun",
+    quote_6: "\"Attention is all you need.\" — Vaswani et al., Google Brain",
+    quote_7: "\"We crossed the quantum threshold and the deliberate-reasoning barrier.\" — Make AI Better",
+    frontier_willow_title: "The Willow Quantum Chip (Dec 2024–2026)",
+    frontier_system2_title: "The System-2 Reasoning Revolution (o1, o3, GPT-6 Astra)",
+    lbl_size: "Size:",
+    lbl_power: "Power:",
+    lbl_reliability: "Reliability:",
+    lbl_speed: "Speed:",
+    lbl_rcs: "Compute time (RCS):",
+    lbl_classical: "Classical supercomputer:",
+    lbl_advantage: "Verifiable advantage:",
+    lbl_aime: "AIME 2026 olympiad:",
+    lbl_swebench: "SWE-bench Verified:",
+    lbl_mechanism: "Core mechanism:",
     nav_home: "Home",
     nav_history: "History of Computing",
     nav_science: "AI in Science",
@@ -546,7 +630,7 @@ async function initNarration() {
   if (!players.length) return;
 
   try {
-    const res = await fetch('assets/narration.json', { cache: 'force-cache' });
+    const res = await fetch('/assets/narration.json', { cache: 'force-cache' });
     if (res.ok) narrationScripts = await res.json();
   } catch {
     narrationScripts = null;
@@ -634,7 +718,7 @@ function syncNarrationLanguage() {
 
     const wasPlaying = !audio.paused;
     const at = audio.currentTime;
-    audio.src = `assets/audio/era-${era}-${currentLang}.mp3`;
+    audio.src = `/assets/audio/era-${era}-${currentLang}.mp3`;
     player.classList.remove('is-unavailable');
     player.querySelector('[data-narration-toggle]').disabled = false;
     if (wasPlaying) {
@@ -931,8 +1015,7 @@ window.setLanguage = function(lang) {
 };
 
 function initLanguage() {
-  const saved = localStorage.getItem('makeaibetter_lang');
-  if (saved === 'pt' || saved === 'en') currentLang = saved;
+  currentLang = document.documentElement.lang.startsWith('en') ? 'en' : 'pt';
   document.getElementById('btn-lang-pt')?.classList.toggle('active', currentLang === 'pt');
   document.getElementById('btn-lang-en')?.classList.toggle('active', currentLang === 'en');
   applyHistoryTranslations();

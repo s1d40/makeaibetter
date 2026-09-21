@@ -12,6 +12,19 @@ let activeModelId = 'gemini-38';
 // --- Translation Dictionary ---
 const translations = {
   pt: {
+    nav_history: "História da Computação",
+    nav_science: "IA na Ciência",
+    btn_history: "Explorar a Epopeia da Computação",
+    btn_science: "Explorar IA na Ciência",
+    hero_kw_inference: "computação de inferência (System-2)",
+    hero_kw_swarms: "enxames de agentes autônomos",
+    hero_kw_open: "pesos abertos de ponta",
+    stat_scaling_label: "Escalabilidade em Tempo de Inferência",
+    stat_cost_val: "10x Menor",
+    stat_labs_val: "50+ Labs",
+    stat_audit_label: "Auditorias do EU AI Act",
+    footer_rights: "&copy; 2026 Make AI Better Research Initiative. Licença MIT Open Source.",
+    manifesto_byline: "Publicado em 21 de Setembro de 2026 • Make AI Better Research Team",
     nav_state_of_ai: "State of AI 2026",
     nav_history: "História",
     nav_science: "IA na Ciência",
@@ -95,6 +108,19 @@ const translations = {
     btn_close_modal: "Fechar Leitor"
   },
   en: {
+    nav_history: "History of Computing",
+    nav_science: "AI in Science",
+    btn_history: "Explore The Epic of Computing",
+    btn_science: "Explore AI in Science",
+    hero_kw_inference: "inference-time compute (System-2)",
+    hero_kw_swarms: "autonomous agent swarms",
+    hero_kw_open: "frontier open weights",
+    stat_scaling_label: "Inference-Time Scaling",
+    stat_cost_val: "10x Lower",
+    stat_labs_val: "50+ Labs",
+    stat_audit_label: "EU AI Act audits",
+    footer_rights: "&copy; 2026 Make AI Better Research Initiative. MIT Open Source License.",
+    manifesto_byline: "Published September 21, 2026 • Make AI Better Research Team",
     nav_state_of_ai: "State of AI 2026",
     nav_benchmarks: "Model Radar",
     nav_pillars: "Research Pillars",
@@ -342,10 +368,9 @@ function setLanguage(lang) {
 }
 
 function initLanguage() {
-  const saved = localStorage.getItem('makeaibetter_lang');
-  if (saved && (saved === 'pt' || saved === 'en')) {
-    currentLang = saved;
-  }
+  // A URL manda: /en/ serve HTML já em inglês, e o localStorage não pode
+  // sobrescrever isso — senão a página renderizada em EN seria repintada em PT.
+  currentLang = document.documentElement.lang.startsWith('en') ? 'en' : 'pt';
   document.getElementById('btn-lang-pt').classList.toggle('active', currentLang === 'pt');
   document.getElementById('btn-lang-en').classList.toggle('active', currentLang === 'en');
   applyTranslations();
@@ -371,7 +396,7 @@ function applyTranslations() {
 // --- Breaking News Fetch & Render ---
 async function loadBreakingNews() {
   try {
-    const res = await fetch('research/breaking_news_sept_2026.json');
+    const res = await fetch('/research/breaking_news_sept_2026.json');
     if (res.ok) {
       newsData = await res.json();
     }

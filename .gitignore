@@ -5,3 +5,6 @@ node_modules/
 
 # vídeos grandes ficam fora do git — ver README
 *.mp4
+
+# gerado por tools/build-en.mjs no deploy
+en/

@@ -7,6 +7,9 @@
   <meta name="description" content="Seis fronteiras científicas em gráficos com fonte primária citada: do funil de verificação do GNoME à supressão de erro lógico no Willow.">
   <meta name="keywords" content="AI for Science, AlphaFold 3, AlphaGenome, GNoME, AlphaChip, Quantum Physics, Drug Discovery, Make AI Better">
   <link rel="canonical" href="https://makeaibetter.com/science.html">
+  <link rel="alternate" hreflang="pt-BR" href="https://makeaibetter.com/science.html">
+  <link rel="alternate" hreflang="en" href="https://makeaibetter.com/en/science.html">
+  <link rel="alternate" hreflang="x-default" href="https://makeaibetter.com/science.html">
 
   <!-- Open Graph / cartão de compartilhamento -->
   <meta property="og:type" content="website">
@@ -238,9 +241,9 @@
       <div class="nav-actions">
         <!-- Language Switcher -->
         <div class="lang-switch-container">
-          <button class="lang-btn active" id="btn-lang-pt" onclick="setLanguage('pt')">PT</button>
-          <span class="lang-divider">/</span>
-          <button class="lang-btn" id="btn-lang-en" onclick="setLanguage('en')">EN</button>
+          <a class="lang-btn active" id="btn-lang-pt" href="/science.html" hreflang="pt-BR" lang="pt-BR" aria-current="true">PT</a>
+          <span class="lang-divider" aria-hidden="true">/</span>
+          <a class="lang-btn" id="btn-lang-en" href="/en/science.html" hreflang="en" lang="en">EN</a>
         </div>
 
         <a href="https://github.com/s1d40/makeaibetter" target="_blank" rel="noopener" class="btn btn-outline nav-cta">
@@ -272,22 +275,22 @@
         <div class="science-stat-box">
           <div class="stat-num gradient-green">2,2M+</div>
           <div class="stat-text" data-i18n="sci_stat_crystals">Novos Cristais (GNoME)</div>
-          <div class="stat-sub">800 anos de pesquisa condensados</div>
+          <div class="stat-sub" data-i18n="hero_stat_1_sub">800 anos de pesquisa condensados</div>
         </div>
         <div class="science-stat-box">
-          <div class="stat-num gradient-purple">3 Bilhões</div>
+          <div class="stat-num gradient-purple" data-i18n="hero_stat_2_val">3 Bilhões</div>
           <div class="stat-text" data-i18n="sci_stat_genome">Pares de Bases Mapeados</div>
-          <div class="stat-sub">AlphaGenome (DeepMind 2026)</div>
+          <div class="stat-sub" data-i18n="hero_stat_2_sub">AlphaGenome (DeepMind 2026)</div>
         </div>
         <div class="science-stat-box">
           <div class="stat-num gradient-cyan">10.000x</div>
           <div class="stat-text" data-i18n="sci_stat_cosmic">Simulação da Teia Cósmica</div>
-          <div class="stat-sub">Modelos de IA para o JWST</div>
+          <div class="stat-sub" data-i18n="hero_stat_3_sub">Modelos de IA para o JWST</div>
         </div>
         <div class="science-stat-box">
-          <div class="stat-num gradient-amber">Horas vs Meses</div>
+          <div class="stat-num gradient-amber" data-i18n="hero_stat_4_val">Horas vs Meses</div>
           <div class="stat-text" data-i18n="sci_stat_alphachip">Design de Chips TPU</div>
-          <div class="stat-sub">AlphaChip (IA desenhando IA)</div>
+          <div class="stat-sub" data-i18n="hero_stat_4_sub">AlphaChip (IA desenhando IA)</div>
         </div>
       </div>
     </div>
@@ -374,40 +377,40 @@
           </thead>
           <tbody>
             <tr data-domain="biology">
-              <th scope="row" class="matrix-row-head"><svg class="domain-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 3c0 5 14 5 14 11M19 3c0 5-14 5-14 11M5 21c0-2.5 3.5-4 7-4s7 1.5 7 4"/><path d="M7.5 7.5h9M6.5 11.5h11M7.5 15.5h9"/></svg><strong>Biologia Molecular</strong></th>
-              <td>AlphaFold 3 & AlphaGenome (Genômica não-codificante)</td>
+              <th scope="row" class="matrix-row-head"><svg class="domain-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 3c0 5 14 5 14 11M19 3c0 5-14 5-14 11M5 21c0-2.5 3.5-4 7-4s7 1.5 7 4"/><path d="M7.5 7.5h9M6.5 11.5h11M7.5 15.5h9"/></svg><strong data-i18n="mx_bio_area">Biologia Molecular</strong></th>
+              <td data-i18n="mx_bio_mark">AlphaFold 3 & AlphaGenome (Genômica não-codificante)</td>
               <td class="speedup-cell" data-speedup></td>
-              <td>Validação anti-alucinação de dobras proteicas</td>
+              <td data-i18n="mx_bio_role">Validação anti-alucinação de dobras proteicas</td>
             </tr>
             <tr data-domain="astronomy">
-              <th scope="row" class="matrix-row-head"><svg class="domain-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m10.06 8.44 6.86-3.96a2 2 0 0 1 2.73.73l1 1.73a2 2 0 0 1-.73 2.73l-6.86 3.96"/><path d="m5.6 11.02 4.46-2.58 2.9 5.02-4.46 2.58a2 2 0 0 1-2.73-.73l-.9-1.56a2 2 0 0 1 .73-2.73Z"/><path d="M9 17.5 7 22M13.5 15.5 16 22M12 19h.01"/></svg><strong>Astronomia</strong></th>
-              <td>Zoobot & Redes Neurais para JWST / Vera Rubin</td>
+              <th scope="row" class="matrix-row-head"><svg class="domain-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m10.06 8.44 6.86-3.96a2 2 0 0 1 2.73.73l1 1.73a2 2 0 0 1-.73 2.73l-6.86 3.96"/><path d="m5.6 11.02 4.46-2.58 2.9 5.02-4.46 2.58a2 2 0 0 1-2.73-.73l-.9-1.56a2 2 0 0 1 .73-2.73Z"/><path d="M9 17.5 7 22M13.5 15.5 16 22M12 19h.01"/></svg><strong data-i18n="mx_astro_area">Astronomia</strong></th>
+              <td data-i18n="mx_astro_mark">Zoobot & Redes Neurais para JWST / Vera Rubin</td>
               <td class="speedup-cell" data-speedup></td>
-              <td>Filtragem de dados astronômicos abertos</td>
+              <td data-i18n="mx_astro_role">Filtragem de dados astronômicos abertos</td>
             </tr>
             <tr data-domain="medicine">
-              <th scope="row" class="matrix-row-head"><svg class="domain-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2.5" y="8.5" width="19" height="7" rx="3.5" transform="rotate(-45 12 12)"/><path d="M9.2 9.2l5.6 5.6"/></svg><strong>Medicina & Fármacos</strong></th>
-              <td>Agentes Autônomos Co-Scientist & Robin</td>
+              <th scope="row" class="matrix-row-head"><svg class="domain-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2.5" y="8.5" width="19" height="7" rx="3.5" transform="rotate(-45 12 12)"/><path d="M9.2 9.2l5.6 5.6"/></svg><strong data-i18n="mx_med_area">Medicina & Fármacos</strong></th>
+              <td data-i18n="mx_med_mark">Agentes Autônomos Co-Scientist & Robin</td>
               <td class="speedup-cell" data-speedup></td>
-              <td>Sandboxing e segurança de ensaios in-silico</td>
+              <td data-i18n="mx_med_role">Sandboxing e segurança de ensaios in-silico</td>
             </tr>
             <tr data-domain="chemistry">
-              <th scope="row" class="matrix-row-head"><svg class="domain-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 3v6.2a2 2 0 0 1-.3 1.05L4.2 17.4A2 2 0 0 0 5.9 20.5h12.2a2 2 0 0 0 1.7-3.1l-4.5-7.15A2 2 0 0 1 15 9.2V3"/><path d="M8 3h8M6.6 14.5h10.8"/></svg><strong>Química & Materiais</strong></th>
-              <td>GNoME (2,2M novos cristais) & Self-Driving Labs</td>
+              <th scope="row" class="matrix-row-head"><svg class="domain-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 3v6.2a2 2 0 0 1-.3 1.05L4.2 17.4A2 2 0 0 0 5.9 20.5h12.2a2 2 0 0 0 1.7-3.1l-4.5-7.15A2 2 0 0 1 15 9.2V3"/><path d="M8 3h8M6.6 14.5h10.8"/></svg><strong data-i18n="mx_chem_area">Química & Materiais</strong></th>
+              <td data-i18n="mx_chem_mark">GNoME (2,2M novos cristais) & Self-Driving Labs</td>
               <td class="speedup-cell" data-speedup></td>
-              <td>Benchmarks de síntese física reproduzível</td>
+              <td data-i18n="mx_chem_role">Benchmarks de síntese física reproduzível</td>
             </tr>
             <tr data-domain="quantum">
-              <th scope="row" class="matrix-row-head"><svg class="domain-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="2"/><ellipse cx="12" cy="12" rx="10" ry="4.2"/><ellipse cx="12" cy="12" rx="10" ry="4.2" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4.2" transform="rotate(120 12 12)"/></svg><strong>Física Quântica</strong></th>
-              <td>Decodificador neural de código de superfície (Willow)</td>
+              <th scope="row" class="matrix-row-head"><svg class="domain-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="2"/><ellipse cx="12" cy="12" rx="10" ry="4.2"/><ellipse cx="12" cy="12" rx="10" ry="4.2" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4.2" transform="rotate(120 12 12)"/></svg><strong data-i18n="mx_quantum_area">Física Quântica</strong></th>
+              <td data-i18n="mx_quantum_mark">Decodificador neural de código de superfície (Willow)</td>
               <td class="speedup-cell" data-speedup></td>
-              <td>Modelagem aberta de estados quânticos</td>
+              <td data-i18n="mx_quantum_role">Modelagem aberta de estados quânticos</td>
             </tr>
             <tr data-domain="ai4ai">
-              <th scope="row" class="matrix-row-head"><svg class="domain-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="7" y="7" width="10" height="10" rx="2"/><rect x="3.5" y="3.5" width="17" height="17" rx="3"/><path d="M9 1.5v2M15 1.5v2M9 20.5v2M15 20.5v2M1.5 9h2M1.5 15h2M20.5 9h2M20.5 15h2"/></svg><strong>IA para IA</strong></th>
-              <td>AlphaChip & Dados sintéticos provados em Lean 4</td>
+              <th scope="row" class="matrix-row-head"><svg class="domain-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="7" y="7" width="10" height="10" rx="2"/><rect x="3.5" y="3.5" width="17" height="17" rx="3"/><path d="M9 1.5v2M15 1.5v2M9 20.5v2M15 20.5v2M1.5 9h2M1.5 15h2M20.5 9h2M20.5 15h2"/></svg><strong data-i18n="mx_ai_area">IA para IA</strong></th>
+              <td data-i18n="mx_ai_mark">AlphaChip & Dados sintéticos provados em Lean 4</td>
               <td class="speedup-cell" data-speedup></td>
-              <td>Verificação formal e governança de auto-aprimoramento</td>
+              <td data-i18n="mx_ai_role">Verificação formal e governança de auto-aprimoramento</td>
             </tr>
           </tbody>
         </table>
@@ -420,15 +423,15 @@
           Descubra a linha do tempo completa de 90 anos, de Alan Turing em 1936 até os chips quânticos e modelos de raciocínio de 2026.
         </p>
         <div class="cta-buttons-row">
-          <a href="history.html" class="btn btn-primary" data-i18n="btn_explore_history">
-            <span>Explorar a Epopeia da Computação</span>
+          <a href="history.html" class="btn btn-primary">
+            <span data-i18n="btn_explore_history">Explorar a Epopeia da Computação</span>
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <line x1="5" y1="12" x2="19" y2="12"></line>
               <polyline points="12 5 19 12 12 19"></polyline>
             </svg>
           </a>
-          <a href="index.html" class="btn btn-secondary" data-i18n="btn_return_radar">
-            <span>Voltar ao Radar de Modelos 2026</span>
+          <a href="index.html" class="btn btn-secondary">
+            <span data-i18n="btn_return_radar">Voltar ao Radar de Modelos 2026</span>
           </a>
         </div>
       </div>
@@ -451,7 +454,7 @@
         <p class="footer-desc" data-i18n="footer_desc">
           Iniciativa de pesquisa independente e aberta para o avanço seguro e rigoroso da inteligência artificial.
         </p>
-        <div class="footer-copy">
+        <div class="footer-copy" data-i18n="footer_rights">
           &copy; 2026 Make AI Better Research Initiative. Licença MIT Open Source.
         </div>
       </div>

@@ -19,7 +19,7 @@ let catalog = null;
 async function loadCatalog() {
   if (catalog) return catalog;
   try {
-    const res = await fetch('assets/videos.json', { cache: 'no-cache' });
+    const res = await fetch('/assets/videos.json', { cache: 'no-cache' });
     catalog = res.ok ? (await res.json()).videos : {};
   } catch {
     catalog = {};

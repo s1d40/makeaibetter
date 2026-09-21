@@ -12,6 +12,9 @@
   <meta property="og:title" content="Make AI Better — State of AI 2026 & Open Research">
   <meta property="og:description" content="Panorama completo do estado da arte de IA em 21 de setembro de 2026. Breaking news, benchmarks e arquiteturas de raciocínio.">
   <link rel="canonical" href="https://makeaibetter.com/">
+  <link rel="alternate" hreflang="pt-BR" href="https://makeaibetter.com/">
+  <link rel="alternate" hreflang="en" href="https://makeaibetter.com/en/">
+  <link rel="alternate" hreflang="x-default" href="https://makeaibetter.com/">
 
   <!-- Open Graph / cartão de compartilhamento -->
   <meta property="og:type" content="website">
@@ -126,9 +129,9 @@
       <div class="nav-actions">
         <!-- Language Switcher -->
         <div class="lang-switch-container">
-          <button class="lang-btn active" id="btn-lang-pt" onclick="setLanguage('pt')">PT</button>
-          <span class="lang-divider">/</span>
-          <button class="lang-btn" id="btn-lang-en" onclick="setLanguage('en')">EN</button>
+          <a class="lang-btn active" id="btn-lang-pt" href="/" hreflang="pt-BR" lang="pt-BR" aria-current="true">PT</a>
+          <span class="lang-divider" aria-hidden="true">/</span>
+          <a class="lang-btn" id="btn-lang-en" href="/en/" hreflang="en" lang="en">EN</a>
         </div>
 
         <a href="https://github.com/s1d40/makeaibetter" target="_blank" rel="noopener" class="btn btn-outline nav-cta" id="github-header-btn">
@@ -155,7 +158,7 @@
       </h1>
 
       <p class="hero-subtitle animate-fade-up delay-1" data-i18n="hero_subtitle">
-        A inteligência artificial ultrapassou a era da previsão bruta de tokens. Em 21 de setembro de 2026, exploramos a transição definitiva para <strong>computação de inferência (System-2)</strong>, <strong>enxames de agentes autônomos</strong> e <strong>pesos abertos de ponta</strong>.
+        A inteligência artificial ultrapassou a era da previsão bruta de tokens. Em 21 de setembro de 2026, exploramos a transição definitiva para <strong data-i18n="hero_kw_inference">computação de inferência (System-2)</strong>, <strong data-i18n="hero_kw_swarms">enxames de agentes autônomos</strong> e <strong data-i18n="hero_kw_open">pesos abertos de ponta</strong>.
       </p>
 
       <div class="hero-buttons animate-fade-up delay-2">
@@ -199,17 +202,17 @@
         <div class="stat-card">
           <div class="stat-value gradient-purple">System-2</div>
           <div class="stat-label" data-i18n="stat_test_time">Paradigma de Test-Time Compute</div>
-          <div class="stat-sub">Escalabilidade em Tempo de Inferência</div>
+          <div class="stat-sub" data-i18n="stat_scaling_label">Escalabilidade em Tempo de Inferência</div>
         </div>
         <div class="stat-card">
-          <div class="stat-value gradient-green">10x Menor</div>
+          <div class="stat-value gradient-green" data-i18n="stat_cost_val">10x Menor</div>
           <div class="stat-label" data-i18n="stat_open_moe">Custo de Inferência Open MoE</div>
           <div class="stat-sub">DeepSeek V4 & Llama 4</div>
         </div>
         <div class="stat-card">
-          <div class="stat-value gradient-amber">50+ Labs</div>
+          <div class="stat-value gradient-amber" data-i18n="stat_labs_val">50+ Labs</div>
           <div class="stat-label" data-i18n="stat_coalition">Alinhamento & Pacing Global</div>
-          <div class="stat-sub">Auditorias do EU AI Act</div>
+          <div class="stat-sub" data-i18n="stat_audit_label">Auditorias do EU AI Act</div>
         </div>
       </div>
     </div>
@@ -504,7 +507,7 @@
         <p class="footer-desc" data-i18n="footer_desc">
           Iniciativa de pesquisa independente e aberta para o avanço seguro e rigoroso da inteligência artificial.
         </p>
-        <div class="footer-copy">
+        <div class="footer-copy" data-i18n="footer_rights">
           &copy; 2026 Make AI Better Research Initiative. Licença MIT Open Source.
         </div>
       </div>
@@ -541,7 +544,7 @@
         <div class="modal-title-box">
           <span class="badge badge-cyan" data-i18n="modal_badge">Relatório Oficial de Pesquisa</span>
           <h3 id="modal-title">State of AI 2026: The Paradigm Shift</h3>
-          <p class="modal-meta" id="modal-meta">Publicado em 21 de Setembro de 2026 • Make AI Better Research Team</p>
+          <p class="modal-meta" id="modal-meta" data-i18n="manifesto_byline">Publicado em 21 de Setembro de 2026 • Make AI Better Research Team</p>
         </div>
         <button class="modal-close-btn" onclick="closeReportModal()" aria-label="Fechar modal">&times;</button>
       </div>

@@ -7,7 +7,7 @@
       "seconds": 71,
       "title_pt": "A Evolução da Computação: dos mainframes à IA",
       "title_en": "The Evolution of Computing: from mainframes to AI",
-      "poster": "assets/video-posters/evolucao.webp"
+      "poster": "/assets/video-posters/evolucao.webp"
     },
     "quantica": {
       "youtubeId": "",
@@ -15,7 +15,7 @@
       "seconds": 86,
       "title_pt": "Como a física quântica destrava a superinteligência",
       "title_en": "How quantum physics unlocks superintelligence",
-      "poster": "assets/video-posters/quantica.webp"
+      "poster": "/assets/video-posters/quantica.webp"
     },
     "internet-maquinas": {
       "youtubeId": "",
@@ -23,7 +23,7 @@
       "seconds": 78,
       "title_pt": "Como a internet passou a ser das máquinas",
       "title_en": "How the internet became the machines'",
-      "poster": "assets/video-posters/internet-maquinas.webp"
+      "poster": "/assets/video-posters/internet-maquinas.webp"
     },
     "state-of-ai": {
       "youtubeId": "",
@@ -31,7 +31,7 @@
       "seconds": 688,
       "title_pt": "State of AI 2026: o paradigma",
       "title_en": "State of AI 2026: the paradigm",
-      "poster": "assets/video-posters/state-of-ai.webp"
+      "poster": "/assets/video-posters/state-of-ai.webp"
     }
   }
 }

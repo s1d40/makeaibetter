@@ -20,6 +20,9 @@
 
   <link rel="preload" as="image" href="assets/images/era-1.webp" fetchpriority="high">
   <link rel="canonical" href="https://makeaibetter.com/history.html">
+  <link rel="alternate" hreflang="pt-BR" href="https://makeaibetter.com/history.html">
+  <link rel="alternate" hreflang="en" href="https://makeaibetter.com/en/history.html">
+  <link rel="alternate" hreflang="x-default" href="https://makeaibetter.com/history.html">
 
   
   <!-- Fonts -->
@@ -126,9 +129,9 @@
       <div class="nav-actions">
         <!-- Language Switcher -->
         <div class="lang-switch-container">
-          <button class="lang-btn active" id="btn-lang-pt" onclick="setLanguage('pt')">PT</button>
-          <span class="lang-divider">/</span>
-          <button class="lang-btn" id="btn-lang-en" onclick="setLanguage('en')">EN</button>
+          <a class="lang-btn active" id="btn-lang-pt" href="/history.html" hreflang="pt-BR" lang="pt-BR" aria-current="true">PT</a>
+          <span class="lang-divider" aria-hidden="true">/</span>
+          <a class="lang-btn" id="btn-lang-en" href="/en/history.html" hreflang="en" lang="en">EN</a>
         </div>
 
         <a href="https://github.com/s1d40/makeaibetter" target="_blank" rel="noopener" class="btn btn-outline nav-cta">
@@ -176,14 +179,14 @@
         Em 1936, Alan Turing concebeu a máquina que poderia computar qualquer pensamento formalizável. Nove décadas depois, a humanidade atinge a computação quântica abaixo do limiar de erro com o <strong>Google Willow</strong> e modelos de raciocínio deliberado com a <strong>OpenAI</strong>. Esta é a trajetória completa da inteligência mecânica.
       </p>
       <div class="hero-action-row">
-        <a href="#era-1" class="btn btn-primary" id="btn-start-journey" data-i18n="btn_start_journey">
+        <a href="#era-1" class="btn btn-primary" id="btn-start-journey">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <polyline points="6 9 12 15 18 9"></polyline>
           </svg>
-          <span>Iniciar a Viagem</span>
+          <span data-i18n="btn_start_journey">Iniciar a Viagem</span>
         </a>
-        <a href="science.html" class="btn btn-secondary" data-i18n="btn_view_science_hub">
-          <span>Explorar IA na Ciência</span>
+        <a href="science.html" class="btn btn-secondary">
+          <span data-i18n="btn_view_science_hub">Explorar IA na Ciência</span>
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <line x1="5" y1="12" x2="19" y2="12"></line>
             <polyline points="12 5 19 12 12 19"></polyline>
@@ -211,7 +214,7 @@
         <div class="epoch-header">
           <div class="epoch-meta">
             <span class="badge badge-amber" data-i18n="era_1_tag">ERA 1 • 1936 – 1950</span>
-            <span class="epoch-quote">"Podem as máquinas pensar?" — Alan Turing, 1950</span>
+            <span class="epoch-quote" data-i18n="quote_1">"Podem as máquinas pensar?" — Alan Turing, 1950</span>
           </div>
           <h2 class="epoch-title" data-i18n="era_1_title">O Oráculo Matemático e a Fita Infinita</h2>
         </div>
@@ -307,7 +310,7 @@
         <div class="epoch-header">
           <div class="epoch-meta">
             <span class="badge badge-purple" data-i18n="era_2_tag">ERA 2 • 1945 – 1960</span>
-            <span class="epoch-quote">"Qualquer problema que possa ser computado pode ser formulado em memória." — John von Neumann</span>
+            <span class="epoch-quote" data-i18n="quote_2">"Qualquer problema que possa ser computado pode ser formulado em memória." — John von Neumann</span>
           </div>
           <h2 class="epoch-title" data-i18n="era_2_title">A Arquitetura Von Neumann e o Milagre do Transistor</h2>
         </div>
@@ -355,18 +358,18 @@
             <div class="transistor-visualizer-grid">
               <div class="compare-card valve-card">
                 <div class="card-tag" data-i18n="valve_label">Válvula Termiônica (1945)</div>
-                <div class="spec-row"><span>Tamanho:</span> <strong>~10 a 15 cm</strong></div>
-                <div class="spec-row"><span>Consumo:</span> <strong>~5 a 10 Watts</strong></div>
-                <div class="spec-row"><span>Confiabilidade:</span> <strong>Queima em ~2.000 horas</strong></div>
-                <div class="spec-row"><span>Velocidade:</span> <strong>~10 a 100 kHz</strong></div>
+                <div class="spec-row"><span data-i18n="lbl_size">Tamanho:</span> <strong data-i18n="tv_tube_size">~10 a 15 cm</strong></div>
+                <div class="spec-row"><span data-i18n="lbl_power">Consumo:</span> <strong data-i18n="tv_tube_power">~5 a 10 Watts</strong></div>
+                <div class="spec-row"><span data-i18n="lbl_reliability">Confiabilidade:</span> <strong data-i18n="tv_tube_life">Queima em ~2.000 horas</strong></div>
+                <div class="spec-row"><span data-i18n="lbl_speed">Velocidade:</span> <strong data-i18n="tv_tube_speed">~10 a 100 kHz</strong></div>
               </div>
               <div class="compare-vs">VS</div>
               <div class="compare-card transistor-card">
                 <div class="card-tag" data-i18n="transistor_label">Transistor de Estado Sólido (1947+)</div>
-                <div class="spec-row"><span>Tamanho:</span> <strong>De mm a 2 nanômetros</strong></div>
-                <div class="spec-row"><span>Consumo:</span> <strong>Picowatts (1 bilhão de vezes menor)</strong></div>
-                <div class="spec-row"><span>Confiabilidade:</span> <strong>Vida útil de décadas</strong></div>
-                <div class="spec-row"><span>Velocidade:</span> <strong>GigaHertz (GHz)</strong></div>
+                <div class="spec-row"><span data-i18n="lbl_size">Tamanho:</span> <strong data-i18n="tv_chip_size">De mm a 2 nanômetros</strong></div>
+                <div class="spec-row"><span data-i18n="lbl_power">Consumo:</span> <strong data-i18n="tv_chip_power">Picowatts (1 bilhão de vezes menor)</strong></div>
+                <div class="spec-row"><span data-i18n="lbl_reliability">Confiabilidade:</span> <strong data-i18n="tv_chip_life">Vida útil de décadas</strong></div>
+                <div class="spec-row"><span data-i18n="lbl_speed">Velocidade:</span> <strong data-i18n="tv_chip_speed">GigaHertz (GHz)</strong></div>
               </div>
             </div>
           </div>
@@ -381,7 +384,7 @@
         <div class="epoch-header">
           <div class="epoch-meta">
             <span class="badge badge-cyan" data-i18n="era_3_tag">ERA 3 • 1960 – 1980</span>
-            <span class="epoch-quote">"O número de transistores dobrará a cada dois anos." — Gordon Moore, 1965</span>
+            <span class="epoch-quote" data-i18n="quote_3">"O número de transistores dobrará a cada dois anos." — Gordon Moore, 1965</span>
           </div>
           <h2 class="epoch-title" data-i18n="era_3_title">Circuitos Integrados, Lei de Moore e o Intel 4004</h2>
         </div>
@@ -450,7 +453,7 @@
         <div class="epoch-header">
           <div class="epoch-meta">
             <span class="badge badge-green" data-i18n="era_4_tag">ERA 4 • 1980 – 2000</span>
-            <span class="epoch-quote">"Isto é para todo mundo." — Sir Tim Berners-Lee</span>
+            <span class="epoch-quote" data-i18n="quote_4">"Isto é para todo mundo." — Sir Tim Berners-Lee</span>
           </div>
           <h2 class="epoch-title" data-i18n="era_4_title">Computação Pessoal, a World Wide Web e o Backprop</h2>
         </div>
@@ -541,7 +544,7 @@
         <div class="epoch-header">
           <div class="epoch-meta">
             <span class="badge badge-amber" data-i18n="era_5_tag">ERA 5 • 2000 – 2016</span>
-            <span class="epoch-quote">"O Deep Learning funciona porque o mundo é composicional." — Yann LeCun</span>
+            <span class="epoch-quote" data-i18n="quote_5">"O Deep Learning funciona porque o mundo é composicional." — Yann LeCun</span>
           </div>
           <h2 class="epoch-title" data-i18n="era_5_title">Computação em Nuvem, GPUs CUDA e o Big Bang do Deep Learning</h2>
         </div>
@@ -586,7 +589,7 @@
         <div class="epoch-header">
           <div class="epoch-meta">
             <span class="badge badge-purple" data-i18n="era_6_tag">ERA 6 • 2017 – 2024</span>
-            <span class="epoch-quote">"Attention is all you need." — Vaswani et al., Google Brain</span>
+            <span class="epoch-quote" data-i18n="quote_6">"Attention is all you need." — Vaswani et al., Google Brain</span>
           </div>
           <h2 class="epoch-title" data-i18n="era_6_title">A Revolução dos Transformers e a Explosão da IA Generativa</h2>
         </div>
@@ -631,7 +634,7 @@
         <div class="epoch-header">
           <div class="epoch-meta">
             <span class="badge badge-cyan" data-i18n="era_7_tag">ERA 7 • 2024 – 2026 (A FRONTEIRA ATUAL)</span>
-            <span class="epoch-quote">"Cruzamos o limiar quântico e a barreira do raciocínio deliberado." — Make AI Better</span>
+            <span class="epoch-quote" data-i18n="quote_7">"Cruzamos o limiar quântico e a barreira do raciocínio deliberado." — Make AI Better</span>
           </div>
           <h2 class="epoch-title gradient-text" data-i18n="era_7_title">A Dupla Fronteira: O Salto Quântico (Google Willow) e o Raciocínio System-2 (OpenAI)</h2>
         </div>
@@ -672,22 +675,22 @@
                 <span class="pulse-dot"></span>
                 <span>Google Quantum AI</span>
               </div>
-              <h3 class="frontier-card-title">O Chip Quântico Willow (Dez/2024–2026)</h3>
-              <p class="frontier-card-desc">
-                Dotado de <strong>105 qubits supercondutores transmon</strong>, o Willow superou pela primeira vez na história o <em>limiar de correção de erros quânticos ("below-threshold")</em>. Ao aumentar a malha de código de superfície, a taxa de erro lógico diminuiu exponencialmente.
+              <h3 class="frontier-card-title" data-i18n="frontier_willow_title">O Chip Quântico Willow (Dez/2024–2026)</h3>
+              <p class="frontier-card-desc" data-i18n="frontier_willow_desc">
+                Dotado de <strong data-i18n="val_qubits">105 qubits supercondutores transmon</strong>, o Willow superou pela primeira vez na história o <em>limiar de correção de erros quânticos ("below-threshold")</em>. Ao aumentar a malha de código de superfície, a taxa de erro lógico diminuiu exponencialmente.
               </p>
               <div class="frontier-metrics-box">
                 <div class="metric-line">
-                  <span>Tempo de Cálculo (RCS):</span>
-                  <strong>&lt; 5 minutos</strong>
+                  <span data-i18n="lbl_rcs">Tempo de Cálculo (RCS):</span>
+                  <strong data-i18n="val_rcs_time">&lt; 5 minutos</strong>
                 </div>
                 <div class="metric-line">
-                  <span>Supercomputador Clássico:</span>
-                  <strong>10 septilhões ($10^{25}$) de anos</strong>
+                  <span data-i18n="lbl_classical">Supercomputador Clássico:</span>
+                  <strong data-i18n="val_classical_years">10 septilhões ($10^{25}$) de anos</strong>
                 </div>
                 <div class="metric-line">
-                  <span>Vantagem Verificável:</span>
-                  <strong>13.000x mais rápido (Quantum Echoes)</strong>
+                  <span data-i18n="lbl_advantage">Vantagem Verificável:</span>
+                  <strong data-i18n="val_advantage">13.000x mais rápido (Quantum Echoes)</strong>
                 </div>
               </div>
 
@@ -698,7 +701,7 @@
                   <!-- 25 interactive visual nodes rendered by JS -->
                 </div>
                 <div class="qubit-status-row">
-                  <span id="qubit-error-rate">Taxa de Erro Lógico: 0.000012% (Abaixo do Limiar)</span>
+                  <span id="qubit-error-rate" data-i18n="val_error_rate">Taxa de Erro Lógico: 0.000012% (Abaixo do Limiar)</span>
                 </div>
               </div>
             </div>
@@ -709,21 +712,21 @@
                 <span class="pulse-dot"></span>
                 <span>OpenAI Frontier Reasoning</span>
               </div>
-              <h3 class="frontier-card-title">A Revolução do Raciocínio System-2 (o1, o3, GPT-6 Astra)</h3>
-              <p class="frontier-card-desc">
+              <h3 class="frontier-card-title" data-i18n="frontier_system2_title">A Revolução do Raciocínio System-2 (o1, o3, GPT-6 Astra)</h3>
+              <p class="frontier-card-desc" data-i18n="frontier_system2_desc">
                 O fim da era do "chute impulsivo" do próximo token. A fronteira em 2026 é governada pelo <strong>Test-Time Compute Scaling</strong>: alocação dinâmica de tempo de reflexão onde o modelo explora árvores de hipóteses e auto-corrige seus erros antes de responder.
               </p>
               <div class="frontier-metrics-box">
                 <div class="metric-line">
-                  <span>Olimpíada AIME 2026:</span>
-                  <strong>96.8% de precisão</strong>
+                  <span data-i18n="lbl_aime">Olimpíada AIME 2026:</span>
+                  <strong data-i18n="val_aime_acc">96.8% de precisão</strong>
                 </div>
                 <div class="metric-line">
-                  <span>SWE-bench Verified:</span>
-                  <strong>81.9% em engenharia autônoma</strong>
+                  <span data-i18n="lbl_swebench">SWE-bench Verified:</span>
+                  <strong data-i18n="val_swe_acc">81.9% em engenharia autônoma</strong>
                 </div>
                 <div class="metric-line">
-                  <span>Mecanismo Central:</span>
+                  <span data-i18n="lbl_mechanism">Mecanismo Central:</span>
                   <strong>Process Reward Models (PRMs)</strong>
                 </div>
               </div>
@@ -731,12 +734,12 @@
               <!-- Interactive System-2 Reasoning Tree Visualizer -->
               <div class="interactive-mini-box">
                 <div class="mini-box-title" data-i18n="system2_sim_title">Árvore de Raciocínio System-2 em Tempo Real:</div>
-                <div class="reasoning-scenario-tag" id="reasoning-title">Prova Matemática (AIME 2026)</div>
+                <div class="reasoning-scenario-tag" id="reasoning-title" data-i18n="reasoning_scenario_tag">Prova Matemática (AIME 2026)</div>
                 <div class="reasoning-tree-display" id="reasoning-tree">
-                  <div class="tree-step step-ok">✓ Etapa 1: Formalização do problema no espaço polinomial</div>
-                  <div class="tree-step step-bad">✗ Hipótese 2A: Indução fraca falhou — rejeitada via PRM</div>
-                  <div class="tree-step step-ok">✓ Hipótese 2B: Bijection provada em Lean 4 (verificado)</div>
-                  <div class="tree-step step-ok">✓ Etapa 4: Resposta verificada. Score AIME: 100%</div>
+                  <div class="tree-step step-ok" data-i18n="tree_step_1">✓ Etapa 1: Formalização do problema no espaço polinomial</div>
+                  <div class="tree-step step-bad" data-i18n="tree_step_2">✗ Hipótese 2A: Indução fraca falhou — rejeitada via PRM</div>
+                  <div class="tree-step step-ok" data-i18n="tree_step_3">✓ Hipótese 2B: Bijection provada em Lean 4 (verificado)</div>
+                  <div class="tree-step step-ok" data-i18n="tree_step_4">✓ Etapa 4: Resposta verificada. Score AIME: 100%</div>
                 </div>
                 <button class="btn btn-outline small-btn" onclick="runReasoningSimulation()">
                   <span data-i18n="btn_simulate_thinking">Simular Deliberação Cognitiva (Thinking Tokens)</span>
@@ -752,8 +755,8 @@
               Em 1936, Turing provou que o cálculo podia ser formalizado. Em 2026, com o chip quântico <strong>Willow</strong> dominando os estados atômicos e a <strong>OpenAI</strong> dominando a verificação de raciocínio passo a passo, entramos em uma era onde o cálculo e a razão tornam-se ilimitados. A missão da <strong>Make AI Better</strong> é assegurar que esse poder incalculável seja transparente, seguro e acessível a toda a humanidade.
             </p>
             <div class="conclusion-cta-row">
-              <a href="science.html" class="btn btn-primary" data-i18n="btn_go_science">
-                <span>Ver como a IA Acelera a Ciência Global</span>
+              <a href="science.html" class="btn btn-primary">
+                <span data-i18n="btn_go_science">Ver como a IA Acelera a Ciência Global</span>
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <line x1="5" y1="12" x2="19" y2="12"></line>
                   <polyline points="12 5 19 12 12 19"></polyline>
@@ -791,7 +794,7 @@
         <p class="footer-desc" data-i18n="footer_desc">
           Iniciativa de pesquisa independente e aberta para o avanço seguro e rigoroso da inteligência artificial.
         </p>
-        <div class="footer-copy">
+        <div class="footer-copy" data-i18n="footer_rights">
           &copy; 2026 Make AI Better Research Initiative. Licença MIT Open Source.
         </div>
       </div>

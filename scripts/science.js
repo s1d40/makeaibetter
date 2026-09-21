@@ -314,7 +314,7 @@ let scienceMetrics = null;
 async function loadMetrics() {
   if (scienceMetrics !== null) return scienceMetrics;
   try {
-    const res = await fetch('research/science_metrics.json', { cache: 'no-cache' });
+    const res = await fetch('/research/science_metrics.json', { cache: 'no-cache' });
     scienceMetrics = res.ok ? await res.json() : { series: [] };
   } catch {
     scienceMetrics = { series: [] };
@@ -894,10 +894,7 @@ window.setLanguage = function(lang) {
 };
 
 function initLanguage() {
-  const saved = localStorage.getItem('makeaibetter_lang');
-  if (saved && (saved === 'pt' || saved === 'en')) {
-    currentLang = saved;
-  }
+  currentLang = document.documentElement.lang.startsWith('en') ? 'en' : 'pt';
   document.getElementById('btn-lang-pt')?.classList.toggle('active', currentLang === 'pt');
   document.getElementById('btn-lang-en')?.classList.toggle('active', currentLang === 'en');
   applyScienceTranslations();
@@ -906,6 +903,35 @@ function initLanguage() {
 function applyScienceTranslations() {
   const dict = {
     pt: {
+      footer_desc: "Iniciativa de pesquisa independente e aberta para o avanço seguro e rigoroso da inteligência artificial.",
+      footer_col_nav: "Navegação",
+      footer_col_disciplines: "Disciplinas",
+      footer_col_connect: "Conectar",
+      hero_stat_1_sub: "800 anos de pesquisa condensados",
+      hero_stat_2_val: "3 Bilhões",
+      hero_stat_2_sub: "AlphaGenome (DeepMind 2026)",
+      hero_stat_3_sub: "Modelos de IA para o JWST",
+      hero_stat_4_val: "Horas vs Meses",
+      hero_stat_4_sub: "AlphaChip (IA desenhando IA)",
+      mx_bio_area: "Biologia Molecular",
+      mx_bio_mark: "AlphaFold 3 & AlphaGenome (Genômica não-codificante)",
+      mx_bio_role: "Validação anti-alucinação de dobras proteicas",
+      mx_astro_area: "Astronomia",
+      mx_astro_mark: "Zoobot & Redes Neurais para JWST / Vera Rubin",
+      mx_astro_role: "Filtragem de dados astronômicos abertos",
+      mx_med_area: "Medicina & Fármacos",
+      mx_med_mark: "Agentes Autônomos Co-Scientist & Robin",
+      mx_med_role: "Sandboxing e segurança de ensaios in-silico",
+      mx_chem_area: "Química & Materiais",
+      mx_chem_mark: "GNoME (2,2M novos cristais) & Self-Driving Labs",
+      mx_chem_role: "Benchmarks de síntese física reproduzível",
+      mx_quantum_area: "Física Quântica",
+      mx_quantum_mark: "Decodificador neural de código de superfície (Willow)",
+      mx_quantum_role: "Modelagem aberta de estados quânticos",
+      mx_ai_area: "IA para IA",
+      mx_ai_mark: "AlphaChip & Dados sintéticos provados em Lean 4",
+      mx_ai_role: "Verificação formal e governança de auto-aprimoramento",
+      footer_rights: "&copy; 2026 Make AI Better Research Initiative. Licença MIT Open Source.",
       nav_home: "Home",
       nav_history: "História da Computação",
       nav_science: "IA na Ciência",
@@ -939,6 +965,35 @@ function applyScienceTranslations() {
       btn_return_radar: "Voltar ao Radar de Modelos 2026"
     },
     en: {
+      footer_desc: "Independent, open research initiative for the safe and rigorous advancement of artificial intelligence.",
+      footer_col_nav: "Navigation",
+      footer_col_disciplines: "Disciplines",
+      footer_col_connect: "Connect",
+      hero_stat_1_sub: "800 years of research compressed",
+      hero_stat_2_val: "3 Billion",
+      hero_stat_2_sub: "AlphaGenome (DeepMind 2026)",
+      hero_stat_3_sub: "AI models for JWST",
+      hero_stat_4_val: "Hours vs Months",
+      hero_stat_4_sub: "AlphaChip (AI designing AI)",
+      mx_bio_area: "Molecular Biology",
+      mx_bio_mark: "AlphaFold 3 & AlphaGenome (non-coding genomics)",
+      mx_bio_role: "Anti-hallucination validation of protein folds",
+      mx_astro_area: "Astronomy",
+      mx_astro_mark: "Zoobot & neural networks for JWST / Vera Rubin",
+      mx_astro_role: "Open astronomical data filtering",
+      mx_med_area: "Medicine & Pharma",
+      mx_med_mark: "Co-Scientist & Robin autonomous agents",
+      mx_med_role: "Sandboxing and safety for in-silico trials",
+      mx_chem_area: "Chemistry & Materials",
+      mx_chem_mark: "GNoME (2.2M new crystals) & self-driving labs",
+      mx_chem_role: "Reproducible physical synthesis benchmarks",
+      mx_quantum_area: "Quantum Physics",
+      mx_quantum_mark: "Neural surface-code decoder (Willow)",
+      mx_quantum_role: "Open modeling of quantum states",
+      mx_ai_area: "AI for AI",
+      mx_ai_mark: "AlphaChip & synthetic data proved in Lean 4",
+      mx_ai_role: "Formal verification and self-improvement governance",
+      footer_rights: "&copy; 2026 Make AI Better Research Initiative. MIT Open Source License.",
       nav_home: "Home",
       nav_history: "History of Computing",
       nav_science: "AI in Science",
