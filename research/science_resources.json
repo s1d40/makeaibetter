@@ -1,0 +1,6 @@
+{
+  "generated_at": null,
+  "note": "Placeholder. Será substituído pela saída do levantamento descrito em research/DEEP_RESEARCH_PROMPT_science_resources.md. Cada domínio terá quatro coleções: news, links, tools e repos. Enquanto domains estiver vazio, science.html não renderiza a seção de recursos.",
+  "domains": {},
+  "rejected": []
+}
