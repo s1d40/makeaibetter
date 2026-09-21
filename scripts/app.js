@@ -12,6 +12,8 @@ let activeModelId = 'gemini-38';
 // --- Translation Dictionary ---
 const translations = {
   pt: {
+    maker_label: "QUEM FAZ",
+    maker_text: "Um projeto da <a href=\"https://sfaisolutions.com\" target=\"_blank\" rel=\"noopener\">SFAI Solutions</a>, que desenvolve o <a href=\"https://app.sfaisolutions.com\" target=\"_blank\" rel=\"noopener\">Cocreator</a> — ferramentas de criação de conteúdo com IA. <a href=\"/research/como-e-feito.html\">Como este site é feito</a>.",
     nav_research: "Pesquisa",
     nav_history: "História da Computação",
     nav_science: "IA na Ciência",
@@ -109,6 +111,8 @@ const translations = {
     btn_close_modal: "Fechar Leitor"
   },
   en: {
+    maker_label: "WHO MAKES THIS",
+    maker_text: "A project by <a href=\"https://sfaisolutions.com\" target=\"_blank\" rel=\"noopener\">SFAI Solutions</a>, makers of <a href=\"https://app.sfaisolutions.com\" target=\"_blank\" rel=\"noopener\">Cocreator</a> — AI content creation tools. <a href=\"/research/como-e-feito.html\">How this site is made</a>.",
     nav_research: "Research",
     nav_history: "History of Computing",
     nav_science: "AI in Science",

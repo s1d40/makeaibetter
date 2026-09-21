@@ -1024,6 +1024,8 @@ function initLanguage() {
 function applyScienceTranslations() {
   const dict = {
     pt: {
+      maker_label: "QUEM FAZ",
+      maker_text: "Um projeto da <a href=\"https://sfaisolutions.com\" target=\"_blank\" rel=\"noopener\">SFAI Solutions</a>, que desenvolve o <a href=\"https://app.sfaisolutions.com\" target=\"_blank\" rel=\"noopener\">Cocreator</a> — ferramentas de criação de conteúdo com IA. <a href=\"/research/como-e-feito.html\">Como este site é feito</a>.",
       res_tag: "ACERVO",
       res_title: "Onde explorar cada área",
       res_subtitle: "Fontes para acompanhar, links que valem a visita, ferramentas de IA que rodam no navegador e o código aberto que sustenta cada campo. Cada URL foi carregada e verificada.",
@@ -1090,6 +1092,8 @@ function applyScienceTranslations() {
       btn_return_radar: "Voltar ao Radar de Modelos 2026"
     },
     en: {
+      maker_label: "WHO MAKES THIS",
+      maker_text: "A project by <a href=\"https://sfaisolutions.com\" target=\"_blank\" rel=\"noopener\">SFAI Solutions</a>, makers of <a href=\"https://app.sfaisolutions.com\" target=\"_blank\" rel=\"noopener\">Cocreator</a> — AI content creation tools. <a href=\"/research/como-e-feito.html\">How this site is made</a>.",
       res_tag: "ARCHIVE",
       res_title: "Where to explore each field",
       res_subtitle: "Sources to follow, links worth visiting, AI tools that run in the browser, and the open source that holds each field up. Every URL was loaded and verified.",

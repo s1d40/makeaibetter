@@ -24,6 +24,12 @@ const BASE = 'https://makeaibetter.com';
 
 const REPORTS = [
   {
+    src: 'como_e_feito.md', slug: 'como-e-feito',
+    title: 'Como este site é feito',
+    desc: 'Sete artes, catorze narrações e quatro vídeos gerados com IA em tempo de build — a direção de arte, as instruções que economizam retrabalho e o que a IA não fez.',
+    kind: 'Bastidores', date: '2026-09-21',
+  },
+  {
     src: 'science_metrics_report.md', slug: 'metricas-ia-ciencia',
     title: 'Métricas verificadas de IA na ciência',
     desc: 'Levantamento de sete séries quantitativas em seis domínios científicos, com fonte primária, denominador de cada comparação e as controvérsias registradas.',

@@ -36,6 +36,8 @@ const mooreData = {
 // ─── Bilingual Dictionary ─────────────────────────────────────────────────────
 const historyI18n = {
   pt: {
+    maker_label: "QUEM FAZ",
+    maker_text: "Um projeto da <a href=\"https://sfaisolutions.com\" target=\"_blank\" rel=\"noopener\">SFAI Solutions</a>, que desenvolve o <a href=\"https://app.sfaisolutions.com\" target=\"_blank\" rel=\"noopener\">Cocreator</a> — ferramentas de criação de conteúdo com IA. <a href=\"/research/como-e-feito.html\">Como este site é feito</a>.",
     nav_research: "Pesquisa",
     frontier_willow_desc: "Dotado de <strong data-i18n=\"val_qubits\">105 qubits supercondutores transmon</strong>, o Willow superou pela primeira vez na história o <em>limiar de correção de erros quânticos (\"below-threshold\")</em>. Ao aumentar a malha de código de superfície, a taxa de erro lógico diminuiu exponencialmente.",
     frontier_system2_desc: "O fim da era do \"chute impulsivo\" do próximo token. A fronteira em 2026 é governada pelo <strong>Test-Time Compute Scaling</strong>: alocação dinâmica de tempo de reflexão onde o modelo explora árvores de hipóteses e auto-corrige seus erros antes de responder.",
@@ -155,6 +157,8 @@ const historyI18n = {
     footer_col_connect: "Conectar"
   },
   en: {
+    maker_label: "WHO MAKES THIS",
+    maker_text: "A project by <a href=\"https://sfaisolutions.com\" target=\"_blank\" rel=\"noopener\">SFAI Solutions</a>, makers of <a href=\"https://app.sfaisolutions.com\" target=\"_blank\" rel=\"noopener\">Cocreator</a> — AI content creation tools. <a href=\"/research/como-e-feito.html\">How this site is made</a>.",
     nav_research: "Research",
     frontier_willow_desc: "With <strong data-i18n=\"val_qubits\">105 superconducting transmon qubits</strong>, Willow became the first chip in history to cross the <em>quantum error-correction threshold (\"below-threshold\")</em>. As the surface-code lattice grows, the logical error rate falls exponentially.",
     frontier_system2_desc: "The end of the impulsive next-token guess. The 2026 frontier is governed by <strong>test-time compute scaling</strong>: dynamically allocating thinking time so the model explores hypothesis trees and corrects itself before answering.",

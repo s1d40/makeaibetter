@@ -1380,3 +1380,31 @@ h1, h2, h3, h4, h5, h6 {
   .video-shorts .yt-embed { aspect-ratio: 16 / 10; }
   .video-shorts .yt-poster { object-position: center 30%; }
 }
+
+/* Autoria no rodapé — quem faz o site, declarado sem virar anúncio */
+.maker-note {
+  margin-top: 1.4rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--border-subtle);
+}
+.maker-label {
+  margin: 0 0 0.45rem;
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.maker-text {
+  margin: 0;
+  font-size: 0.82rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  max-width: 44ch;
+}
+.maker-text a {
+  color: var(--text-link);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(56, 189, 248, 0.35);
+}
+.maker-text a:hover { color: var(--accent-cyan); border-bottom-color: currentColor; }
