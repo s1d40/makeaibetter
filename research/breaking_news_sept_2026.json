@@ -1,0 +1,146 @@
+[
+  {
+    "id": "news-2026-09-20",
+    "date": "2026-09-20",
+    "title": "Google Unveils Gemini 3.8 Live with Extended Thinking and Native World Model Capabilities",
+    "title_pt": "Google Revela Gemini 3.8 Live com Raciocínio Estendido e Modelo de Mundo Nativo",
+    "category": "Frontier Models",
+    "category_pt": "Modelos de Fronteira",
+    "impact": "Crucial",
+    "summary": "Google DeepMind announced Gemini 3.8 Live, combining sub-100ms real-time multimodal perception with dynamic 'Extended Thinking' reasoning heads capable of multi-million token context recall.",
+    "summary_pt": "A Google DeepMind anunciou o Gemini 3.8 Live, unindo percepção multimodal em tempo real (abaixo de 100ms) a 'Raciocínio Estendido' dinâmico capaz de recordar e raciocinar sobre milhões de tokens.",
+    "tags": ["Google", "Multimodal", "System-2", "Gemini 3.8"],
+    "metrics": {
+      "SWE-bench Verified": "82.4%",
+      "FrontierMath": "41.6%",
+      "Latency": "< 90ms"
+    },
+    "link": "#"
+  },
+  {
+    "id": "news-2026-09-18",
+    "date": "2026-09-18",
+    "title": "OpenAI Introduces GPT-6 Astra & Next-Gen o3 Reasoning Engine for Complex Automation",
+    "title_pt": "OpenAI Apresenta GPT-6 Astra e Motor de Raciocínio o3 para Automação Complexa",
+    "category": "Reasoning & Compute",
+    "category_pt": "Raciocínio & Computação",
+    "impact": "Crucial",
+    "summary": "GPT-6 Astra introduces an adaptive test-time compute allocator that dynamically increases inference budget on hard engineering tasks, setting new state-of-the-art results across complex problem solving.",
+    "summary_pt": "O GPT-6 Astra introduz um alocador adaptativo de computação de inferência que aumenta dinamicamente o tempo de reflexão em tarefas complexas de engenharia, batendo recordes globais.",
+    "tags": ["OpenAI", "GPT-6", "o3", "Inference Scaling"],
+    "metrics": {
+      "AIME 2026": "96.8%",
+      "CodeForces ELO": "2480",
+      "Dynamic Thinking": "Adaptive"
+    },
+    "link": "#"
+  },
+  {
+    "id": "news-2026-09-14",
+    "date": "2026-09-14",
+    "title": "Anthropic Claude 5.1 Fable Demonstrates 48-Hour Autonomous Codebase Refactoring",
+    "title_pt": "Anthropic Claude 5.1 Fable Demonstra Refatoração Autônoma de 48 Horas em Grandes Codebases",
+    "category": "Autonomous Agents",
+    "category_pt": "Agentes Autônomos",
+    "impact": "High",
+    "summary": "Claude 5.1 Fable showcases verified multi-agent hierarchy capable of end-to-end bug isolation, reproduction script creation, and zero-regression refactoring across million-line repositories.",
+    "summary_pt": "Claude 5.1 Fable demonstra hierarquia multi-agente verificada capaz de isolar bugs, criar scripts de reprodução e refatorar repositórios de milhões de linhas sem regressões.",
+    "tags": ["Anthropic", "Claude 5.1", "Agents", "Software Engineering"],
+    "metrics": {
+      "SWE-bench Pro": "79.1%",
+      "Steerability": "99.4%",
+      "Context Window": "1M tokens"
+    },
+    "link": "#"
+  },
+  {
+    "id": "news-2026-09-08",
+    "date": "2026-09-08",
+    "title": "DeepSeek V4 Open-Weights Release: SOTA Reasoning Architecture on Consumer Clusters",
+    "title_pt": "DeepSeek Lança V4 em Pesos Abertos: Arquitetura de Raciocínio SOTA para Clusters Acessíveis",
+    "category": "Open Weights",
+    "category_pt": "Pesos Abertos",
+    "impact": "Crucial",
+    "summary": "DeepSeek V4 releases fully open weights with native Mixture-of-Experts and integrated reasoning tokens, providing near-frontier performance at 1/10th the inference cost of proprietary APIs.",
+    "summary_pt": "DeepSeek V4 é lançado com pesos abertos, arquitetura MoE nativa e tokens de raciocínio integrados, entregando desempenho de ponta a uma fração do custo de APIs proprietárias.",
+    "tags": ["DeepSeek", "Open Weights", "MoE", "Open Science"],
+    "metrics": {
+      "Math Benchmark": "91.2%",
+      "Cost Efficiency": "10x Lower",
+      "License": "Permissive Open"
+    },
+    "link": "#"
+  },
+  {
+    "id": "news-2026-08-28",
+    "date": "2026-08-28",
+    "title": "EU AI Act Enters Full Operational Phase: Standardized Audits and Red-Teaming for Systemic Models",
+    "title_pt": "Lei de IA da União Europeia Entra em Fase Operacional Plena: Auditorias e Red-Teaming Obrigatórios",
+    "category": "Safety & Governance",
+    "category_pt": "Segurança & Governança",
+    "impact": "High",
+    "summary": "Regulatory frameworks in Europe now mandate rigorous third-party red-teaming, energy consumption transparency, and provenance watermarking for all models exceeding 10^26 FLOPs.",
+    "summary_pt": "Regulamentação europeia passa a exigir testes de segurança independentes, transparência energética e marcas d'água de proveniência para modelos com mais de 10^26 FLOPs.",
+    "tags": ["Policy", "EU AI Act", "Safety", "Governance"],
+    "metrics": {
+      "Compliance Threshold": "> 10^26 FLOPs",
+      "Audited Labs": "18 Labs",
+      "Global Impact": "Worldwide Standard"
+    },
+    "link": "#"
+  },
+  {
+    "id": "news-2026-08-15",
+    "date": "2026-08-15",
+    "title": "The Global Pacing Coalition: Frontier Labs Agree on Capability-Alignment Checkpoints",
+    "title_pt": "Coalizão Global de 'Pacing': Laboratórios de Fronteira Acordam Checkpoints de Alinhamento",
+    "category": "Safety & Governance",
+    "category_pt": "Segurança & Governança",
+    "impact": "High",
+    "summary": "Over 50 research institutions and industry leaders align on voluntary pre-deployment scaling pauses if safety evaluation benchmarks detect unverified autonomous agent self-proliferation.",
+    "summary_pt": "Mais de 50 instituições de pesquisa e líderes da indústria alinham pausas voluntárias de escalabilidade caso benchmarks de segurança detectem riscos de auto-proliferação autônoma.",
+    "tags": ["AI Alignment", "Pacing", "Safety", "Consortium"],
+    "metrics": {
+      "Signatory Labs": "52 Organizations",
+      "Eval Framework": "Open Standard",
+      "Target Year": "2026-2028"
+    },
+    "link": "#"
+  },
+  {
+    "id": "news-2026-08-01",
+    "date": "2026-08-01",
+    "title": "Moonshot Kimi K3 Sets New Standard in Long-Horizon Autonomous Literature Synthesis",
+    "title_pt": "Moonshot Kimi K3 Estabelece Novo Padrão em Síntese Autônoma de Literatura Científica",
+    "category": "Frontier Models",
+    "category_pt": "Modelos de Fronteira",
+    "impact": "Medium",
+    "summary": "Kimi K3 integrates dynamic recursive summarization capable of parsing over 10,000 academic papers simultaneously, cross-verifying citations and identifying breakthrough research intersections.",
+    "summary_pt": "O Kimi K3 integra sumarização recursiva dinâmica capaz de analisar mais de 10.000 artigos acadêmicos simultaneamente, validando citações e cruzando dados de pesquisa.",
+    "tags": ["Kimi K3", "Academic AI", "Deep Search", "Long Context"],
+    "metrics": {
+      "Paper Synthesis": "10k+ Papers",
+      "Fact-check Precision": "99.1%",
+      "Speed": "4.5x faster"
+    },
+    "link": "#"
+  },
+  {
+    "id": "news-2026-07-20",
+    "date": "2026-07-20",
+    "title": "FrontierMath Benchmark V2 Reveals Real Progress in Automated Theorem Proving",
+    "title_pt": "Benchmark FrontierMath V2 Revela Avanço Real em Prova Automatizada de Teoremas",
+    "category": "Reasoning & Compute",
+    "category_pt": "Raciocínio & Computação",
+    "impact": "High",
+    "summary": "New contamination-proof mathematical benchmark with verifiable Lean 4 proofs shows top reasoning models solving over 40% of unsolved graduate-level math challenge subsets.",
+    "summary_pt": "Novo benchmark matemático à prova de contaminação com verificação formal em Lean 4 mostra modelos de raciocínio resolvendo mais de 40% de desafios de pós-graduação.",
+    "tags": ["Math AI", "Lean 4", "Formal Verification", "System-2"],
+    "metrics": {
+      "Top Model Score": "42.8%",
+      "Lean 4 Verified": "100%",
+      "Human Baseline": "28.5%"
+    },
+    "link": "#"
+  }
+]
