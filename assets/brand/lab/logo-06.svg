@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="512" height="512" role="img" aria-label="Make AI Better">
+  <title>Make AI Better</title>
+  <defs>
+    <linearGradient id="g" x1="4" y1="2" x2="28" y2="30" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#00f0ff"/><stop offset=".5" stop-color="#8a2be2"/><stop offset="1" stop-color="#00ff88"/>
+    </linearGradient>
+    <linearGradient id="c" x1="12" y1="12" x2="20" y2="20" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#00f0ff"/><stop offset="1" stop-color="#00ff88"/>
+    </linearGradient>
+  </defs>
+  <path d="M10 5.61L22 5.61L28 16L22 26.39L10 26.39L4 16" fill="none" stroke="url(#g)" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M21.25 6.91L26.5 16L21.25 25.09L10.75 25.09L5.5 16L10.75 6.91Z" fill="none" stroke="#00f0ff" stroke-opacity=".62" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M16 10.75L21.25 16L16 21.25L10.75 16Z" fill="url(#c)"/>
+</svg>

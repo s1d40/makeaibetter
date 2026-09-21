@@ -190,3 +190,32 @@ mas o celular mostra só os 1546×423 centrais; todo texto está dentro dessa fa
 
 Space Grotesk 800 para o wordmark, JetBrains Mono 400 para a linha de apoio.
 Ambas no Google Fonts, as mesmas do site.
+
+## Laboratório de variantes
+
+`node tools/logo-lab.mjs --n=16 --seed=3 --sheet` gera variações a partir de uma
+grade fechada de parâmetros (casca, nós, ligação, núcleo, rotação, traço) com
+semente determinística. A paleta é sempre a da marca, então toda variante nasce
+dentro da identidade — muda a geometria, não a cor.
+
+Saída em `assets/brand/lab/`: um SVG por variante, `contact-sheet.png` para
+comparar lado a lado e `legibility.png` com cada marca renderizada a 32, 48, 64
+e 96 px dentro de um corte circular.
+
+### O que a folha de legibilidade mostrou
+
+O teste que decide uma marca não é a folha de contato — é a coluna de 32 px,
+tamanho de favicon e de avatar em lista de comentários.
+
+| Variante | 32 px |
+|---|---|
+| 06 hexágono + losango | Mais limpa do conjunto, silhueta inconfundível |
+| 04, 10, 11, 07 | Legíveis, com identidades distintas |
+| 09 | Legível, mas lê como botão de play — muda a mensagem |
+| 01, 03, 08, 12, 16 | Viram borrão: detalhe interno demais |
+| 14, 15 | Lêem como símbolo da paz |
+| **13 (marca atual)** | **Empasta**: seis raios mais anel mais núcleo é denso demais |
+
+A marca atual funciona bem a partir de 64 px, que é o tamanho na navbar. Para
+favicon e avatar pequeno, vale usar `logo-mono.svg` ou adotar uma variante mais
+enxuta. Trocar a marca principal é decisão de marca, não técnica.
