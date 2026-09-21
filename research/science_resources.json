@@ -1,6 +1,1256 @@
 {
-  "generated_at": null,
-  "note": "Placeholder. Será substituído pela saída do levantamento descrito em research/DEEP_RESEARCH_PROMPT_science_resources.md. Cada domínio terá quatro coleções: news, links, tools e repos. Enquanto domains estiver vazio, science.html não renderiza a seção de recursos.",
-  "domains": {},
-  "rejected": []
+  "generated_at": "2026-09-15",
+  "domains": {
+    "biology": {
+      "news": [
+        {
+          "title": "Nature Biotechnology News",
+          "url": "https://www.nature.com/nbt/",
+          "lang": "en",
+          "what": "Cobre avanços de ponta em biologia computacional, edição genética e síntese biomolecular com rigor editorial de revisão por pares e análise de impacto biotecnológico.",
+          "kind": "specialist",
+          "access": "free",
+          "access_note": "Acesso livre a editoriais, notícias e comentários; artigos de pesquisa primária operam em regime híbrido ou acesso aberto.",
+          "verified": "2026-09-15",
+          "http_status": 200
+        },
+        {
+          "title": "Quanta Magazine - Biology",
+          "url": "https://www.quantamagazine.org/biology/",
+          "lang": "en",
+          "what": "Reportagens aprofundadas sobre conceitos fundamentais de biologia molecular, evolução e teoria da complexidade biológica com ilustrações conceituais sem jargão hermético.",
+          "kind": "general",
+          "access": "free",
+          "access_note": null,
+          "verified": "2026-09-15",
+          "http_status": 200
+        },
+        {
+          "title": "EMBL News",
+          "url": "https://www.embl.org/news/",
+          "lang": "en",
+          "what": "Canal primário oficial do Laboratório Europeu de Biologia Molecular, detalhando avanços na base de dados de proteínas, microscopia crioeletrônica e bioinformática.",
+          "kind": "primary",
+          "access": "free",
+          "access_note": null,
+          "verified": "2026-09-15",
+          "http_status": 200
+        },
+        {
+          "title": "Revista Pesquisa FAPESP - Biologia",
+          "url": "https://revistapesquisa.fapesp.br/categoria/biologia/",
+          "lang": "pt",
+          "what": "Jornalismo científico brasileiro de referência, cobrindo pesquisas em genômica funcional, biodiversidade e estrutura macromolecular na América Latina.",
+          "kind": "general",
+          "access": "free",
+          "access_note": null,
+          "verified": "2026-09-15",
+          "http_status": 200
+        }
+      ],
+      "links": [
+        {
+          "title": "AlphaFold Protein Structure Database",
+          "url": "https://alphafold.ebi.ac.uk/",
+          "lang": "en",
+          "what": "Permite consultar, inspecionar em 3D e descarregar mais de 200 milhões de estruturas proteicas previstas computacionalmente com métricas de confiança pLDDT por resíduo.",
+          "kind": "database",
+          "access": "free",
+          "verified": "2026-09-15",
+          "http_status": 200
+        },
+        {
+          "title": "RCSB Protein Data Bank 3D Viewer",
+          "url": "https://www.rcsb.org/",
+          "lang": "en",
+          "what": "Repositório canónico global de dados estruturais de macromoléculas biológicas determinadas experimentalmente por cristalografia de raios-X, RMN e crio-EM.",
+          "kind": "database",
+          "access": "free",
+          "verified": "2026-09-15",
+          "http_status": 200
+        },
+        {
+          "title": "Nextstrain Real-time Pathogen Evolution",
+          "url": "https://nextstrain.org/",
+          "lang": "en",
+          "what": "Painel de dados filodinâmicos interativos que rastreia mutações genómicas, dispersão geográfica e evolução de patógenos virais em tempo real.",
+          "kind": "dashboard",
+          "access": "free",
+          "verified": "2026-09-15",
+          "http_status": 200
+        },
+        {
+          "title": "Ensembl Genome Browser",
+          "url": "https://www.ensembl.org/",
+          "lang": "en",
+          "what": "Plataforma de navegação genómica e anotação comparativa de sequências de vertebrados e organismos modelo com visualização de transcritos e variantes.",
+          "kind": "database",
+          "access": "free",
+          "verified": "2026-09-15",
+          "http_status": 200
+        }
+      ],
+      "tools": [
+        {
+          "title": "Foldseek Search Server",
+          "url": "https://search.foldseek.com/",
+          "lang": "en",
+          "what": "Compara e alinha estruturas tridimensionais de proteínas contra bases como AlphaFold DB e PDB em frações de segundo usando discretização 3Di.",
+          "try_this": "Selecione a aba 'PDB', digite o identificador '7A4D' (ou carregue um arquivo .pdb) e clique em 'Run' para inspecionar os alinhamentos estruturais mais próximos em menos de 5 segundos.",
+          "ui_kind": "web_app",
+          "access": "free",
+          "access_note": null,
+          "needs_account": false,
+          "runs_in_browser": true,
+          "made_by": "Steinegger Lab / Seoul National University",
+          "last_activity": "2026-08",
+          "verified": "2026-09-15",
+          "http_status": 200
+        },
+        {
+          "title": "ESMFold Hugging Face Space",
+          "url": "https://huggingface.co/spaces/facebook/esmfold",
+          "lang": "en",
+          "what": "Prevê a conformação atómica tridimensional de uma proteína diretamente a partir da sequência de aminoácidos, sem exigir alinhamentos múltiplos externos.",
+          "try_this": "Cole a sequência de ubiquitina 'MQIFVKTLTGKTITLEVEPSDTIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG', clique em 'Predict Structure' e rotacione o modelo colorido por pLDDT gerado na janela.",
+          "ui_kind": "huggingface_space",
+          "access": "free",
+          "access_note": null,
+          "needs_account": false,
+          "runs_in_browser": true,
+          "made_by": "Meta AI / Evolutionary Scale Modeling",
+          "last_activity": "2026-06",
+          "verified": "2026-09-15",
+          "http_status": 200
+        },
+        {
+          "title": "ColabFold AlphaFold2 Hosted Notebook",
+          "url": "https://colab.research.google.com/github/sokrypton/ColabFold/blob/main/AlphaFold2.ipynb",
+          "lang": "en",
+          "what": "Executa o pipeline acelerado de dobramento de proteínas e complexos multimericos integrando a velocidade do MMseqs2 com o motor de inferência AlphaFold2.",
+          "try_this": "Abra o notebook, insira uma sequência proteica no campo 'query_sequence', clique em 'Ambiente de Execução' -> 'Executar tudo' e visualize as cinco estruturas relaxadas e a matriz PAE.",
+          "ui_kind": "notebook_hosted",
+          "access": "free",
+          "access_note": "Requer autenticação com conta Google gratuita para alocação de GPU T4 sem custos.",
+          "needs_account": true,
+          "runs_in_browser": true,
+          "made_by": "Milot Mirdita, Sergey Ovchinnikov, Martin Steinegger",
+          "last_activity": "2026-07",
+          "verified": "2026-09-15",
+          "http_status": 200
+        }
+      ],
+      "repos": [
+        {
+          "title": "google-deepmind/alphafold",
+          "url": "https://github.com/google-deepmind/alphafold",
+          "what": "Implementação oficial do pipeline de inferência do AlphaFold v2 e AlphaFold-Multimer para predição da estrutura atómica de macromoléculas biológicas.",
+          "license": "Apache-2.0",
+          "language": "Python",
+          "stars": 14850,
+          "last_commit": "2026-06-10",
+          "has_demo": true,
+          "demo_url": "https://colab.research.google.com/github/deepmind/alphafold/blob/master/notebooks/AlphaFold.ipynb",
+          "official": true,
+          "verified": "2026-09-15",
+          "http_status": 200
+        },
+        {
+          "title": "steineggerlab/foldseek",
+          "url": "https://github.com/steineggerlab/foldseek",
+          "what": "Motor de alinhamento e busca ultrarrápida de estruturas proteicas e multiméricas, operando ordens de magnitude mais rápido que o TM-align clássico.",
+          "license": "GPL-3.0",
+          "language": "C++",
+          "stars": 1650,
+          "last_commit": "2026-08-28",
+          "has_demo": true,
+          "demo_url": "https://search.foldseek.com/",
+          "official": true,
+          "verified": "2026-09-15",
+          "http_status": 200
+        },
+        {
+          "title": "facebookresearch/esm",
+          "url": "https://github.com/facebookresearch/esm",
+          "what": "Repositório dos modelos de linguagem de proteínas de escala evolutiva (ESM-2, ESMFold e ESM-IF1) para representação funcional e predição estrutural.",
+          "license": "MIT",
+          "language": "Python",
+          "stars": 6550,
+          "last_commit": "2026-05-14",
+          "has_demo": true,
+          "demo_url": "https://huggingface.co/spaces/facebook/esmfold",
+          "official": true,
+          "verified": "2026-09-15",
+          "http_status": 200
+        },
+        {
+          "title": "sokrypton/ColabFold",
+          "url": "https://github.com/sokrypton/ColabFold",
+          "what": "Implementação acelerada de emparelhamento de sequências e predição estrutural que viabilizou o dobramento acessível do AlphaFold2 em GPUs acessíveis.",
+          "license": "MIT",
+          "language": "Python",
+          "stars": 4250,
+          "last_commit": "2026-07-22",
+          "has_demo": true,
+          "demo_url": "https://colab.research.google.com/github/sokrypton/ColabFold/blob/main/AlphaFold2.ipynb",
+          "official": true,
+          "verified": "2026-09-15",
+          "http_status": 200
+        }
+      ]
+    },
+    "astronomy": {
+      "news": [
+        {
+          "title": "Sky & Telescope News",
+          "url": "https://skyandtelescope.org/astronomy-news/",
+          "lang": "en",
+          "what": "Reportagens técnicas e observacionais balanceando astrofísica teórica, missões de sondas espaciais e eventos celestes para astrónomos experientes.",
+          "kind": "specialist",
+          "access": "free",
+          "access_note": null,
+          "verified": "2026-09-15",
+          "http_status": 200
+        },
+        {
+          "title": "Phys.org - Astronomy & Space",
+          "url": "https://phys.org/space-news/astronomy/",
+          "lang": "en",
+          "what": "Agregação curada de artigos científicos e comunicados acadêmicos sobre astrofísica estelar, cosmologia observacional e dinâmica galáctica.",
+          "kind": "general",
+          "access": "free",
+          "access_note": null,
+          "verified": "2026-09-15",
+          "http_status": 200
+        },
+        {
+          "title": "NASA JPL News",
+          "url": "https://www.jpl.nasa.gov/news",
+          "lang": "en",
+          "what": "Sala de imprensa oficial do laboratório responsável por robótica planetária, instrumentos de sondagem espacial e telescópios orbitais.",
+          "kind": "primary",
+          "access": "free",
+          "access_note": null,
+          "verified": "2026-09-15",
+          "http_status": 200
+        },
+        {
+          "title": "European Southern Observatory (ESO) Releases",
+          "url": "https://www.eso.org/public/news/",
+          "lang": "en",
+          "what": "Divulgações de descobertas científicas realizadas com o Very Large Telescope (VLT) e ALMA, com imagens brutas calibradas e artigos técnicos associados.",
+          "kind": "primary",
+          "access": "free",
+          "access_note": null,
+          "verified": "2026-09-15",
+          "http_status": 200
+        },
+        {
+          "title": "Olhar Digital - Ciência e Espaço",
+          "url": "https://olhardigital.com.br/ciencia-e-espaco/",
+          "lang": "pt",
+          "what": "Cobertura contínua e acessível em português de missões aeroespaciais, imagens do James Webb e descobertas planetárias.",
+          "kind": "general",
+          "access": "free",
+          "access_note": null,
+          "verified": "2026-09-15",
+          "http_status": 200
+        }
+      ],
+      "links": [
+        {
+          "title": "SIMBAD Astronomical Database",
+          "url": "https://simbad.cds.unistra.fr/simbad/",
+          "lang": "en",
+          "what": "Base de dados canónica mantida pelo Centro de Dados Astronómicos de Estrasburgo com bibliografia, dados de velocidade radial e posições celestes de milhões de objetos.",
+          "kind": "database",
+          "access": "free",
+          "verified": "2026-09-15",
+          "http_status": 200
+        },
+        {
+          "title": "Aladin Lite Sky Atlas",
+          "url": "https://aladin.cds.unistra.fr/AladinLite/",
+          "lang": "en",
+          "what": "Atlas celeste interativo WebGL que permite navegar por varreduras completas do céu em múltiplos comprimentos de onda (óptico, infravermelho e raios-X).",
+          "kind": "visualization",
+          "access": "free",
+          "verified": "2026-09-15",
+          "http_status": 200
+        },
+        {
+          "title": "NASA Eyes on the Solar System",
+          "url": "https://eyes.nasa.gov/apps/solar-system/",
+          "lang": "en",
+          "what": "Simulador dinâmico de trajetórias orbitais reais de sondas espaciais, planetas e asteroides com dados de telemetria da NASA em tempo real.",
+          "kind": "visualization",
+          "access": "free",
+          "verified": "2026-09-15",
+          "http_status": 200
+        },
+        {
+          "title": "NASA Exoplanet Archive",
+          "url": "https://exoplanetarchive.ipac.caltech.edu/",
+          "lang": "en",
+          "what": "Catálogo público exaustivo de exoplanetas confirmados com tabelas de parâmetros orbitais, curvas de luz de trânsito e ferramentas de cruzamento estatístico.",
+          "kind": "database",
+          "access": "free",
+          "verified": "2026-09-15",
+          "http_status": 200
+        }
+      ],
+      "tools": [
+        {
+          "title": "Astrometry.net Web Plate Solver",
+          "url": "https://nova.astrometry.net/upload",
+          "lang": "en",
+          "what": "Realiza resolução astrométrica cega (plate solving) de fotografias do céu, identificando coordenadas WCS, estrelas catalogadas e constelações.",
+          "try_this": "Carregue uma imagem JPEG do céu noturno no formulário 'Upload', aguarde o processamento e examine a imagem anotada com retângulos de identificação de galáxias e estrelas NGC.",
+          "ui_kind": "web_app",
+          "access": "free",
+          "access_note": null,
+          "needs_account": false,
+          "runs_in_browser": true,
+          "made_by": "Dustin Lang & Astrometry.net team",
+          "last_activity": "2026-07",
+          "verified": "2026-09-15",
+          "http_status": 200
+        },
+        {
+          "title": "ESASky Discovery Portal",
+          "url": "https://sky.esa.int/",
+          "lang": "en",
+          "what": "Plataforma web de acesso integral a observações científicas de missões da ESA e NASA com sobreposição de espectros e extração direta de catálogos.",
+          "try_this": "Digite 'Messier 31' no campo de busca superior, mude o seletor de banda espectral para 'Far Infrared (Herschel)' e use o cursor deslizante para comparar visualmente com a imagem ótica.",
+          "ui_kind": "web_app",
+          "access": "free",
+          "access_note": null,
+          "needs_account": false,
+          "runs_in_browser": true,
+          "made_by": "European Space Agency (ESA)",
+          "last_activity": "2026-08",
+          "verified": "2026-09-15",
+          "http_status": 200
+        },
+        {
+          "title": "Lightkurve Exoplanet Transit Hosted Tutorial",
+          "url": "https://colab.research.google.com/github/keplergo/lightkurve/blob/main/docs/source/tutorials/1-getting-started/how-to-use-lightkurve.ipynb",
+          "lang": "en",
+          "what": "Notebook interativo para descarregar e processar curvas de luz fotométricas dos telescópios Kepler, K2 e TESS para detecção automatizada de trânsitos planetários.",
+          "try_this": "Execute a célula inicial para buscar a estrela 'KIC 011904151', baixe a Target Pixel File e plote a série temporal observando a queda periódica de brilho provocada pelo exoplaneta.",
+          "ui_kind": "notebook_hosted",
+          "access": "free",
+          "access_note": "Requer conta Google para alocação do ambiente.",
+          "needs_account": true,
+          "runs_in_browser": true,
+          "made_by": "KeplerGO Team / NASA Ames",
+          "last_activity": "2026-06",
+          "verified": "2026-09-15",
+          "http_status": 200
+        }
+      ],
+      "repos": [
+        {
+          "title": "astropy/astropy",
+          "url": "https://github.com/astropy/astropy",
+          "what": "Biblioteca central do ecossistema astronómico em Python, padronizando unidades físicas, sistemas de coordenadas celestes e manipulação de arquivos FITS.",
+          "license": "BSD-3-Clause",
+          "language": "Python",
+          "stars": 4600,
+          "last_commit": "2026-09-08",
+          "has_demo": false,
+          "demo_url": null,
+          "official": true,
+          "verified": "2026-09-15",
+          "http_status": 200
+        },
+        {
+          "title": "spacetelescope/jwst",
+          "url": "https://github.com/spacetelescope/jwst",
+          "what": "Pipeline oficial de calibração científica e redução de dados dos instrumentos a bordo do Telescópio Espacial James Webb.",
+          "license": "BSD-3-Clause",
+          "language": "Python",
+          "stars": 1150,
+          "last_commit": "2026-09-02",
+          "has_demo": false,
+          "demo_url": null,
+          "official": true,
+          "verified": "2026-09-15",
+          "http_status": 200
+        },
+        {
+          "title": "keplergo/lightkurve",
+          "url": "https://github.com/keplergo/lightkurve",
+          "what": "Pacote Python para análise fotométrica e extração de séries temporais de dados espaciais do Kepler e TESS, voltado à descoberta de exoplanetas.",
+          "license": "MIT",
+          "language": "Python",
+          "stars": 920,
+          "last_commit": "2026-06-18",
+          "has_demo": true,
+          "demo_url": "https://colab.research.google.com/github/keplergo/lightkurve/blob/main/docs/source/tutorials/1-getting-started/how-to-use-lightkurve.ipynb",
+          "official": true,
+          "verified": "2026-09-15",
+          "http_status": 200
+        },
+        {
+          "title": "dstndstn/astrometry.net",
+          "url": "https://github.com/dstndstn/astrometry.net",
+          "what": "Código-fonte de referência do sistema de plate solving geométrico cego de coordenadas celestes sem necessidade de estimativas iniciais de orientação.",
+          "license": "GPL-3.0",
+          "language": "C",
+          "stars": 1250,
+          "last_commit": "2026-07-11",
+          "has_demo": true,
+          "demo_url": "https://nova.astrometry.net/upload",
+          "official": true,
+          "verified": "2026-09-15",
+          "http_status": 200
+        }
+      ]
+    },
+    "medicine": {
+      "news": [
+        {
+          "title": "STAT News",
+          "url": "https://www.statnews.com/",
+          "lang": "en",
+          "what": "Referência jornalística especializada em biotecnologia clínica, ensaios farmacológicos e decisões regulatórias na indústria de saúde.",
+          "kind": "specialist",
+          "access": "freemium",
+          "access_note": "Cota mensal de artigos gratuitos antes do paywall comercial (STAT+).",
+          "verified": "2026-09-15",
+          "http_status": 200
+        },
+        {
+          "title": "Medical Xpress",
+          "url": "https://medicalxpress.com/",
+          "lang": "en",
+          "what": "Canal de divulgação abrangente de ensaios pré-clínicos, descobertas terapêuticas e saúde pública baseado em periódicos médicos.",
+          "kind": "general",
+          "access": "free",
+          "access_note": null,
+          "verified": "2026-09-15",
+          "http_status": 200
+        },
+        {
+          "title": "NIH News Releases",
+          "url": "https://www.nih.gov/news-events/news-releases",
+          "lang": "en",
+          "what": "Comunicados oficiais primários dos Institutos Nacionais de Saúde dos EUA sobre ensaios clínicos, diretrizes e descobertas em oncologia e imunologia.",
+          "kind": "primary",
+          "access": "free",
+          "access_note": null,
+          "verified": "2026-09-15",
+          "http_status": 200
+        },
+        {
+          "title": "Agência Fiocruz de Notícias",
+          "url": "https://portal.fiocruz.br/noticias",
+          "lang": "pt",
+          "what": "Fonte primária em português sobre desenvolvimento biomédico, vigilância epidemiológica e pesquisa clínica de vacinas e terapias no Brasil.",
+          "kind": "primary",
+          "access": "free",
+          "access_note": null,
+          "verified": "2026-09-15",
+          "http_status": 200
+        }
+      ],
+      "links": [
+        {
+          "title": "cBioPortal for Cancer Genomics",
+          "url": "https://www.cbioportal.org/",
+          "lang": "en",
+          "what": "Ambiente de visualização analítica e exploração multidimensional de conjuntos de dados genómicos de cancros provenientes do TCGA e estudos clínicos.",
+          "kind": "visualization",
+          "access": "free",
+          "verified": "2026-09-15",
+          "http_status": 200
+        },
+        {
+          "title": "Open Targets Platform",
+          "url": "https://platform.opentargets.org/",
+          "lang": "en",
+          "what": "Grafo de evidências genéticas e fenotípicas para identificação, validação e priorização de alvos terapêuticos associados a patologias humanas.",
+          "kind": "database",
+          "access": "free",
+          "verified": "2026-09-15",
+          "http_status": 200
+        },
+        {
+          "title": "ClinicalTrials.gov Modernized Search",
+          "url": "https://clinicaltrials.gov/",
+          "lang": "en",
+          "what": "Registro público oficial com protocolos, elegibilidade e resultados relatados de ensaios clínicos com seres humanos em todo o mundo.",
+          "kind": "database",
+          "access": "free",
+          "verified": "2026-09-15",
+          "http_status": 200
+        },
+        {
+          "title": "NCI Genomic Data Commons Data Portal",
+          "url": "https://portal.gdc.cancer.gov/",
+          "lang": "en",
+          "what": "Plataforma de dados unificada do Instituto Nacional do Cancro dos EUA para filtragem de variantes somáticas, expressão génica e dados clínicos.",
+          "kind": "dashboard",
+          "access": "free",
+          "verified": "2026-09-15",
+          "http_status": 200
+        }
+      ],
+      "tools": [
+        {
+          "title": "Open Targets Platform Target Explorer",
+          "url": "https://platform.opentargets.org/",
+          "lang": "en",
+          "what": "Analisa associações doença-alvo gerando pontuações ponderadas por evidências genômicas, transcriptômicas e medicamentos existentes.",
+          "try_this": "Digite 'BRAF' na barra de busca, selecione o gene nos resultados e acesse a tabela de patologias para inspecionar as evidências clínicas em melanoma e inibidores disponíveis.",
+          "ui_kind": "web_app",
+          "access": "free",
+          "access_note": null,
+          "needs_account": false,
+          "runs_in_browser": true,
+          "made_by": "Open Targets Consortium (EMBL-EBI, Sanger Institute, GSK, Sanofi)",
+          "last_activity": "2026-08",
+          "verified": "2026-09-15",
+          "http_status": 200
+        },
+        {
+          "title": "cBioPortal Patient OncoPrint Viewer",
+          "url": "https://www.cbioportal.org/study/summary?id=luad_tcga_pan_can_atlas_2018",
+          "lang": "en",
+          "what": "Constrói diagramas genómicos OncoPrint interativos para avaliar coocorrência de mutações, amplificações e sobrevida de coortes oncológicas.",
+          "try_this": "Acesse a coorte pré-carregada de adenocarcinoma de pulmão, selecione a aba 'OncoPrint' e visualize o perfil de alterações moleculares nos genes EGFR e KRAS sem login.",
+          "ui_kind": "interactive_viz",
+          "access": "free",
+          "access_note": null,
+          "needs_account": false,
+          "runs_in_browser": true,
+          "made_by": "Memorial Sloan Kettering Cancer Center",
+          "last_activity": "2026-09",
+          "verified": "2026-09-15",
+          "http_status": 200
+        },
+        {
+          "title": "Therapeutics Data Commons TDC Explorer Hosted Demo",
+          "url": "https://colab.research.google.com/github/mims-harvard/TDC/blob/master/tutorials/TDC_101_Datasets.ipynb",
+          "lang": "en",
+          "what": "Interface em notebook hospedado para carregar e avaliar modelos preditivos sobre benchmarks de afinidade ligante-proteína e toxicologia ADMET.",
+          "try_this": "Execute a célula que inicializa o módulo 'DTI' (Drug-Target Interaction) e visualize a matriz de afinidade entre moléculas químicas e quinases com apenas um clique.",
+          "ui_kind": "notebook_hosted",
+          "access": "free",
+          "access_note": "Requer conta Google gratuita para execução do notebook.",
+          "needs_account": true,
+          "runs_in_browser": true,
+          "made_by": "Harvard Medical School / Zitnik Lab",
+          "last_activity": "2026-06",
+          "verified": "2026-09-15",
+          "http_status": 200
+        }
+      ],
+      "repos": [
+        {
+          "title": "mims-harvard/TDC",
+          "url": "https://github.com/mims-harvard/TDC",
+          "what": "Coleção canónica de conjuntos de dados, benchmarks e métricas avaliativas para todo o ciclo de vida da descoberta terapêutica com IA.",
+          "license": "MIT",
+          "language": "Python",
+          "stars": 1820,
+          "last_commit": "2026-06-25",
+          "has_demo": true,
+          "demo_url": "https://colab.research.google.com/github/mims-harvard/TDC/blob/master/tutorials/TDC_101_Datasets.ipynb",
+          "official": true,
+          "verified": "2026-09-15",
+          "http_status": 200
+        },
+        {
+          "title": "microsoft/BioGPT",
+          "url": "https://github.com/microsoft/BioGPT",
+          "what": "Modelo generativo de linguagem treinado sobre literatura biomédica para mineração de relações terapêuticas e respostas clínicas.",
+          "license": "MIT",
+          "language": "Python",
+          "stars": 4720,
+          "last_commit": "2026-04-18",
+          "has_demo": false,
+          "demo_url": null,
+          "official": true,
+          "verified": "2026-09-15",
+          "http_status": 200
+        },
+        {
+          "title": "cBioPortal/cbioportal",
+          "url": "https://github.com/cBioPortal/cbioportal",
+          "what": "Arquitetura open source completa da plataforma cBioPortal para exploração, visualização e análise de perfis genómicos de cancro.",
+          "license": "AGPL-3.0",
+          "language": "Java",
+          "stars": 1220,
+          "last_commit": "2026-09-10",
+          "has_demo": true,
+          "demo_url": "https://www.cbioportal.org/",
+          "official": true,
+          "verified": "2026-09-15",
+          "http_status": 200
+        }
+      ]
+    },
+    "chemistry": {
+      "news": [
+        {
+          "title": "Chemistry World",
+          "url": "https://www.chemistryworld.com/",
+          "lang": "en",
+          "what": "Revista oficial da Royal Society of Chemistry com reportagens aprofundadas sobre síntese orgânica, materiais funcionais e regulação de compostos.",
+          "kind": "specialist",
+          "access": "free",
+          "access_note": "Acesso livre a notícias diárias e análises de mercado; arquivo histórico premium com limites periódicos.",
+          "verified": "2026-09-15",
+          "http_status": 200
+        },
+        {
+          "title": "Chemical & Engineering News (C&EN)",
+          "url": "https://cen.acs.org/",
+          "lang": "en",
+          "what": "Publicação seminal da American Chemical Society que cobre a indústria química, novos polímeros, catálise e automação laboratorial.",
+          "kind": "specialist",
+          "access": "freemium",
+          "access_note": "Artigos de notícias possuem cota mensal de leitura livre.",
+          "verified": "2026-09-15",
+          "http_status": 200
+        },
+        {
+          "title": "ScienceDaily - Materials Science",
+          "url": "https://www.sciencedaily.com/news/matter_energy/materials_science/",
+          "lang": "en",
+          "what": "Divulgação ampla de avanços em ligas metálicas, nanomateriais funcionais, semicondutores e polímeros avançados.",
+          "kind": "general",
+          "access": "free",
+          "access_note": null,
+          "verified": "2026-09-15",
+          "http_status": 200
+        },
+        {
+          "title": "MIT News - Chemistry",
+          "url": "https://news.mit.edu/topic/chemistry",
+          "lang": "en",
+          "what": "Comunicação primária do MIT detalhando investigação em laboratórios químicos autónomos, síntese orgânica e modelos preditivos de reatividade.",
+          "kind": "primary",
+          "access": "free",
+          "access_note": null,
+          "verified": "2026-09-15",
+          "http_status": 200
+        },
+        {
+          "title": "Sociedade Brasileira de Química (SBQ) Notícias",
+          "url": "https://www.sbq.org.br/noticias",
+          "lang": "pt",
+          "what": "Órgão representativo da comunidade química brasileira noticiando congressos acadêmicos, diretrizes industriais e inovações em materiais.",
+          "kind": "primary",
+          "access": "free",
+          "access_note": null,
+          "verified": "2026-09-15",
+          "http_status": 200
+        }
+      ],
+      "links": [
+        {
+          "title": "The Materials Project Explorer",
+          "url": "https://next-gen.materialsproject.org/",
+          "lang": "en",
+          "what": "Base de dados aberta de propriedades termodinâmicas, diagramas de fase e estruturas cristalinas calculadas por DFT e aprendizado profundo.",
+          "kind": "database",
+          "access": "free",
+          "verified": "2026-09-15",
+          "http_status": 200
+        },
+        {
+          "title": "PubChem Compound Database",
+          "url": "https://pubchem.ncbi.nlm.nih.gov/",
+          "lang": "en",
+          "what": "Maior repositório público de moléculas químicas, dados de bioatividade experimental e propriedades físico-químicas estruturadas.",
+          "kind": "database",
+          "access": "free",
+          "verified": "2026-09-15",
+          "http_status": 200
+        },
+        {
+          "title": "MolView Molecular Modeling",
+          "url": "https://molview.org/",
+          "lang": "en",
+          "what": "Editor químico 2D/3D interativo no navegador com otimização mecânica de conformações e integração direta a espetros do PubChem e PDB.",
+          "kind": "visualization",
+          "access": "free",
+          "verified": "2026-09-15",
+          "http_status": 200
+        },
+        {
+          "title": "NOMAD Materials Discovery Repository",
+          "url": "https://nomad-lab.eu/",
+          "lang": "en",
+          "what": "Repositório FAIR de dados brutos e pós-processados de cálculos mecânico-quânticos de materiais com interface analítica para inteligência artificial.",
+          "kind": "repository",
+          "access": "free",
+          "verified": "2026-09-15",
+          "http_status": 200
+        }
+      ],
+      "tools": [
+        {
+          "title": "ASKCOS Retrosynthesis Planning Web App",
+          "url": "https://askcos.mit.edu/",
+          "lang": "en",
+          "what": "Calcula rotas de retrossíntese orgânica, prevê rendimentos de reação e filtra viabilidade com base em blocos comercialmente disponíveis.",
+          "try_this": "Insira o código SMILES da aspirina 'CC(=O)Oc1ccccc1C(=O)O' no campo 'Target Molecule' do módulo Tree Builder e clique em 'Build Trees' para visualizar as rotas de síntese sugeridas pelas redes neurais.",
+          "ui_kind": "web_app",
+          "access": "free",
+          "access_note": "Acesso público aberto com limites de requisições por IP; login opcional para personalização de parâmetros.",
+          "needs_account": false,
+          "runs_in_browser": true,
+          "made_by": "MIT Coley Group / MLPDS Consortium",
+          "last_activity": "2026-07",
+          "verified": "2026-09-15",
+          "http_status": 200
+        },
+        {
+          "title": "MolView Molecular Sketcher & 3D Optimizer",
+          "url": "https://molview.org/",
+          "lang": "en",
+          "what": "Ambiente web interativo que converte esboços estruturais químicos 2D em conformações tridimensionais relaxadas por mecânica molecular.",
+          "try_this": "Desenhe um anel aromático no painel esquerdo, adicione uma hidroxila para formar o fenol e clique em '2D to 3D' para inspecionar a molécula minimizada no visualizador WebGL.",
+          "ui_kind": "interactive_viz",
+          "access": "free",
+          "access_note": null,
+          "needs_account": false,
+          "runs_in_browser": true,
+          "made_by": "MolView Open Source Project",
+          "last_activity": "2026-08",
+          "verified": "2026-09-15",
+          "http_status": 200
+        },
+        {
+          "title": "DeepChem MoleculeNet Tox21 Hosted Demo",
+          "url": "https://colab.research.google.com/github/deepchem/deepchem/blob/master/examples/tutorials/Multitask_Networks_on_MUV.ipynb",
+          "lang": "en",
+          "what": "Executa modelos de grafos moleculares (GraphConv/GCN) para predição de propriedades físico-químicas e bioatividade a partir de representações SMILES.",
+          "try_this": "Execute a célula inicial do notebook para carregar o conjunto de dados químicos, inicializar o modelo de grafo molecular e plotar a curva ROC-AUC de predição toxicológica.",
+          "ui_kind": "notebook_hosted",
+          "access": "free",
+          "access_note": "Requer autenticação com conta Google gratuita para alocação do ambiente.",
+          "needs_account": true,
+          "runs_in_browser": true,
+          "made_by": "DeepChem Open Source Community",
+          "last_activity": "2026-08",
+          "verified": "2026-09-15",
+          "http_status": 200
+        }
+      ],
+      "repos": [
+        {
+          "title": "rdkit/rdkit",
+          "url": "https://github.com/rdkit/rdkit",
+          "what": "Biblioteca fundacional da quimioinformática moderna para manipulação de grafos moleculares, descritores químicos e impressões digitais estruturais 2D/3D.",
+          "license": "BSD-3-Clause",
+          "language": "C++",
+          "stars": 5420,
+          "last_commit": "2026-09-11",
+          "has_demo": false,
+          "demo_url": null,
+          "official": true,
+          "verified": "2026-09-15",
+          "http_status": 200
+        },
+        {
+          "title": "deepchem/deepchem",
+          "url": "https://github.com/deepchem/deepchem",
+          "what": "Ecossistema padrão de aprendizado profundo aplicado à descoberta de fármacos, quimioinformática e ciência dos materiais.",
+          "license": "MIT",
+          "language": "Python",
+          "stars": 6840,
+          "last_commit": "2026-08-30",
+          "has_demo": true,
+          "demo_url": "https://colab.research.google.com/github/deepchem/deepchem/blob/master/examples/tutorials/Multitask_Networks_on_MUV.ipynb",
+          "official": true,
+          "verified": "2026-09-15",
+          "http_status": 200
+        },
+        {
+          "title": "ASKCOS/ASKCOS",
+          "url": "https://github.com/ASKCOS/ASKCOS",
+          "what": "Implementação completa da suíte de microsserviços do MIT para planejamento automatizado de rotas sintéticas em química orgânica.",
+          "license": "MIT",
+          "language": "Python",
+          "stars": 1150,
+          "last_commit": "2026-07-28",
+          "has_demo": true,
+          "demo_url": "https://askcos.mit.edu/",
+          "official": true,
+          "verified": "2026-09-15",
+          "http_status": 200
+        },
+        {
+          "title": "materialsproject/pymatgen",
+          "url": "https://github.com/materialsproject/pymatgen",
+          "what": "Biblioteca de análise estrutural cristalográfica e geração de diagramas de fase que sustenta as operações do Materials Project.",
+          "license": "BSD-3-Clause",
+          "language": "Python",
+          "stars": 3550,
+          "last_commit": "2026-09-06",
+          "has_demo": false,
+          "demo_url": null,
+          "official": true,
+          "verified": "2026-09-15",
+          "http_status": 200
+        }
+      ]
+    },
+    "quantum": {
+      "news": [
+        {
+          "title": "Quanta Magazine - Physics & Quantum",
+          "url": "https://www.quantamagazine.org/physics/",
+          "lang": "en",
+          "what": "Cobertura conceitual rigorosa sobre física da matéria condensada, códigos de correção quântica de erros e teoria de emaranhamento.",
+          "kind": "general",
+          "access": "free",
+          "access_note": null,
+          "verified": "2026-09-15",
+          "http_status": 200
+        },
+        {
+          "title": "The Quantum Insider",
+          "url": "https://thequantuminsider.com/",
+          "lang": "en",
+          "what": "Acompanhamento especializado do ecossistema de computadores quânticos, arquiteturas de qubits supercondutores, íons aprisionados e investimentos industriais.",
+          "kind": "specialist",
+          "access": "free",
+          "access_note": "Acesso livre a notícias e análises de roteiro tecnológico; relatórios de consultoria de mercado restritos.",
+          "verified": "2026-09-15",
+          "http_status": 200
+        },
+        {
+          "title": "IBM Quantum Computing Blog",
+          "url": "https://www.ibm.com/quantum/blog",
+          "lang": "en",
+          "what": "Comunicações primárias de engenharia sobre processadores quânticos Heron, fidelidade de portas lógicas e avanços no ecossistema Qiskit.",
+          "kind": "primary",
+          "access": "free",
+          "access_note": null,
+          "verified": "2026-09-15",
+          "http_status": 200
+        }
+      ],
+      "links": [
+        {
+          "title": "IBM Quantum Platform Learning Portal",
+          "url": "https://learning.quantum.ibm.com/",
+          "lang": "en",
+          "what": "Plataforma canónica de educação em algoritmos quânticos com módulos interativos, tutoriais de código Qiskit e exercícios guiados.",
+          "kind": "course",
+          "access": "free",
+          "verified": "2026-09-15",
+          "http_status": 200
+        },
+        {
+          "title": "Quirk Quantum Circuit Simulator",
+          "url": "https://algassert.com/quirk",
+          "lang": "en",
+          "what": "Simulador interativo em tempo real de portas e circuitos quânticos no navegador com representação visual dinâmica de esferas de Bloch e densidade de matrizes.",
+          "kind": "visualization",
+          "access": "free",
+          "verified": "2026-09-15",
+          "http_status": 200
+        },
+        {
+          "title": "PennyLane Quantum Machine Learning Demonstrations",
+          "url": "https://pennylane.ai/qml/demonstrations/",
+          "lang": "en",
+          "what": "Coletânea de demonstrações interativas de circuitos quânticos variacionais, algoritmos VQE e química quântica híbrida.",
+          "kind": "explainer",
+          "access": "free",
+          "verified": "2026-09-15",
+          "http_status": 200
+        },
+        {
+          "title": "Quantum Algorithm Zoo",
+          "url": "https://quantumalgorithmzoo.org/",
+          "lang": "en",
+          "what": "Catálogo de referência canónico e rigoroso de algoritmos quânticos com classificações de complexidade computacional e referências bibliográficas primárias.",
+          "kind": "repository",
+          "access": "free",
+          "verified": "2026-09-15",
+          "http_status": 200
+        }
+      ],
+      "tools": [
+        {
+          "title": "Quirk Web Quantum Simulator",
+          "url": "https://algassert.com/quirk",
+          "lang": "en",
+          "what": "Ambiente interativo drag-and-drop para simulação de estados quânticos puros e portas lógicas com visualização imediata da esfera de Bloch.",
+          "try_this": "Arraste uma porta Hadamard ('H') para o primeiro fio (qubit 0) e uma porta Controlled-NOT ('•' e '⊕') ligando o qubit 0 ao qubit 1 para gerar instantaneamente um estado de Bell entrelaçado (|00⟩ + |11⟩)/√2.",
+          "ui_kind": "interactive_viz",
+          "access": "free",
+          "access_note": null,
+          "needs_account": false,
+          "runs_in_browser": true,
+          "made_by": "Craig Gidney (Google Quantum AI)",
+          "last_activity": "2026-05",
+          "verified": "2026-09-15",
+          "http_status": 200
+        },
+        {
+          "title": "IBM Quantum Composer",
+          "url": "https://quantum.ibm.com/composer",
+          "lang": "en",
+          "what": "Ferramenta gráfica profissional para desenhar circuitos quânticos em pentagrama, inspecionar vetores de estado e compilar para código Qiskit e OpenQASM.",
+          "try_this": "Insira uma porta 'H' e uma porta de fase 'T', abra a janela 'Statevector' abaixo e veja o vetor de probabilidade e as fases relativas atualizarem-se dinamicamente.",
+          "ui_kind": "web_app",
+          "access": "free",
+          "access_note": "Requer cadastro com conta IBM gratuita sem necessidade de cartão de crédito.",
+          "needs_account": true,
+          "runs_in_browser": true,
+          "made_by": "IBM Quantum",
+          "last_activity": "2026-08",
+          "verified": "2026-09-15",
+          "http_status": 200
+        },
+        {
+          "title": "PennyLane Hosted Interactive QML Demo",
+          "url": "https://colab.research.google.com/github/PennyLaneAI/qml/blob/master/demonstrations/tutorial_qubit_rotation.ipynb",
+          "lang": "en",
+          "what": "Notebook interativo que ensina e executa otimização de circuitos quânticos variacionais com diferenciação automática de gradientes no navegador.",
+          "try_this": "Execute as células sequenciais para definir o dispositivo quântico simulado, treinar a rotação do qubit com descida de gradiente e verificar a convergência da função de custo para -1.0.",
+          "ui_kind": "notebook_hosted",
+          "access": "free",
+          "access_note": "Requer conta Google para alocação do ambiente interativo.",
+          "needs_account": true,
+          "runs_in_browser": true,
+          "made_by": "Xanadu",
+          "last_activity": "2026-07",
+          "verified": "2026-09-15",
+          "http_status": 200
+        }
+      ],
+      "repos": [
+        {
+          "title": "Qiskit/qiskit",
+          "url": "https://github.com/Qiskit/qiskit",
+          "what": "SDK de código aberto líder global para desenvolvimento quântico em nível de circuitos, transpiladores otimizados e algoritmos de execução em QPUs.",
+          "license": "Apache-2.0",
+          "language": "Python",
+          "stars": 7250,
+          "last_commit": "2026-09-12",
+          "has_demo": true,
+          "demo_url": "https://quantum.ibm.com/composer",
+          "official": true,
+          "verified": "2026-09-15",
+          "http_status": 200
+        },
+        {
+          "title": "PennyLaneAI/pennylane",
+          "url": "https://github.com/PennyLaneAI/pennylane",
+          "what": "Biblioteca de programação diferenciável para computação quântica e aprendizado de máquina quântico compatível com PyTorch, JAX e TensorFlow.",
+          "license": "Apache-2.0",
+          "language": "Python",
+          "stars": 3480,
+          "last_commit": "2026-09-09",
+          "has_demo": true,
+          "demo_url": "https://colab.research.google.com/github/PennyLaneAI/qml/blob/master/demonstrations/tutorial_qubit_rotation.ipynb",
+          "official": true,
+          "verified": "2026-09-15",
+          "http_status": 200
+        },
+        {
+          "title": "quantumlib/Cirq",
+          "url": "https://github.com/quantumlib/Cirq",
+          "what": "Estrutura do Google Quantum AI para escrever, manipular e otimizar circuitos quânticos intermediários para processadores NISQ.",
+          "license": "Apache-2.0",
+          "language": "Python",
+          "stars": 4350,
+          "last_commit": "2026-08-22",
+          "has_demo": false,
+          "demo_url": null,
+          "official": true,
+          "verified": "2026-09-15",
+          "http_status": 200
+        },
+        {
+          "title": "microsoft/qsharp",
+          "url": "https://github.com/microsoft/qsharp",
+          "what": "Compilador de alto desempenho, linguagem e simulador do ecossistema de computação quântica da Microsoft voltado à correção de erros.",
+          "license": "MIT",
+          "language": "Rust",
+          "stars": 1950,
+          "last_commit": "2026-08-15",
+          "has_demo": false,
+          "demo_url": null,
+          "official": true,
+          "verified": "2026-09-15",
+          "http_status": 200
+        }
+      ]
+    },
+    "ai4ai": {
+      "news": [
+        {
+          "title": "The Gradient",
+          "url": "https://thegradient.pub/",
+          "lang": "en",
+          "what": "Ensaios e análises críticas escritas por investigadores e profissionais sobre avanços técnicos, escalabilidade e limitações conceituais de IA.",
+          "kind": "specialist",
+          "access": "free",
+          "access_note": null,
+          "verified": "2026-09-15",
+          "http_status": 200
+        },
+        {
+          "title": "MIT Technology Review - AI",
+          "url": "https://www.technologyreview.com/topic/artificial-intelligence/",
+          "lang": "en",
+          "what": "Jornalismo analítico focado em implicações operacionais, semicondutores, sistemas de computação e impacto socioeconómico da IA.",
+          "kind": "general",
+          "access": "freemium",
+          "access_note": "Cota mensal de leitura gratuita antes de exigir subscrição comercial.",
+          "verified": "2026-09-15",
+          "http_status": 200
+        },
+        {
+          "title": "Google DeepMind Research Blog",
+          "url": "https://deepmind.google/discover/blog/",
+          "lang": "en",
+          "what": "Comunicação primária do DeepMind sobre arquiteturas de redes neurais, otimização de chips (AlphaChip), síntese de código e raciocínio formal.",
+          "kind": "primary",
+          "access": "free",
+          "access_note": null,
+          "verified": "2026-09-15",
+          "http_status": 200
+        },
+        {
+          "title": "Manual da IA / Meio Bit",
+          "url": "https://tecnoblog.net/meiobit/categoria/ciencia/",
+          "lang": "pt",
+          "what": "Análises técnicas em português sobre arquiteturas de processamento neural, compiladores abertos e avanços em modelos fundacionais.",
+          "kind": "general",
+          "access": "free",
+          "access_note": null,
+          "verified": "2026-09-15",
+          "http_status": 200
+        }
+      ],
+      "links": [
+        {
+          "title": "Hugging Face Open LLM Leaderboard",
+          "url": "https://huggingface.co/spaces/open-llm-leaderboard/open_llm_leaderboard",
+          "lang": "en",
+          "what": "Painel de referência comparativa que avalia arquiteturas de modelos de linguagem abertos com benchmarks padronizados e filtros antifalsificação.",
+          "kind": "dashboard",
+          "access": "free",
+          "verified": "2026-09-15",
+          "http_status": 200
+        },
+        {
+          "title": "Papers with Code - ML Systems",
+          "url": "https://paperswithcode.com/area/systems",
+          "lang": "en",
+          "what": "Repositório estruturado de artigos, código e tabelas de liderança técnica cobrindo compiladores, quantização, NAS e hardware para IA.",
+          "kind": "database",
+          "access": "free",
+          "verified": "2026-09-15",
+          "http_status": 200
+        },
+        {
+          "title": "Distill.pub Research Visualization",
+          "url": "https://distill.pub/",
+          "lang": "en",
+          "what": "Arquivo canónico de ensaios científicos interativos de aprendizagem de máquina que detalham visualmente mecanismos de atenção, convolução e interpretabilidade.",
+          "kind": "explainer",
+          "access": "free",
+          "verified": "2026-09-15",
+          "http_status": 200
+        },
+        {
+          "title": "OpenAI Triton Interactive Docs",
+          "url": "https://triton-lang.org/",
+          "lang": "en",
+          "what": "Documentação e tutoriais da linguagem e compilador open-source para desenvolvimento de kernels de GPU acelerados sem recorrer a CUDA em C++.",
+          "kind": "course",
+          "access": "free",
+          "verified": "2026-09-15",
+          "http_status": 200
+        }
+      ],
+      "tools": [
+        {
+          "title": "Netron Neural Network Visualizer",
+          "url": "https://netron.app/",
+          "lang": "en",
+          "what": "Visualizador de grafos computacionais que renderiza topologias, dimensões de tensores e operadores de redes neurais sem upload para servidores externos.",
+          "try_this": "Abra a página, clique no botão central 'Open Model...' e selecione qualquer arquivo pré-existente (.onnx, .pt ou .tflite) para navegar interativamente pelas camadas e pesos do grafo.",
+          "ui_kind": "web_app",
+          "access": "free",
+          "access_note": null,
+          "needs_account": false,
+          "runs_in_browser": true,
+          "made_by": "Lutz Roeder",
+          "last_activity": "2026-09",
+          "verified": "2026-09-15",
+          "http_status": 200
+        },
+        {
+          "title": "Argilla Synthetic Data Generator Space",
+          "url": "https://huggingface.co/spaces/argilla/synthetic-data-generator",
+          "lang": "en",
+          "what": "Ambiente gráfico no Hugging Face que constrói conjuntos de dados sintéticos para alinhamento e ajuste fino de LLMs com base no Distilabel.",
+          "try_this": "Insira uma descrição como 'Perguntas e respostas sobre computação quântica com raciocínio passo a passo', clique em 'Generate Samples' e examine as linhas de dados sintéticos criadas na interface.",
+          "ui_kind": "huggingface_space",
+          "access": "free",
+          "access_note": null,
+          "needs_account": false,
+          "runs_in_browser": true,
+          "made_by": "Argilla / Hugging Face",
+          "last_activity": "2026-08",
+          "verified": "2026-09-15",
+          "http_status": 200
+        },
+        {
+          "title": "Hugging Face Open LLM Leaderboard 2 Interface",
+          "url": "https://huggingface.co/spaces/open-llm-leaderboard/open_llm_leaderboard",
+          "lang": "en",
+          "what": "Interface analítica para filtragem dinâmica e inspeção detalhada de métricas (IFEval, MuSR, MMLU-Pro) de arquiteturas de IA abertas.",
+          "try_this": "Utilize a barra de pesquisa da tabela para filtrar por 'Llama-3', alterne os tipos de arquitetura e visualize a dispersão de desempenho em tarefas de raciocínio lógico.",
+          "ui_kind": "interactive_viz",
+          "access": "free",
+          "access_note": null,
+          "needs_account": false,
+          "runs_in_browser": true,
+          "made_by": "Hugging Face H4 Team",
+          "last_activity": "2026-09",
+          "verified": "2026-09-15",
+          "http_status": 200
+        }
+      ],
+      "repos": [
+        {
+          "title": "The-OpenROAD-Project/OpenROAD",
+          "url": "https://github.com/The-OpenROAD-Project/OpenROAD",
+          "what": "Ferramenta de automação de design físico e layout de circuitos integrados com IA para conversão autónoma RTL-to-GDSII em 24 horas sem intervenção humana.",
+          "license": "BSD-3-Clause",
+          "language": "C++",
+          "stars": 3600,
+          "last_commit": "2026-09-16",
+          "has_demo": false,
+          "demo_url": null,
+          "official": true,
+          "verified": "2026-09-15",
+          "http_status": 200
+        },
+        {
+          "title": "argilla-io/distilabel",
+          "url": "https://github.com/argilla-io/distilabel",
+          "what": "Estrutura moderna para geração de dados sintéticos e alinhamento de modelos com base em realimentação por IA (RLAIF) e pipelines distribuídos.",
+          "license": "Apache-2.0",
+          "language": "Python",
+          "stars": 3420,
+          "last_commit": "2026-09-10",
+          "has_demo": true,
+          "demo_url": "https://huggingface.co/spaces/argilla/synthetic-data-generator",
+          "official": true,
+          "verified": "2026-09-15",
+          "http_status": 200
+        },
+        {
+          "title": "vllm-project/vllm",
+          "url": "https://github.com/vllm-project/vllm",
+          "what": "Motor de inferência e serviço de modelos de linguagem de altíssimo rendimento que introduziu o algoritmo PagedAttention para gestão de memória KV.",
+          "license": "Apache-2.0",
+          "language": "Python",
+          "stars": 33500,
+          "last_commit": "2026-09-15",
+          "has_demo": false,
+          "demo_url": null,
+          "official": true,
+          "verified": "2026-09-15",
+          "http_status": 200
+        },
+        {
+          "title": "D-X-Y/AutoDL-Projects",
+          "url": "https://github.com/D-X-Y/AutoDL-Projects",
+          "what": "Suíte canónica de benchmarks para pesquisa de arquitetura neural (NAS-Bench-201) e avaliação empírica de algoritmos de busca de modelos.",
+          "license": "MIT",
+          "language": "Python",
+          "stars": 2240,
+          "last_commit": "2026-05-12",
+          "has_demo": false,
+          "demo_url": null,
+          "official": true,
+          "verified": "2026-09-15",
+          "http_status": 200
+        }
+      ]
+    }
+  },
+  "rejected": [
+    {
+      "title": "Cradle Bio",
+      "url": "https://www.cradle.bio/",
+      "domain": "biology",
+      "collection": "tools",
+      "reason": "Anuncia plataforma de engenharia de proteínas via navegador com IA generativa, mas exige agendamento de chamada comercial e plano institucional pago sem teste prático aberto."
+    },
+    {
+      "title": "SpaceEngine",
+      "url": "https://spaceengine.org/",
+      "domain": "astronomy",
+      "collection": "tools",
+      "reason": "Apresenta simulação tridimensional do universo observável e geração procedimental com IA, mas opera exclusivamente como software executável comercial distribuído no Steam sem versão web."
+    },
+    {
+      "title": "Insilico Medicine PandaOmics",
+      "url": "https://insilico.com/pandaomics",
+      "domain": "medicine",
+      "collection": "tools",
+      "reason": "Ferramenta de identificação de alvos terapêuticos e oncologia com IA anunciada amplamente em notícias, porém restrita a contratações empresariais sob termos de confidencialidade (NDA) sem acesso gratuito útil."
+    },
+    {
+      "title": "IBM RXN for Chemistry Hosted Platform",
+      "url": "https://rxn.app.accelerate.science/rxn/",
+      "domain": "chemistry",
+      "collection": "tools",
+      "reason": "A plataforma web hospedada teve desativação oficial (End of Service) confirmada para outubro de 2026, apresentando falhas intermitentes de autenticação (erro HTTP 401) e encerramento da infraestrutura em nuvem aberta."
+    },
+    {
+      "title": "Rigetti Quantum Cloud Services (QCS)",
+      "url": "https://www.rigetti.com/",
+      "domain": "quantum",
+      "collection": "tools",
+      "reason": "Descontinuou o nível de acesso gratuito experimental direto na nuvem para utilizadores independentes, canalizando a execução de circuitos para instâncias pagas via AWS Braket."
+    },
+    {
+      "title": "Google Cloud Vertex AI Neural Architecture Search (NAS)",
+      "url": "https://cloud.google.com/vertex-ai/docs/training/neural-architecture-search",
+      "domain": "ai4ai",
+      "collection": "tools",
+      "reason": "Não oferece interface interativa gratuita: exige criação de conta corporativa no GCP com inserção obrigatória de cartão de crédito e fatura o treino de exploração de modelos por TPU-hora."
+    },
+    {
+      "title": "AutoKeras",
+      "url": "https://autokeras.com/",
+      "domain": "ai4ai",
+      "collection": "tools",
+      "reason": "Candidato proposto para a categoria de ferramentas, mas desqualificado por ser exclusivamente uma biblioteca Python de AutoML via linha de comando sem interface web, pertencendo formalmente a repositórios."
+    },
+    {
+      "title": "ChemAxon Marvin Live",
+      "url": "https://chemaxon.com/products/marvin-live",
+      "domain": "chemistry",
+      "collection": "tools",
+      "reason": "Divulga camada de teste colaborativo de design molecular e predição química, mas condiciona o uso à aprovação prévia de vendas e inserção de dados corporativos."
+    },
+    {
+      "title": "Sociedade Brasileira de Física (SBF) Notícias",
+      "url": "https://sbfisica.org.br/v1/sbf/noticias/",
+      "domain": "quantum",
+      "collection": "news",
+      "reason": "Certificado TLS não valida na verificação independente (curl ssl_verify_result=20, http=000). Navegador exibiria aviso de segurança."
+    }
+  ],
+  "source_document": "research/science_resources_report.md"
 }

@@ -852,3 +852,129 @@ section[id] {
   .matrix-basis { grid-template-columns: 1fr; gap: 0.15rem; }
   .matrix-basis dd { margin-bottom: 0.5rem; }
 }
+
+/* ==========================================================================
+   Acervo de recursos por domínio
+   ========================================================================== */
+.resources-section { padding-top: 1rem; }
+.resources { display: flex; flex-direction: column; gap: 2.6rem; }
+
+.res-group-title {
+  font-family: var(--font-heading);
+  font-size: 1.02rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 1rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.res-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(288px, 1fr));
+  gap: 0.9rem;
+}
+
+.res-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1.1rem 1.2rem;
+  border: 1px solid var(--border-subtle);
+  border-radius: 14px;
+  background: var(--bg-card);
+  text-decoration: none;
+  transition: border-color var(--transition-fast), transform var(--transition-fast);
+}
+.res-card:hover {
+  border-color: var(--accent-cyan);
+  transform: translateY(-2px);
+}
+.res-card:focus-visible {
+  outline: 2px solid var(--accent-cyan);
+  outline-offset: 3px;
+}
+
+.res-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.7rem;
+}
+.res-title {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.97rem;
+  line-height: 1.35;
+  color: var(--text-primary);
+}
+.res-host {
+  flex: 0 0 auto;
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  color: var(--text-muted);
+  max-width: 42%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.res-what {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+/* A primeira ação concreta: é o que separa "li sobre" de "usei" */
+.res-try {
+  font-size: 0.8rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  padding: 0.6rem 0.7rem;
+  border-left: 2px solid var(--accent-cyan);
+  background: rgba(0, 240, 255, 0.045);
+  border-radius: 0 8px 8px 0;
+}
+.res-try b { color: var(--accent-cyan); font-weight: 600; }
+
+.res-badges { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.15rem; }
+.res-badge {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.22rem 0.5rem;
+  border-radius: 999px;
+  border: 1px solid var(--border-subtle);
+  color: var(--text-muted);
+}
+.res-badge.is-good {
+  color: var(--accent-green);
+  border-color: rgba(0, 255, 136, 0.35);
+  background: rgba(0, 255, 136, 0.07);
+}
+
+.res-note {
+  font-size: 0.76rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin: 0;
+  padding-top: 0.6rem;
+  border-top: 1px solid var(--border-subtle);
+}
+.res-note a { color: var(--text-link); }
+
+@media (max-width: 560px) {
+  .res-grid { grid-template-columns: 1fr; }
+  .res-head { flex-direction: column; gap: 0.2rem; }
+  .res-host { max-width: 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .res-card { transition: none; }
+  .res-card:hover { transform: none; }
+}
+
+/* Sequências biológicas e identificadores longos não têm espaço para quebrar:
+   sem isto, um `try_this` com uma sequência de aminoácidos vaza do card. */
+.res-try, .res-what { overflow-wrap: anywhere; }

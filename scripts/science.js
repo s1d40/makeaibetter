@@ -297,6 +297,7 @@ function renderActiveDomain() {
   `;
 
   renderDomainChart(activeDomainId);
+  renderResources(activeDomainId);
 }
 
 // --- Painel de dados do domínio ---
@@ -778,6 +779,126 @@ function renderMatrixChart(serie) {
   host.appendChild(fig);
 }
 
+// --- Acervo de recursos por domínio ---
+//
+// Consome research/science_resources.json, produzido pelo levantamento descrito
+// em research/DEEP_RESEARCH_PROMPT_science_resources.md. Cada item traz a data
+// em que a URL foi carregada; o que não passou na verificação está em
+// `rejected` no próprio arquivo, fora do ar público.
+
+let scienceResources = null;
+
+const COLLECTIONS = [
+  { id: 'tools', pt: 'Ferramentas para usar agora', en: 'Tools you can use now' },
+  { id: 'links', pt: 'Vale a visita', en: 'Worth a visit' },
+  { id: 'repos', pt: 'Código aberto', en: 'Open source' },
+  { id: 'news', pt: 'Onde acompanhar', en: 'Where to follow' },
+];
+
+const ACCESS_LABEL = {
+  free: ['grátis', 'free'],
+  freemium: ['cota grátis', 'free tier'],
+  academic: ['acadêmico', 'academic'],
+  open_source: ['open source', 'open source'],
+};
+
+async function loadResources() {
+  if (scienceResources !== null) return scienceResources;
+  try {
+    const res = await fetch('/research/science_resources.json', { cache: 'no-cache' });
+    scienceResources = res.ok ? await res.json() : { domains: {} };
+  } catch {
+    scienceResources = { domains: {} };
+  }
+  return scienceResources;
+}
+
+const host = (url) => { try { return new URL(url).host.replace(/^www\./, ''); } catch { return url; } };
+
+/** Selos que respondem "consigo clicar e usar agora?" sem abrir a página. */
+function toolBadges(item) {
+  const out = [];
+  const acc = ACCESS_LABEL[item.access];
+  if (acc) out.push({ text: t(acc[0], acc[1]), tone: item.access === 'free' ? 'good' : 'neutral' });
+  if (item.needs_account === false) {
+    out.push({ text: t('sem cadastro', 'no signup'), tone: 'good' });
+  } else if (item.needs_account === true) {
+    out.push({ text: t('exige conta', 'account needed'), tone: 'neutral' });
+  }
+  return out;
+}
+
+function resourceCard(item, collection) {
+  const a = document.createElement('a');
+  a.className = `res-card res-${collection}`;
+  a.href = item.url;
+  a.target = '_blank';
+  a.rel = 'noopener';
+
+  const badges = collection === 'tools' ? toolBadges(item) : [];
+  if (collection === 'repos') {
+    if (item.official) badges.push({ text: t('oficial', 'official'), tone: 'good' });
+    if (item.license) badges.push({ text: item.license, tone: 'neutral' });
+  }
+  if (collection === 'news' && item.kind) {
+    const k = { general: ['geral', 'general'], specialist: ['especializada', 'specialist'], primary: ['fonte primária', 'primary source'] }[item.kind];
+    if (k) badges.push({ text: t(k[0], k[1]), tone: 'neutral' });
+  }
+
+  a.innerHTML = `
+    <span class="res-head">
+      <span class="res-title">${item.title}</span>
+      <span class="res-host">${host(item.url)}</span>
+    </span>
+    <span class="res-what">${item.what}</span>
+    ${item.try_this ? `<span class="res-try"><b>${t('Experimente', 'Try this')}:</b> ${item.try_this}</span>` : ''}
+    ${badges.length ? `<span class="res-badges">${badges
+      .map((b) => `<span class="res-badge is-${b.tone}">${b.text}</span>`).join('')}</span>` : ''}`;
+  return a;
+}
+
+/** Desenha o acervo do domínio ativo dentro de #resources-slot. */
+async function renderResources(domainId) {
+  const slot = document.getElementById('resources-slot');
+  if (!slot) return;
+
+  const data = await loadResources();
+  const dom = data.domains?.[domainId];
+  slot.replaceChildren();
+
+  if (!dom) {
+    slot.appendChild(pendingState('science_resources.json'));
+    return;
+  }
+
+  for (const col of COLLECTIONS) {
+    const items = dom[col.id] || [];
+    if (!items.length) continue;
+
+    const group = document.createElement('section');
+    group.className = 'res-group';
+    const h = document.createElement('h3');
+    h.className = 'res-group-title';
+    h.textContent = currentLang === 'pt' ? col.pt : col.en;
+    group.appendChild(h);
+
+    const grid = document.createElement('div');
+    grid.className = 'res-grid';
+    items.forEach((it) => grid.appendChild(resourceCard(it, col.id)));
+    group.appendChild(grid);
+    slot.appendChild(group);
+  }
+
+  const note = document.createElement('p');
+  note.className = 'res-note';
+  const dates = Object.values(dom).flat().map((i) => i.verified).filter(Boolean).sort();
+  note.innerHTML = t(
+    `Links verificados em ${dates[dates.length - 1] || '—'}. O que não passou na verificação está registrado em <a href="/research/science_resources_report.md">relatório de curadoria</a>.`,
+    `Links verified on ${dates[dates.length - 1] || '—'}. What failed verification is recorded in the <a href="/research/science_resources_report.md">curation report</a>.`
+  );
+  slot.appendChild(note);
+}
+
 // --- Explorador de trânsito de exoplaneta (modelo físico) ---
 
 let transitState = { k: 0.1028, b: 0.3 };
@@ -903,6 +1024,9 @@ function initLanguage() {
 function applyScienceTranslations() {
   const dict = {
     pt: {
+      res_tag: "ACERVO",
+      res_title: "Onde explorar cada área",
+      res_subtitle: "Fontes para acompanhar, links que valem a visita, ferramentas de IA que rodam no navegador e o código aberto que sustenta cada campo. Cada URL foi carregada e verificada.",
       nav_research: "Pesquisa",
       footer_desc: "Iniciativa de pesquisa independente e aberta para o avanço seguro e rigoroso da inteligência artificial.",
       footer_col_nav: "Navegação",
@@ -966,6 +1090,9 @@ function applyScienceTranslations() {
       btn_return_radar: "Voltar ao Radar de Modelos 2026"
     },
     en: {
+      res_tag: "ARCHIVE",
+      res_title: "Where to explore each field",
+      res_subtitle: "Sources to follow, links worth visiting, AI tools that run in the browser, and the open source that holds each field up. Every URL was loaded and verified.",
       nav_research: "Research",
       footer_desc: "Independent, open research initiative for the safe and rigorous advancement of artificial intelligence.",
       footer_col_nav: "Navigation",
