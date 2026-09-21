@@ -74,18 +74,55 @@ Open your browser at `http://localhost:8080`.
 ```
 makeaibetter/
 ├── index.html                   # Main interactive website portal
-├── styles/
-│   └── main.css                 # Cyber-research glassmorphism styling & design system
-├── scripts/
-│   └── app.js                   # Particles canvas, interactive radar, filters & i18n
+├── history.html                 # The Computing Epic — horizontal timeline, 7 eras
+├── science.html                 # AI for Science Hub — 6 scientific domains
+├── styles/                      # main.css · history.css · science.css
+├── scripts/                     # app.js · history.js · science.js
 ├── research/
 │   ├── state_of_ai_2026.md      # Comprehensive technical State of AI 2026 report
 │   └── breaking_news_sept_2026.json # Structured dataset of 2026 AI breakthroughs
+├── tools/
+│   ├── eras.json                # Era manifest: art direction, palettes, voices
+│   └── generate-assets.mjs      # Build-time Gemini generator (art + narration)
 ├── assets/
-│   └── icons/                   # Vector assets and badges
+│   ├── images/era-N.webp        # Generated chapter artwork (Gemini)
+│   ├── audio/era-N-{pt,en}.mp3  # Generated chapter narration (Gemini TTS)
+│   └── narration.json           # Narration scripts / transcripts
 ├── LICENSE                      # MIT Open Source License
 └── README.md                    # You are here
 ```
+
+---
+
+## 🎨 Generated Chapter Assets (Gemini)
+
+`history.html` presents 90 years of computing as a **horizontal timeline**: seven
+full-width panels on a scroll-snapping rail, navigated with the arrows, the `←`/`→`
+keys, the `CRONOLOGIA` bar, or the mouse wheel. Below 900px the rail falls back to a
+vertical stack.
+
+Each panel carries a piece of generated artwork and a bilingual voice-over. These are
+produced **at build time** and committed as static files — the site itself never calls
+an AI API, so no key is ever shipped to the browser.
+
+| Asset | Model | Output |
+|---|---|---|
+| Chapter artwork | `gemini-3-pro-image` | `assets/images/era-N.webp` (16:9, 1280px) |
+| Narration script | `gemini-3.8-flash` | `assets/narration.json` (PT + EN, ~120 words) |
+| Voice-over | `gemini-3.1-flash-tts-preview` | `assets/audio/era-N-{pt,en}.mp3` |
+
+### Regenerating
+
+```bash
+export GEMINI_API_KEY="..."          # or drop the key in ./gemini.api.key (gitignored)
+node tools/generate-assets.mjs       # only fills in what is missing
+node tools/generate-assets.mjs --only=7 --force   # redo a single era
+```
+
+Flags: `--only=1,3`, `--force`, `--skip-image`, `--skip-audio`. Requires Node 18+ and
+`ffmpeg` on `PATH`. Art direction, colour palettes and narrator voices live in
+[`tools/eras.json`](./tools/eras.json); the narration is grounded in the chapter copy
+in `scripts/history.js`, which stays the single source of truth for the text.
 
 ---
 

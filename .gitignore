@@ -1,0 +1,4 @@
+gemini.api.key
+.env
+*.api.key
+node_modules/

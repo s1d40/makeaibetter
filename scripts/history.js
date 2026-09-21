@@ -49,6 +49,11 @@ const historyI18n = {
     history_hero_lead: "Em 1936, Alan Turing concebeu a máquina que poderia computar qualquer pensamento formalizável. Nove décadas depois, a humanidade atinge a computação quântica abaixo do limiar de erro com o <strong>Google Willow</strong> e modelos de raciocínio deliberado com a <strong>OpenAI</strong>. Esta é a trajetória completa da inteligência mecânica.",
     btn_start_journey: "Iniciar a Viagem",
     btn_view_science_hub: "Explorar IA na Ciência",
+    rail_hint: "Role lateralmente ou use ← → para percorrer 90 anos",
+    ai_art_credit: "Arte gerada com Gemini",
+    narration_label: "Narração do capítulo",
+    narration_transcript: "Texto",
+    narration_missing: "Narração indisponível",
     era_1_tag: "ERA 1 • 1936 – 1950",
     era_1_title: "O Oráculo Matemático e a Fita Infinita",
     era_1_p1: "Em 1936, no artigo revolucionário <em>\"On Computable Numbers\"</em>, o jovem matemático britânico <strong>Alan Mathison Turing</strong> formulou o conceito da <strong>Máquina Universal de Turing</strong>. Ele provou que um único dispositivo hipotético, lendo e escrevendo símbolos em uma fita de papel infinitamente longa, era capaz de simular o comportamento de qualquer outro calculador concebível.",
@@ -121,6 +126,11 @@ const historyI18n = {
     btn_start_journey: "Start the Journey",
     btn_view_science_hub: "Explore AI for Science",
     era_1_tag: "ERA 1 • 1936 – 1950",
+    rail_hint: "Scroll sideways or use ← → to travel 90 years",
+    ai_art_credit: "Artwork generated with Gemini",
+    narration_label: "Chapter narration",
+    narration_transcript: "Transcript",
+    narration_missing: "Narration unavailable",
     era_1_title: "The Mathematical Oracle & The Infinite Tape",
     era_1_p1: "In 1936, in the revolutionary paper <em>\"On Computable Numbers\"</em>, British mathematician <strong>Alan Mathison Turing</strong> formulated the <strong>Universal Turing Machine</strong>. He proved that a single hypothetical device, reading and writing symbols on an infinitely long paper tape, could simulate any conceivable calculating machine.",
     era_1_p2: "During WWII at Bletchley Park, Turing's theoretical work became operational. He designed the <strong>Bombe</strong> to break German Enigma cipher transmissions, while Tommy Flowers built <strong>Colossus</strong> (the first electronic digital computer with 1,500 vacuum tubes). In 1950, Turing published the seminal <em>\"Computing Machinery and Intelligence\"</em>, introducing the Turing Test.",
@@ -187,6 +197,8 @@ document.addEventListener('DOMContentLoaded', () => {
   renderTuringTape();
   renderWillowLattice();
   initMooreSlider();
+  initHorizontalRail();
+  initNarration();
   setupScrubberObserver();
   animateHero();
 });
@@ -211,15 +223,30 @@ function animateHero() {
   });
 }
 
-// ─── Scroll Progress Bar ──────────────────────────────────────────────────────
+// ─── Progresso: agora mede o avanço no trilho horizontal ─────────────────────
 function initScrollProgress() {
   const bar = document.getElementById('scroll-progress-bar');
+  const railFill = document.getElementById('scrubber-rail-fill');
+  const rail = document.getElementById('timeline-rail');
   if (!bar) return;
-  window.addEventListener('scroll', () => {
-    const h = document.documentElement.scrollHeight - window.innerHeight;
-    const pct = h > 0 ? (window.scrollY / h) * 100 : 0;
+
+  const update = () => {
+    let pct;
+    if (rail && isRailHorizontal()) {
+      const max = rail.scrollWidth - rail.clientWidth;
+      pct = max > 0 ? (rail.scrollLeft / max) * 100 : 0;
+    } else {
+      const h = document.documentElement.scrollHeight - window.innerHeight;
+      pct = h > 0 ? (window.scrollY / h) * 100 : 0;
+    }
     bar.style.width = `${pct}%`;
-  }, { passive: true });
+    if (railFill) railFill.style.width = `${pct}%`;
+  };
+
+  window.addEventListener('scroll', update, { passive: true });
+  rail?.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update, { passive: true });
+  update();
 }
 
 // ─── IntersectionObserver — Scroll-Reveal ────────────────────────────────────
@@ -332,27 +359,300 @@ function initScrollRevealAnimations() {
   }
 }
 
-// ─── Scrubber: Active dot tracking ───────────────────────────────────────────
+// ─── Cronologia: destaca o painel centrado no trilho ─────────────────────────
 function setupScrubberObserver() {
-  const sections = document.querySelectorAll('.epoch-section');
-  const dots = document.querySelectorAll('.scrub-dot');
+  const rail = document.getElementById('timeline-rail');
+  const dots = [...document.querySelectorAll('.scrub-dot')];
+  if (!rail || !dots.length) return;
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const id = entry.target.id;
-        dots.forEach(dot => {
-          const isActive = dot.getAttribute('href') === `#${id}`;
-          dot.classList.toggle('active', isActive);
-          if (isActive) {
-            animate(dot, { scale: [1, 1.2, 1] }, { duration: 0.4, easing: 'ease-out' });
-          }
-        });
+  const setActive = (era) => {
+    dots.forEach((dot) => {
+      const isActive = dot.dataset.era === String(era);
+      if (isActive && !dot.classList.contains('active')) {
+        animate(dot, { scale: [1, 1.18, 1] }, { duration: 0.4, easing: 'ease-out' });
       }
+      dot.classList.toggle('active', isActive);
     });
-  }, { threshold: 0.45, rootMargin: '-10% 0px -10% 0px' });
+  };
 
-  sections.forEach(s => observer.observe(s));
+  let frame = null;
+  const sync = () => {
+    if (frame) return;
+    frame = requestAnimationFrame(() => {
+      frame = null;
+      setActive(currentEraInView());
+      updateRailNavState();
+    });
+  };
+
+  rail.addEventListener('scroll', sync, { passive: true });
+  window.addEventListener('scroll', sync, { passive: true });
+  window.addEventListener('resize', sync, { passive: true });
+
+  dots.forEach((dot) => {
+    dot.addEventListener('click', (e) => {
+      e.preventDefault();
+      scrollToEra(Number(dot.dataset.era));
+    });
+  });
+
+  sync();
+}
+
+// ─── TRILHO HORIZONTAL ────────────────────────────────────────────────────────
+const railEl = () => document.getElementById('timeline-rail');
+
+function isRailHorizontal() {
+  return window.matchMedia('(min-width: 901px)').matches;
+}
+
+/** Índice (1-based) do painel mais próximo do centro do trilho. */
+function currentEraInView() {
+  const rail = railEl();
+  const panels = [...document.querySelectorAll('.epoch-section')];
+  if (!rail || !panels.length) return 1;
+
+  if (isRailHorizontal()) {
+    const center = rail.scrollLeft + rail.clientWidth / 2;
+    let best = 1;
+    let bestDist = Infinity;
+    panels.forEach((panel, i) => {
+      const mid = panel.offsetLeft + panel.offsetWidth / 2;
+      const dist = Math.abs(mid - center);
+      if (dist < bestDist) { bestDist = dist; best = i + 1; }
+    });
+    return best;
+  }
+
+  const anchor = window.innerHeight * 0.4;
+  let best = 1;
+  panels.forEach((panel, i) => {
+    if (panel.getBoundingClientRect().top <= anchor) best = i + 1;
+  });
+  return best;
+}
+
+function scrollToEra(era) {
+  const rail = railEl();
+  const panel = document.getElementById(`era-${era}`);
+  if (!rail || !panel) return;
+
+  if (isRailHorizontal()) {
+    const left = panel.offsetLeft - (rail.clientWidth - panel.offsetWidth) / 2;
+    rail.scrollTo({ left: Math.max(0, left), behavior: prefersReducedMotion() ? 'auto' : 'smooth' });
+  } else {
+    panel.scrollIntoView({ behavior: prefersReducedMotion() ? 'auto' : 'smooth', block: 'start' });
+  }
+  dismissRailHint();
+}
+
+function prefersReducedMotion() {
+  return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+}
+
+function updateRailNavState() {
+  const era = currentEraInView();
+  const total = document.querySelectorAll('.epoch-section').length;
+  const prev = document.getElementById('rail-prev');
+  const next = document.getElementById('rail-next');
+  if (prev) prev.disabled = era <= 1;
+  if (next) next.disabled = era >= total;
+}
+
+function dismissRailHint() {
+  document.getElementById('rail-hint')?.classList.add('is-dismissed');
+}
+
+function initHorizontalRail() {
+  const rail = railEl();
+  if (!rail) return;
+  const total = document.querySelectorAll('.epoch-section').length;
+
+  document.getElementById('rail-prev')?.addEventListener('click', () => {
+    scrollToEra(Math.max(1, currentEraInView() - 1));
+  });
+  document.getElementById('rail-next')?.addEventListener('click', () => {
+    scrollToEra(Math.min(total, currentEraInView() + 1));
+  });
+
+  // Teclado: ← → percorrem as eras quando o trilho tem foco
+  rail.addEventListener('keydown', (e) => {
+    if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
+    if (e.target.closest('input, textarea, button, a')) return;
+    e.preventDefault();
+    const era = currentEraInView();
+    scrollToEra(e.key === 'ArrowLeft' ? Math.max(1, era - 1) : Math.min(total, era + 1));
+  });
+
+  // Roda vertical do mouse move o trilho lateralmente, mas sem roubar
+  // o scroll de um painel cujo conteúdo ainda pode rolar.
+  rail.addEventListener('wheel', (e) => {
+    if (!isRailHorizontal()) return;
+    if (Math.abs(e.deltaY) <= Math.abs(e.deltaX)) return;
+
+    const inner = e.target.closest?.('.epoch-body, .epoch-visual');
+    if (inner && inner.scrollHeight > inner.clientHeight + 1) {
+      const atTop = inner.scrollTop <= 0;
+      const atBottom = inner.scrollTop + inner.clientHeight >= inner.scrollHeight - 1;
+      if (!((e.deltaY < 0 && atTop) || (e.deltaY > 0 && atBottom))) return;
+    }
+
+    e.preventDefault();
+    rail.scrollLeft += e.deltaY;
+    dismissRailHint();
+  }, { passive: false });
+
+  rail.addEventListener('scroll', dismissRailHint, { passive: true, once: true });
+
+  // A barra de cronologia só aparece depois do hero
+  const scrubber = document.getElementById('timeline-scrubber');
+  const viewport = document.getElementById('timeline-viewport');
+  if (scrubber && viewport) {
+    new IntersectionObserver(([entry]) => {
+      scrubber.classList.toggle('is-visible', entry.isIntersecting);
+    }, { rootMargin: '-90px 0px -40% 0px' }).observe(viewport);
+  }
+
+  // CTA do hero entra no trilho
+  document.getElementById('btn-start-journey')?.addEventListener('click', (e) => {
+    e.preventDefault();
+    viewport?.scrollIntoView({ behavior: prefersReducedMotion() ? 'auto' : 'smooth', block: 'start' });
+    setTimeout(() => scrollToEra(1), prefersReducedMotion() ? 0 : 500);
+  });
+
+  // Revelação suave das artes geradas
+  document.querySelectorAll('.epoch-image').forEach((img) => {
+    const reveal = () => img.classList.add('is-loaded');
+    if (img.complete && img.naturalWidth) reveal();
+    else {
+      img.addEventListener('load', reveal, { once: true });
+      img.addEventListener('error', () => img.closest('.epoch-figure')?.remove(), { once: true });
+    }
+  });
+}
+
+// ─── NARRAÇÃO (áudio gerado com Gemini TTS) ──────────────────────────────────
+let narrationScripts = null;
+let activeNarration = null;
+
+const fmtTime = (s) => {
+  if (!Number.isFinite(s)) return '0:00';
+  const m = Math.floor(s / 60);
+  return `${m}:${String(Math.floor(s % 60)).padStart(2, '0')}`;
+};
+
+async function initNarration() {
+  const players = [...document.querySelectorAll('.narration-player')];
+  if (!players.length) return;
+
+  try {
+    const res = await fetch('assets/narration.json', { cache: 'force-cache' });
+    if (res.ok) narrationScripts = await res.json();
+  } catch {
+    narrationScripts = null;
+  }
+
+  players.forEach(setupNarrationPlayer);
+  syncNarrationLanguage();
+}
+
+function setupNarrationPlayer(player) {
+  const era = player.dataset.era;
+  const btn = player.querySelector('[data-narration-toggle]');
+  const fill = player.querySelector('[data-narration-fill]');
+  const track = player.querySelector('[data-narration-track]');
+  const time = player.querySelector('[data-narration-time]');
+  const transcriptBtn = player.querySelector('[data-narration-transcript]');
+  const transcript = player.parentElement?.querySelector('[data-narration-text]');
+
+  const audio = new Audio();
+  audio.preload = 'metadata';
+  player._audio = audio;
+
+  audio.addEventListener('timeupdate', () => {
+    const pct = audio.duration ? (audio.currentTime / audio.duration) * 100 : 0;
+    fill.style.width = `${pct}%`;
+    time.textContent = fmtTime(audio.duration ? audio.duration - audio.currentTime : 0);
+  });
+  audio.addEventListener('ended', () => {
+    player.classList.remove('is-playing');
+    fill.style.width = '0%';
+    time.textContent = fmtTime(audio.duration);
+    activeNarration = null;
+  });
+  audio.addEventListener('loadedmetadata', () => { time.textContent = fmtTime(audio.duration); });
+  audio.addEventListener('error', () => {
+    player.classList.add('is-unavailable');
+    btn.disabled = true;
+    player.querySelector('.narration-label').textContent =
+      historyI18n[currentLang].narration_missing;
+  });
+
+  btn.addEventListener('click', () => {
+    if (!audio.paused) {
+      audio.pause();
+      player.classList.remove('is-playing');
+      activeNarration = null;
+      return;
+    }
+    if (activeNarration && activeNarration !== player) {
+      activeNarration._audio.pause();
+      activeNarration.classList.remove('is-playing');
+    }
+    audio.play().then(() => {
+      player.classList.add('is-playing');
+      activeNarration = player;
+    }).catch(() => {
+      player.classList.add('is-unavailable');
+      btn.disabled = true;
+    });
+  });
+
+  track.addEventListener('click', (e) => {
+    if (!audio.duration) return;
+    const rect = track.getBoundingClientRect();
+    audio.currentTime = ((e.clientX - rect.left) / rect.width) * audio.duration;
+  });
+
+  transcriptBtn.addEventListener('click', () => {
+    const open = transcriptBtn.getAttribute('aria-expanded') === 'true';
+    transcriptBtn.setAttribute('aria-expanded', String(!open));
+    transcript.hidden = open;
+    if (!open) animate(transcript, { opacity: [0, 1], y: [-6, 0] }, { duration: 0.35 });
+  });
+
+  player._era = era;
+  player._transcript = transcript;
+}
+
+/** Troca faixa de áudio e transcrição conforme o idioma ativo. */
+function syncNarrationLanguage() {
+  document.querySelectorAll('.narration-player').forEach((player) => {
+    const era = player._era;
+    const audio = player._audio;
+    if (!audio) return;
+
+    const wasPlaying = !audio.paused;
+    const at = audio.currentTime;
+    audio.src = `assets/audio/era-${era}-${currentLang}.mp3`;
+    player.classList.remove('is-unavailable');
+    player.querySelector('[data-narration-toggle]').disabled = false;
+    if (wasPlaying) {
+      audio.currentTime = at;
+      audio.play().catch(() => {});
+    }
+
+    if (player._transcript) {
+      player._transcript.textContent = narrationScripts?.[era]?.[currentLang] ?? '';
+    }
+  });
+
+  // alt das artes segue o título da era ativa no idioma corrente
+  document.querySelectorAll('.epoch-image').forEach((img) => {
+    const era = img.id.replace('epoch-image-', '');
+    const title = historyI18n[currentLang][`era_${era}_title`];
+    if (title) img.alt = title.replace(/<[^>]+>/g, '');
+  });
 }
 
 // ─── TURING TAPE SIMULATOR ────────────────────────────────────────────────────
@@ -644,4 +944,5 @@ function applyHistoryTranslations() {
     const key = el.getAttribute('data-i18n');
     if (dict[key] !== undefined) el.innerHTML = dict[key];
   });
+  syncNarrationLanguage();
 }

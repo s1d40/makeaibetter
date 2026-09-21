@@ -45,37 +45,65 @@
   transition: width 0.1s linear;
 }
 
-/* Floating Timeline Scrubber on Left */
+/* Barra de Cronologia Horizontal (topo) */
 .timeline-scrubber {
   position: fixed;
-  left: 2rem;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 84px;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 90;
   display: flex;
-  flex-direction: column;
-  gap: 0.85rem;
-  background: rgba(13, 16, 28, 0.75);
+  align-items: center;
+  gap: 0.9rem;
+  max-width: calc(100vw - 2rem);
+  background: rgba(13, 16, 28, 0.82);
   backdrop-filter: blur(14px);
-  padding: 1rem 0.6rem;
-  border-radius: 30px;
+  -webkit-backdrop-filter: blur(14px);
+  padding: 0.5rem 0.85rem;
+  border-radius: 40px;
   border: 1px solid var(--border-subtle);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.55);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-smooth), transform var(--transition-smooth);
+}
+.timeline-scrubber.is-visible {
+  opacity: 1;
+  pointer-events: auto;
 }
 .scrubber-label {
   font-family: var(--font-mono);
   font-size: 0.55rem;
-  text-align: center;
   color: var(--text-muted);
-  letter-spacing: 0.1em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  margin-bottom: 0.2rem;
+  white-space: nowrap;
+}
+.scrubber-track {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  position: relative;
+}
+/* fio que liga os anos */
+.scrubber-track::before {
+  content: '';
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  top: 50%;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(255, 183, 3, 0.45), rgba(138, 43, 226, 0.5), rgba(0, 240, 255, 0.6), rgba(0, 255, 136, 0.7));
+  z-index: 0;
 }
 .scrub-dot {
-  width: 28px;
+  position: relative;
+  z-index: 1;
+  min-width: 52px;
   height: 28px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.05);
+  padding: 0 0.55rem;
+  border-radius: 999px;
+  background: rgba(10, 13, 24, 0.95);
   border: 1px solid var(--border-subtle);
   color: var(--text-muted);
   display: flex;
@@ -83,22 +111,36 @@
   justify-content: center;
   text-decoration: none;
   font-family: var(--font-mono);
-  font-size: 0.65rem;
+  font-size: 0.68rem;
   font-weight: 700;
   transition: all var(--transition-fast);
 }
 .scrub-dot:hover {
   color: #ffffff;
   border-color: var(--accent-cyan);
-  background: rgba(0, 240, 255, 0.2);
-  transform: scale(1.15);
+  background: rgba(0, 240, 255, 0.18);
+  transform: translateY(-2px);
 }
 .scrub-dot.active {
   background: var(--accent-cyan);
   color: #050811;
   border-color: var(--accent-cyan);
-  box-shadow: 0 0 12px var(--accent-cyan);
-  transform: scale(1.2);
+  box-shadow: 0 0 14px rgba(0, 240, 255, 0.7);
+}
+.scrubber-rail-progress {
+  width: 70px;
+  height: 3px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+.scrubber-rail-progress span {
+  display: block;
+  height: 100%;
+  width: 0%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #ffb703, #00f0ff);
+  transition: width 0.15s linear;
 }
 
 /* Hero Section */
@@ -142,43 +184,105 @@
   flex-wrap: wrap;
 }
 
-/* Main Timeline Architecture */
-.timeline-container {
+/* Trilho Horizontal — viewport, setas e faixa de painéis */
+.timeline-viewport {
   position: relative;
-  max-width: 1040px;
-  margin: 0 auto;
-  padding: 40px 1.5rem 140px 1.5rem;
   z-index: 2;
+  /* espaço para a navbar fixa + a barra CRONOLOGIA flutuante */
+  padding: 150px 0 70px;
 }
 
-.timeline-central-spine {
+.timeline-rail {
+  display: flex;
+  align-items: stretch;
+  gap: 2.5rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+
+  overscroll-behavior-x: contain;
+  padding: 0 max(1.5rem, calc(50vw - 590px)) 1.5rem;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.timeline-rail::-webkit-scrollbar { display: none; }
+.timeline-rail:focus-visible {
+  outline: 2px solid var(--accent-cyan);
+  outline-offset: -6px;
+  border-radius: 24px;
+}
+
+/* Setas de navegação */
+.rail-nav {
   position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  width: 2px;
-  background: linear-gradient(180deg, 
-    rgba(255, 183, 3, 0.5) 0%, 
-    rgba(138, 43, 226, 0.6) 35%, 
-    rgba(0, 240, 255, 0.8) 75%, 
-    rgba(0, 255, 136, 0.9) 100%);
-  transform: translateX(-50%);
-  z-index: 1;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #ffffff;
+  background: rgba(13, 16, 28, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-light);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.55);
+  transition: all var(--transition-fast);
 }
+.rail-nav:hover:not(:disabled) {
+  border-color: var(--accent-cyan);
+  background: rgba(0, 240, 255, 0.18);
+  box-shadow: 0 0 24px rgba(0, 240, 255, 0.35);
+}
+.rail-nav:disabled {
+  opacity: 0.22;
+  cursor: default;
+}
+.rail-nav-prev { left: 1.1rem; }
+.rail-nav-next { right: 1.1rem; }
 
-/* Epoch Sections */
+.rail-hint {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1.4rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  transition: opacity var(--transition-smooth);
+}
+.rail-hint.is-dismissed { opacity: 0; }
+
+/* Painel de Era */
 .epoch-section {
   position: relative;
-  margin-bottom: 100px;
+  flex: 0 0 min(1180px, 92vw);
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch;
 }
 
 .epoch-marker {
   position: relative;
   z-index: 3;
-  margin-bottom: 1.75rem;
+  margin: 0 auto 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.marker-connector {
+  width: 2px;
+  height: 22px;
+  background: linear-gradient(180deg, var(--accent-cyan), transparent);
 }
 .marker-circle {
   width: 70px;
@@ -200,16 +304,26 @@
 /* Epoch Cards */
 .epoch-card {
   width: 100%;
+  flex: 1 1 auto;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: minmax(280px, 370px) 1fr;
+  grid-template-rows: auto minmax(0, 1fr);
+  grid-template-areas:
+    "head head"
+    "visual body";
+  column-gap: 2.5rem;
+  max-height: min(70vh, 780px);
   background: var(--bg-card);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--border-subtle);
   border-radius: 22px;
-  padding: 3rem;
+  padding: 2.4rem 2.6rem;
   box-shadow: var(--shadow-card);
   position: relative;
   z-index: 2;
-  transition: transform var(--transition-smooth), border-color var(--transition-smooth), box-shadow var(--transition-smooth);
+  transition: border-color var(--transition-smooth), box-shadow var(--transition-smooth);
 }
 .epoch-card:hover {
   border-color: var(--border-light);
@@ -223,7 +337,8 @@
 }
 
 .epoch-header {
-  margin-bottom: 2rem;
+  grid-area: head;
+  margin-bottom: 1.6rem;
   border-bottom: 1px solid var(--border-subtle);
   padding-bottom: 1.5rem;
 }
@@ -242,7 +357,7 @@
   color: var(--text-muted);
 }
 .epoch-title {
-  font-size: 2.2rem;
+  font-size: clamp(1.5rem, 2vw, 2.1rem);
   margin-top: 0.35rem;
   line-height: 1.25;
 }
@@ -735,7 +850,6 @@
 
 /* Responsive History */
 @media (max-width: 992px) {
-  .timeline-scrubber { display: none; }
   .history-title { font-size: 2.7rem; }
   .history-subtitle-text { font-size: 1.4rem; }
   .frontier-breakthrough-grid { grid-template-columns: 1fr; }
@@ -745,9 +859,254 @@
 }
 
 @media (max-width: 768px) {
-  .timeline-central-spine { left: 20px; }
-  .epoch-marker { align-self: flex-start; margin-left: -15px; }
+  .epoch-marker { margin-bottom: 1rem; }
   .history-title { font-size: 2.1rem; }
   .history-subtitle-text { font-size: 1.2rem; }
   .moore-display-readout { grid-template-columns: 1fr; }
+}
+
+
+/* ==========================================================================
+   Coluna visual — arte gerada com Gemini + player de narração
+   ========================================================================== */
+.epoch-visual {
+  grid-area: visual;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 240, 255, 0.35) transparent;
+  padding-right: 0.35rem;
+}
+
+.epoch-figure {
+  margin: 0;
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+  background: #05070d;
+  flex: 0 0 auto;
+}
+.epoch-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  opacity: 0;
+  transform: scale(1.04);
+  transition: opacity 0.7s ease, transform 1.2s ease;
+}
+.epoch-image.is-loaded {
+  opacity: 1;
+  transform: scale(1);
+}
+.epoch-figure::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, transparent 45%, rgba(4, 5, 8, 0.85) 100%);
+}
+.epoch-figcaption {
+  position: absolute;
+  left: 0.7rem;
+  bottom: 0.6rem;
+  z-index: 2;
+}
+.ai-art-chip {
+  display: inline-block;
+  padding: 0.22rem 0.6rem;
+  border-radius: 999px;
+  background: rgba(5, 8, 17, 0.75);
+  border: 1px solid var(--border-subtle);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+/* Player de narração */
+.narration-player {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.75rem 0.9rem;
+  border-radius: 14px;
+  background: rgba(8, 10, 18, 0.8);
+  border: 1px solid var(--border-light);
+  flex: 0 0 auto;
+}
+.narration-player.is-unavailable { opacity: 0.45; }
+
+.narration-btn {
+  width: 42px;
+  height: 42px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  border: 1px solid var(--accent-cyan);
+  background: rgba(0, 240, 255, 0.12);
+  color: var(--accent-cyan);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+.narration-btn:hover:not(:disabled) {
+  background: var(--accent-cyan);
+  color: #050811;
+  box-shadow: 0 0 18px rgba(0, 240, 255, 0.5);
+}
+.narration-btn:disabled { cursor: default; }
+.narration-btn .icon-pause { display: none; }
+.narration-player.is-playing .narration-btn .icon-play { display: none; }
+.narration-player.is-playing .narration-btn .icon-pause { display: block; }
+
+.narration-meta {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.narration-label {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.narration-track {
+  height: 4px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.09);
+  cursor: pointer;
+  overflow: hidden;
+}
+.narration-fill {
+  display: block;
+  height: 100%;
+  width: 0%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent-cyan), #00ff88);
+}
+.narration-time {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  flex: 0 0 auto;
+}
+.narration-transcript-btn {
+  flex: 0 0 auto;
+  padding: 0.3rem 0.6rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-subtle);
+  background: transparent;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+.narration-transcript-btn:hover,
+.narration-transcript-btn[aria-expanded="true"] {
+  color: #ffffff;
+  border-color: var(--accent-cyan);
+}
+.narration-text {
+  margin: 0;
+  font-size: 0.86rem;
+  line-height: 1.75;
+  color: var(--text-secondary);
+  padding: 0.9rem 1rem;
+  border-left: 2px solid var(--accent-cyan);
+  background: rgba(0, 240, 255, 0.04);
+  border-radius: 0 10px 10px 0;
+  flex: 0 0 auto;
+}
+
+/* Corpo rolável do painel */
+.epoch-body {
+  grid-area: body;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 240, 255, 0.35) transparent;
+  padding-right: 0.6rem;
+  -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 14px, #000 calc(100% - 24px), transparent 100%);
+  mask-image: linear-gradient(180deg, transparent 0, #000 14px, #000 calc(100% - 24px), transparent 100%);
+}
+.epoch-body::-webkit-scrollbar,
+.epoch-visual::-webkit-scrollbar { width: 6px; }
+.epoch-body::-webkit-scrollbar-thumb,
+.epoch-visual::-webkit-scrollbar-thumb {
+  background: rgba(0, 240, 255, 0.3);
+  border-radius: 999px;
+}
+
+/* ==========================================================================
+   Responsivo — abaixo de 900px o trilho vira pilha vertical de novo
+   ========================================================================== */
+@media (max-width: 900px) {
+  .timeline-viewport { padding: 30px 0 60px; }
+  .timeline-rail {
+    display: block;
+    overflow: visible;
+    scroll-snap-type: none;
+    padding: 0 1.25rem 2rem;
+  }
+  .rail-nav,
+  .rail-hint { display: none; }
+  .epoch-section {
+    flex: none;
+    width: 100%;
+    margin-bottom: 4.5rem;
+  }
+  .epoch-card {
+    display: block;
+    max-height: none;
+    padding: 1.9rem 1.4rem;
+  }
+  .epoch-visual,
+  .epoch-body {
+    overflow: visible;
+    max-height: none;
+    padding-right: 0;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+  .epoch-visual { margin-bottom: 1.8rem; }
+  .timeline-scrubber {
+    top: auto;
+    bottom: 1rem;
+    padding: 0.45rem 0.6rem;
+    overflow-x: auto;
+  }
+  .scrubber-label,
+  .scrubber-rail-progress { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .timeline-rail { scroll-behavior: auto; }
+  .epoch-image { transition: none; opacity: 1; transform: none; }
+}
+
+/* No trilho horizontal a própria barra CRONOLOGIA é o eixo:
+   o selo de ano só reaparece na pilha vertical (<=900px). */
+@media (min-width: 901px) {
+  .epoch-marker { display: none; }
 }

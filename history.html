@@ -6,6 +6,16 @@
   <title>A Epopeia da Computação: De Turing ao Willow & OpenAI | Make AI Better</title>
   <meta name="description" content="Uma jornada visual e animada através de 90 anos da história do cálculo. Da máquina universal de Alan Turing ao chip quântico Google Willow e ao raciocínio System-2 da OpenAI.">
   <meta name="keywords" content="História da Computação, Alan Turing, Google Willow, OpenAI o1 o3, Quantum Computing, System-2 Reasoning, Motion.dev, Make AI Better">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="A Epopeia da Computação | Make AI Better">
+  <meta property="og:description" content="90 anos de computação em uma linha do tempo horizontal e interativa — da fita de Turing ao chip quântico Willow, com narração e arte geradas com Gemini.">
+  <meta property="og:image" content="https://makeaibetter.com/assets/images/era-7.webp">
+  <meta property="og:url" content="https://makeaibetter.com/history.html">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preload" as="image" href="assets/images/era-1.webp" fetchpriority="high">
   
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -81,9 +91,10 @@
     <div class="scroll-progress-bar" id="scroll-progress-bar"></div>
   </div>
 
-  <!-- Floating Timeline Quick Scrubber -->
-  <aside class="timeline-scrubber" id="timeline-scrubber">
+  <!-- Barra de Cronologia Horizontal -->
+  <aside class="timeline-scrubber" id="timeline-scrubber" aria-label="Cronologia">
     <div class="scrubber-label" data-i18n="timeline_nav_label">CRONOLOGIA</div>
+    <div class="scrubber-track" id="scrubber-track">
     <a href="#era-1" class="scrub-dot active" data-era="1" title="1936: Alan Turing"><span>1936</span></a>
     <a href="#era-2" class="scrub-dot" data-era="2" title="1947: Von Neumann & Transistor"><span>1947</span></a>
     <a href="#era-3" class="scrub-dot" data-era="3" title="1971: Microchips & Moore"><span>1971</span></a>
@@ -91,6 +102,8 @@
     <a href="#era-5" class="scrub-dot" data-era="5" title="2012: Deep Learning & GPUs"><span>2012</span></a>
     <a href="#era-6" class="scrub-dot" data-era="6" title="2017: Transformers"><span>2017</span></a>
     <a href="#era-7" class="scrub-dot" data-era="7" title="2026: Willow & System-2"><span>2026</span></a>
+    </div>
+    <div class="scrubber-rail-progress"><span id="scrubber-rail-fill"></span></div>
   </aside>
 
   <!-- Hero Section -->
@@ -125,15 +138,20 @@
     </div>
   </section>
 
-  <!-- Main Timeline Chapters Container -->
-  <main class="timeline-container">
-    <div class="timeline-central-spine"></div>
+  <!-- Trilho Horizontal de Capítulos -->
+  <main class="timeline-viewport" id="timeline-viewport">
+    <button class="rail-nav rail-nav-prev" id="rail-prev" type="button" aria-label="Era anterior" disabled>
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+    </button>
+    <button class="rail-nav rail-nav-next" id="rail-next" type="button" aria-label="Próxima era">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+    </button>
+
+    <div class="timeline-rail" id="timeline-rail" tabindex="0" role="region" aria-label="Linha do tempo da computação">
 
     <!-- ERA 1 -->
     <section class="epoch-section" id="era-1" data-epoch="1">
-      <div class="epoch-marker">
-        <div class="marker-circle">1936</div>
-      </div>
+      <div class="epoch-marker"><div class="marker-circle">1936</div><span class="marker-connector" aria-hidden="true"></span></div>
       <div class="epoch-card motion-card" id="card-era-1">
         <div class="epoch-header">
           <div class="epoch-meta">
@@ -142,6 +160,29 @@
           </div>
           <h2 class="epoch-title" data-i18n="era_1_title">O Oráculo Matemático e a Fita Infinita</h2>
         </div>
+        <div class="epoch-visual">
+          <figure class="epoch-figure">
+            <img class="epoch-image" id="epoch-image-1" src="assets/images/era-1.webp" width="1280" height="720" fetchpriority="high" decoding="async" alt="">
+            <figcaption class="epoch-figcaption">
+              <span class="ai-art-chip" data-i18n="ai_art_credit">Arte gerada com Gemini</span>
+            </figcaption>
+          </figure>
+
+          <div class="narration-player" data-era="1">
+            <button class="narration-btn" type="button" data-narration-toggle aria-label="Ouvir narração">
+              <svg class="icon-play" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="7 4 20 12 7 20"></polygon></svg>
+              <svg class="icon-pause" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16" rx="1"></rect><rect x="14" y="4" width="4" height="16" rx="1"></rect></svg>
+            </button>
+            <div class="narration-meta">
+              <span class="narration-label" data-i18n="narration_label">Narração do capítulo</span>
+              <div class="narration-track" data-narration-track><span class="narration-fill" data-narration-fill></span></div>
+            </div>
+            <span class="narration-time" data-narration-time>0:00</span>
+            <button class="narration-transcript-btn" type="button" data-narration-transcript aria-expanded="false" data-i18n="narration_transcript">Texto</button>
+          </div>
+          <p class="narration-text" data-narration-text hidden></p>
+        </div>
+
         <div class="epoch-body">
           <p data-i18n="era_1_p1">
             Em 1936, no artigo revolucionário <em>"On Computable Numbers"</em>, o jovem matemático britânico <strong>Alan Mathison Turing</strong> formulou o conceito da <strong>Máquina Universal de Turing</strong>. Ele provou que um único dispositivo hipotético, lendo e escrevendo símbolos em uma fita de papel infinitamente longa, era capaz de simular o comportamento de qualquer outro calculador concebível.
@@ -206,9 +247,7 @@
 
     <!-- ERA 2 -->
     <section class="epoch-section" id="era-2" data-epoch="2">
-      <div class="epoch-marker">
-        <div class="marker-circle">1947</div>
-      </div>
+      <div class="epoch-marker"><div class="marker-circle">1947</div><span class="marker-connector" aria-hidden="true"></span></div>
       <div class="epoch-card motion-card" id="card-era-2">
         <div class="epoch-header">
           <div class="epoch-meta">
@@ -217,6 +256,29 @@
           </div>
           <h2 class="epoch-title" data-i18n="era_2_title">A Arquitetura Von Neumann e o Milagre do Transistor</h2>
         </div>
+        <div class="epoch-visual">
+          <figure class="epoch-figure">
+            <img class="epoch-image" id="epoch-image-2" src="assets/images/era-2.webp" width="1280" height="720" loading="lazy" decoding="async" alt="">
+            <figcaption class="epoch-figcaption">
+              <span class="ai-art-chip" data-i18n="ai_art_credit">Arte gerada com Gemini</span>
+            </figcaption>
+          </figure>
+
+          <div class="narration-player" data-era="2">
+            <button class="narration-btn" type="button" data-narration-toggle aria-label="Ouvir narração">
+              <svg class="icon-play" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="7 4 20 12 7 20"></polygon></svg>
+              <svg class="icon-pause" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16" rx="1"></rect><rect x="14" y="4" width="4" height="16" rx="1"></rect></svg>
+            </button>
+            <div class="narration-meta">
+              <span class="narration-label" data-i18n="narration_label">Narração do capítulo</span>
+              <div class="narration-track" data-narration-track><span class="narration-fill" data-narration-fill></span></div>
+            </div>
+            <span class="narration-time" data-narration-time>0:00</span>
+            <button class="narration-transcript-btn" type="button" data-narration-transcript aria-expanded="false" data-i18n="narration_transcript">Texto</button>
+          </div>
+          <p class="narration-text" data-narration-text hidden></p>
+        </div>
+
         <div class="epoch-body">
           <p data-i18n="era_2_p1">
             Os primeiros computadores eletrônicos gigantes, como o <strong>ENIAC (1946)</strong> com suas 18.000 válvulas, ocupavam salas inteiras e quebravam constantemente pelo calor e queima de filamentos. Em 1945, <strong>John von Neumann</strong> distribuiu seu relatório sobre o EDVAC, definindo o conceito de <strong>Programa Armazenado</strong>: dados e instruções compartilham a mesma memória principal, processados por uma Unidade de Controle e uma ALU. Essa estrutura governa até hoje quase todos os computadores do planeta.
@@ -259,9 +321,7 @@
 
     <!-- ERA 3 -->
     <section class="epoch-section" id="era-3" data-epoch="3">
-      <div class="epoch-marker">
-        <div class="marker-circle">1971</div>
-      </div>
+      <div class="epoch-marker"><div class="marker-circle">1971</div><span class="marker-connector" aria-hidden="true"></span></div>
       <div class="epoch-card motion-card" id="card-era-3">
         <div class="epoch-header">
           <div class="epoch-meta">
@@ -270,6 +330,29 @@
           </div>
           <h2 class="epoch-title" data-i18n="era_3_title">Circuitos Integrados, Lei de Moore e o Intel 4004</h2>
         </div>
+        <div class="epoch-visual">
+          <figure class="epoch-figure">
+            <img class="epoch-image" id="epoch-image-3" src="assets/images/era-3.webp" width="1280" height="720" loading="lazy" decoding="async" alt="">
+            <figcaption class="epoch-figcaption">
+              <span class="ai-art-chip" data-i18n="ai_art_credit">Arte gerada com Gemini</span>
+            </figcaption>
+          </figure>
+
+          <div class="narration-player" data-era="3">
+            <button class="narration-btn" type="button" data-narration-toggle aria-label="Ouvir narração">
+              <svg class="icon-play" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="7 4 20 12 7 20"></polygon></svg>
+              <svg class="icon-pause" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16" rx="1"></rect><rect x="14" y="4" width="4" height="16" rx="1"></rect></svg>
+            </button>
+            <div class="narration-meta">
+              <span class="narration-label" data-i18n="narration_label">Narração do capítulo</span>
+              <div class="narration-track" data-narration-track><span class="narration-fill" data-narration-fill></span></div>
+            </div>
+            <span class="narration-time" data-narration-time>0:00</span>
+            <button class="narration-transcript-btn" type="button" data-narration-transcript aria-expanded="false" data-i18n="narration_transcript">Texto</button>
+          </div>
+          <p class="narration-text" data-narration-text hidden></p>
+        </div>
+
         <div class="epoch-body">
           <p data-i18n="era_3_p1">
             Com a invenção do circuito integrado por Robert Noyce e Jack Kilby, múltiplos transistores puderam ser impressos em uma única lâmina de silício. Em 1965, Gordon Moore formulou a previsão empírica mais lucrativa da história: a <strong>Lei de Moore</strong>.
@@ -307,9 +390,7 @@
 
     <!-- ERA 4 -->
     <section class="epoch-section" id="era-4" data-epoch="4">
-      <div class="epoch-marker">
-        <div class="marker-circle">1984</div>
-      </div>
+      <div class="epoch-marker"><div class="marker-circle">1984</div><span class="marker-connector" aria-hidden="true"></span></div>
       <div class="epoch-card motion-card" id="card-era-4">
         <div class="epoch-header">
           <div class="epoch-meta">
@@ -318,6 +399,29 @@
           </div>
           <h2 class="epoch-title" data-i18n="era_4_title">Computação Pessoal, a World Wide Web e o Backprop</h2>
         </div>
+        <div class="epoch-visual">
+          <figure class="epoch-figure">
+            <img class="epoch-image" id="epoch-image-4" src="assets/images/era-4.webp" width="1280" height="720" loading="lazy" decoding="async" alt="">
+            <figcaption class="epoch-figcaption">
+              <span class="ai-art-chip" data-i18n="ai_art_credit">Arte gerada com Gemini</span>
+            </figcaption>
+          </figure>
+
+          <div class="narration-player" data-era="4">
+            <button class="narration-btn" type="button" data-narration-toggle aria-label="Ouvir narração">
+              <svg class="icon-play" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="7 4 20 12 7 20"></polygon></svg>
+              <svg class="icon-pause" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16" rx="1"></rect><rect x="14" y="4" width="4" height="16" rx="1"></rect></svg>
+            </button>
+            <div class="narration-meta">
+              <span class="narration-label" data-i18n="narration_label">Narração do capítulo</span>
+              <div class="narration-track" data-narration-track><span class="narration-fill" data-narration-fill></span></div>
+            </div>
+            <span class="narration-time" data-narration-time>0:00</span>
+            <button class="narration-transcript-btn" type="button" data-narration-transcript aria-expanded="false" data-i18n="narration_transcript">Texto</button>
+          </div>
+          <p class="narration-text" data-narration-text hidden></p>
+        </div>
+
         <div class="epoch-body">
           <p data-i18n="era_4_p1">
             Os computadores finalmente deixaram os data centers corporativos e invadiram as residências. O lançamento do <strong>IBM PC (1981)</strong> e do icônico <strong>Apple Macintosh (1984)</strong> popularizou a interface gráfica com janelas, ícones e mouse. Em 1989, no CERN, <strong>Tim Berners-Lee</strong> inventou a World Wide Web (HTTP, HTML e URLs), conectando a humanidade em uma única malha de hipertexto.
@@ -377,9 +481,7 @@
 
     <!-- ERA 5 -->
     <section class="epoch-section" id="era-5" data-epoch="5">
-      <div class="epoch-marker">
-        <div class="marker-circle">2012</div>
-      </div>
+      <div class="epoch-marker"><div class="marker-circle">2012</div><span class="marker-connector" aria-hidden="true"></span></div>
       <div class="epoch-card motion-card" id="card-era-5">
         <div class="epoch-header">
           <div class="epoch-meta">
@@ -388,6 +490,29 @@
           </div>
           <h2 class="epoch-title" data-i18n="era_5_title">Computação em Nuvem, GPUs CUDA e o Big Bang do Deep Learning</h2>
         </div>
+        <div class="epoch-visual">
+          <figure class="epoch-figure">
+            <img class="epoch-image" id="epoch-image-5" src="assets/images/era-5.webp" width="1280" height="720" loading="lazy" decoding="async" alt="">
+            <figcaption class="epoch-figcaption">
+              <span class="ai-art-chip" data-i18n="ai_art_credit">Arte gerada com Gemini</span>
+            </figcaption>
+          </figure>
+
+          <div class="narration-player" data-era="5">
+            <button class="narration-btn" type="button" data-narration-toggle aria-label="Ouvir narração">
+              <svg class="icon-play" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="7 4 20 12 7 20"></polygon></svg>
+              <svg class="icon-pause" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16" rx="1"></rect><rect x="14" y="4" width="4" height="16" rx="1"></rect></svg>
+            </button>
+            <div class="narration-meta">
+              <span class="narration-label" data-i18n="narration_label">Narração do capítulo</span>
+              <div class="narration-track" data-narration-track><span class="narration-fill" data-narration-fill></span></div>
+            </div>
+            <span class="narration-time" data-narration-time>0:00</span>
+            <button class="narration-transcript-btn" type="button" data-narration-transcript aria-expanded="false" data-i18n="narration_transcript">Texto</button>
+          </div>
+          <p class="narration-text" data-narration-text hidden></p>
+        </div>
+
         <div class="epoch-body">
           <p data-i18n="era_5_p1">
             Na virada do milênio, o cálculo migrou para os data centers elásticos com a computação em nuvem (AWS EC2). Paralelamente, a <strong>NVIDIA</strong> lançou em 2006 a plataforma <strong>CUDA</strong>, desbloqueando o poder de processamento massivamente paralelo das GPUs para álgebra linear e matrizes matemáticas.
@@ -401,9 +526,7 @@
 
     <!-- ERA 6 -->
     <section class="epoch-section" id="era-6" data-epoch="6">
-      <div class="epoch-marker">
-        <div class="marker-circle">2017</div>
-      </div>
+      <div class="epoch-marker"><div class="marker-circle">2017</div><span class="marker-connector" aria-hidden="true"></span></div>
       <div class="epoch-card motion-card" id="card-era-6">
         <div class="epoch-header">
           <div class="epoch-meta">
@@ -412,6 +535,29 @@
           </div>
           <h2 class="epoch-title" data-i18n="era_6_title">A Revolução dos Transformers e a Explosão da IA Generativa</h2>
         </div>
+        <div class="epoch-visual">
+          <figure class="epoch-figure">
+            <img class="epoch-image" id="epoch-image-6" src="assets/images/era-6.webp" width="1280" height="720" loading="lazy" decoding="async" alt="">
+            <figcaption class="epoch-figcaption">
+              <span class="ai-art-chip" data-i18n="ai_art_credit">Arte gerada com Gemini</span>
+            </figcaption>
+          </figure>
+
+          <div class="narration-player" data-era="6">
+            <button class="narration-btn" type="button" data-narration-toggle aria-label="Ouvir narração">
+              <svg class="icon-play" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="7 4 20 12 7 20"></polygon></svg>
+              <svg class="icon-pause" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16" rx="1"></rect><rect x="14" y="4" width="4" height="16" rx="1"></rect></svg>
+            </button>
+            <div class="narration-meta">
+              <span class="narration-label" data-i18n="narration_label">Narração do capítulo</span>
+              <div class="narration-track" data-narration-track><span class="narration-fill" data-narration-fill></span></div>
+            </div>
+            <span class="narration-time" data-narration-time>0:00</span>
+            <button class="narration-transcript-btn" type="button" data-narration-transcript aria-expanded="false" data-i18n="narration_transcript">Texto</button>
+          </div>
+          <p class="narration-text" data-narration-text hidden></p>
+        </div>
+
         <div class="epoch-body">
           <p data-i18n="era_6_p1">
             Em junho de 2017, oito pesquisadores do Google publicaram o paper histórico <em>"Attention Is All You Need"</em>. A arquitetura <strong>Transformer</strong> eliminou redes recorrentes (RNNs/LSTMs) em favor do mecanismo de <strong>Self-Attention (Auto-Atenção)</strong>, permitindo que supercomputadores treinassem em paralelo com bilhões de páginas da web sem sofrer gargalos sequenciais.
@@ -425,9 +571,7 @@
 
     <!-- ERA 7 -->
     <section class="epoch-section" id="era-7" data-epoch="7">
-      <div class="epoch-marker">
-        <div class="marker-circle">2026</div>
-      </div>
+      <div class="epoch-marker"><div class="marker-circle">2026</div><span class="marker-connector" aria-hidden="true"></span></div>
       <div class="epoch-card motion-card active-frontier-card" id="card-era-7">
         <div class="epoch-header">
           <div class="epoch-meta">
@@ -436,6 +580,29 @@
           </div>
           <h2 class="epoch-title gradient-text" data-i18n="era_7_title">A Dupla Fronteira: O Salto Quântico (Google Willow) e o Raciocínio System-2 (OpenAI)</h2>
         </div>
+        <div class="epoch-visual">
+          <figure class="epoch-figure">
+            <img class="epoch-image" id="epoch-image-7" src="assets/images/era-7.webp" width="1280" height="720" loading="lazy" decoding="async" alt="">
+            <figcaption class="epoch-figcaption">
+              <span class="ai-art-chip" data-i18n="ai_art_credit">Arte gerada com Gemini</span>
+            </figcaption>
+          </figure>
+
+          <div class="narration-player" data-era="7">
+            <button class="narration-btn" type="button" data-narration-toggle aria-label="Ouvir narração">
+              <svg class="icon-play" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="7 4 20 12 7 20"></polygon></svg>
+              <svg class="icon-pause" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16" rx="1"></rect><rect x="14" y="4" width="4" height="16" rx="1"></rect></svg>
+            </button>
+            <div class="narration-meta">
+              <span class="narration-label" data-i18n="narration_label">Narração do capítulo</span>
+              <div class="narration-track" data-narration-track><span class="narration-fill" data-narration-fill></span></div>
+            </div>
+            <span class="narration-time" data-narration-time>0:00</span>
+            <button class="narration-transcript-btn" type="button" data-narration-transcript aria-expanded="false" data-i18n="narration_transcript">Texto</button>
+          </div>
+          <p class="narration-text" data-narration-text hidden></p>
+        </div>
+
         <div class="epoch-body">
           <p data-i18n="era_7_p1">
             Em 2026, a história da computação atinge sua mais espetacular convergência simultânea entre física de hardware e inteligência cognitiva:
@@ -545,6 +712,12 @@
       </div>
     </section>
 
+    </div>
+
+    <div class="rail-hint" id="rail-hint">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+      <span data-i18n="rail_hint">Role, arraste ou use ← → para percorrer 90 anos</span>
+    </div>
   </main>
 
   <!-- Global Footer -->

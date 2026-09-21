@@ -1,0 +1,58 @@
+{
+  "voices": {
+    "pt": { "name": "Charon", "style": "Narre em português do Brasil com tom de documentário científico: grave, pausado, reverente, como um narrador de série da BBC. Ritmo calmo, ênfase nos nomes próprios e nas datas." },
+    "en": { "name": "Charon", "style": "Narrate in English with a science-documentary tone: deep, measured, reverent, like a BBC series narrator. Calm pacing, emphasis on proper names and dates." }
+  },
+  "imageStyle": "Cinematic dark editorial illustration for a technology history website. Deep obsidian background, volumetric fog, dramatic rim lighting, fine grain, painterly realism, wide 16:9 composition with negative space on the left third. Absolutely no text, no letters, no numbers, no logos, no watermarks, no UI overlays.",
+  "eras": [
+    {
+      "id": 1,
+      "year": "1936",
+      "span": "1936–1950",
+      "palette": "monochrome graphite with warm amber phosphor accents",
+      "imagePrompt": "A wartime Bletchley Park hut at night: an infinite punched paper tape ribbon curling through the darkness like a river of logic, an electromechanical Bombe rotor cabinet half-lit, brass and bakelite, amber phosphor glow, silhouetted codebreakers."
+    },
+    {
+      "id": 2,
+      "year": "1947",
+      "span": "1945–1960",
+      "palette": "deep cyanide blue with metallic copper",
+      "imagePrompt": "The first point-contact transistor on a germanium slab, macro scale, gold foil contacts catching light, surrounded by the ghostly skeleton of a room-sized vacuum-tube computer dissolving into fog behind it. Copper and cyan blue."
+    },
+    {
+      "id": 3,
+      "year": "1971",
+      "span": "1960–1980",
+      "palette": "copper traces on cyan-blue silicon",
+      "imagePrompt": "Extreme macro of a silicon wafer and an early integrated circuit die, copper interconnect traces radiating like a city grid seen from orbit, wafer rainbow diffraction, a geometric exponential curve implied by receding rows of shrinking chips."
+    },
+    {
+      "id": 4,
+      "year": "1984",
+      "span": "1980–2000",
+      "palette": "electric purple, magenta and 90s neon gradients",
+      "imagePrompt": "A beige personal computer glowing in a dark 1990s bedroom, CRT light spilling onto the wall, a globe of fiber-optic network lines rising out of the screen, electric purple and magenta neon gradients, a faint neural network lattice woven through the cables."
+    },
+    {
+      "id": 5,
+      "year": "2012",
+      "span": "2000–2016",
+      "palette": "electric violet and GPU tensor green",
+      "imagePrompt": "A dense datacenter aisle at night, racks of GPUs breathing violet light, a vast lattice of tensor matrices floating above the corridor like aurora, cables converging to a vanishing point, cold mist."
+    },
+    {
+      "id": 6,
+      "year": "2017",
+      "span": "2017–2024",
+      "palette": "holographic cyan over obsidian",
+      "imagePrompt": "An abstract attention mechanism: thousands of luminous cyan filaments connecting floating glass tokens in parallel, no recurrence, a self-attention constellation suspended in obsidian void, glass refraction and caustics."
+    },
+    {
+      "id": 7,
+      "year": "2026",
+      "span": "2024–2026",
+      "palette": "holographic cyan and quantum green over obsidian",
+      "imagePrompt": "A dual frontier diptych fused into one image: on one side a dilution refrigerator chandelier of a superconducting quantum processor glowing gold and cyan, on the other an expanding tree of reasoning branches made of light, invalid branches dimming and falling away. Quantum green and holographic cyan."
+    }
+  ]
+}
