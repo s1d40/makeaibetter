@@ -12,6 +12,7 @@ let activeModelId = 'gemini-38';
 // --- Translation Dictionary ---
 const translations = {
   pt: {
+    nav_research: "Pesquisa",
     nav_history: "História da Computação",
     nav_science: "IA na Ciência",
     btn_history: "Explorar a Epopeia da Computação",
@@ -108,6 +109,7 @@ const translations = {
     btn_close_modal: "Fechar Leitor"
   },
   en: {
+    nav_research: "Research",
     nav_history: "History of Computing",
     nav_science: "AI in Science",
     btn_history: "Explore The Epic of Computing",

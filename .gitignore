@@ -11,3 +11,6 @@ en/
 
 # symlink de dev para o puppeteer do scratchpad
 node_modules
+
+# gerado por tools/build-research.mjs no deploy
+research/*.html

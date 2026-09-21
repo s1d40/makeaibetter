@@ -903,6 +903,7 @@ function initLanguage() {
 function applyScienceTranslations() {
   const dict = {
     pt: {
+      nav_research: "Pesquisa",
       footer_desc: "Iniciativa de pesquisa independente e aberta para o avanço seguro e rigoroso da inteligência artificial.",
       footer_col_nav: "Navegação",
       footer_col_disciplines: "Disciplinas",
@@ -965,6 +966,7 @@ function applyScienceTranslations() {
       btn_return_radar: "Voltar ao Radar de Modelos 2026"
     },
     en: {
+      nav_research: "Research",
       footer_desc: "Independent, open research initiative for the safe and rigorous advancement of artificial intelligence.",
       footer_col_nav: "Navigation",
       footer_col_disciplines: "Disciplines",

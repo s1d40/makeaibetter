@@ -36,6 +36,7 @@ const mooreData = {
 // ─── Bilingual Dictionary ─────────────────────────────────────────────────────
 const historyI18n = {
   pt: {
+    nav_research: "Pesquisa",
     frontier_willow_desc: "Dotado de <strong data-i18n=\"val_qubits\">105 qubits supercondutores transmon</strong>, o Willow superou pela primeira vez na história o <em>limiar de correção de erros quânticos (\"below-threshold\")</em>. Ao aumentar a malha de código de superfície, a taxa de erro lógico diminuiu exponencialmente.",
     frontier_system2_desc: "O fim da era do \"chute impulsivo\" do próximo token. A fronteira em 2026 é governada pelo <strong>Test-Time Compute Scaling</strong>: alocação dinâmica de tempo de reflexão onde o modelo explora árvores de hipóteses e auto-corrige seus erros antes de responder.",
     reasoning_scenario_tag: "Prova Matemática (AIME 2026)",
@@ -154,6 +155,7 @@ const historyI18n = {
     footer_col_connect: "Conectar"
   },
   en: {
+    nav_research: "Research",
     frontier_willow_desc: "With <strong data-i18n=\"val_qubits\">105 superconducting transmon qubits</strong>, Willow became the first chip in history to cross the <em>quantum error-correction threshold (\"below-threshold\")</em>. As the surface-code lattice grows, the logical error rate falls exponentially.",
     frontier_system2_desc: "The end of the impulsive next-token guess. The 2026 frontier is governed by <strong>test-time compute scaling</strong>: dynamically allocating thinking time so the model explores hypothesis trees and corrects itself before answering.",
     reasoning_scenario_tag: "Mathematical proof (AIME 2026)",

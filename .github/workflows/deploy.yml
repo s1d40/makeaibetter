@@ -27,6 +27,8 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
+      - name: Build research pages
+        run: node tools/build-research.mjs
       - name: Build English pages
         run: node tools/build-en.mjs
       - name: Setup Pages

@@ -2,6 +2,10 @@
    MAKE AI BETTER — Design System & Stylesheet (2026 Modern Aesthetic)
    ========================================================================== */
 
+html {
+  overflow-x: clip;
+}
+
 :root {
   /* Color Palette: Deep Space & Cyber Research */
   --bg-primary: #07080c;
@@ -66,7 +70,12 @@ html {
 body {
   position: relative;
   min-height: 100vh;
-  overflow-x: hidden;
+  /* `hidden` só no body não basta: o excesso migra para o <html> e a página
+     continua rolando de lado. Os orbes decorativos de 600px ficam deliberadamente
+     fora da viewport, então a contenção precisa existir na raiz também.
+     `clip` em vez de `hidden` para não criar contexto de rolagem — `position:
+     sticky` dentro da página continua funcionando. */
+  overflow-x: clip;
   background: radial-gradient(circle at 50% 0%, #111528 0%, #07080c 55%, #050608 100%);
 }
 
